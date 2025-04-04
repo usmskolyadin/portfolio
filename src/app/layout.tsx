@@ -5,6 +5,7 @@ import "@/src/app/styles/globals.css";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { AudioPlayer } from "../widgets/audio-player/AudioPlayer";
+import Link from "next/link";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,15 +33,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <header className="flex justify-between items-center py-4 border-gray-200 px-6 relative">
             {/* Логотип */}
             <h1 className="text-md font-medium drop-shadow-[0_0_3px_#ffffff]">
-              *WHY SPACY COOKING <span className="underline">HERE</span>?
+              <Link href="/">*WHY SPACY COOKING <span className="underline">HERE</span>?</Link>
             </h1>
 
             {/* Десктопное меню */}
             <nav className="hidden md:flex gap-6">
               {["About", "Catalog", "Pricing", "Team"].map((item) => (
-                <a key={item} href="#" className="hover:underline font-medium">
-                  {item}
-                </a>
+                <Link className="hover:underline font-medium" key={item} href="/admin"> 
+                    {item}
+                </Link>
               ))}
             </nav>
 
