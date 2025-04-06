@@ -7,5 +7,5 @@ interface TabsContentProps {
 
 export function TabsContent({ value, children }: TabsContentProps) {
   const { selectedTab } = useTabs();
-  return selectedTab === value ? <div className="mt-4">{children}</div> : null;
+  return selectedTab === value ? <div className="">{children}</div> : null;
 }

@@ -13,7 +13,9 @@ interface TabsProps {
   
     return (
       <TabsContext.Provider value={{ selectedTab, setSelectedTab }}>
-        <div>{children}</div>
+        <div className="">
+          {children}
+        </div>
       </TabsContext.Provider>
     );
   }

@@ -55,3 +55,23 @@ body {
     #ffffff
   );
 }
+
+.duration::-webkit-slider-runnable-track {
+  background: #ffffff;
+  border-radius: 15px;
+}
+
+.duration::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #0a946d;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+.duration:focus::-webkit-slider-thumb {
+  outline: none;
+}

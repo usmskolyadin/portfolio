@@ -30,21 +30,21 @@ export const features = [
       title: "MY DEVELOPER EXP.",
       description:
         "Стек технологий подбирается индивидуально под каждый случай, я использую исключительно современные и удобные для обеих сторон технологии. Мой стек: \n\n Бэкенд - Python, FastAPI, Flask, Django Rest Framework/Django, Express.js, Node.js \n\n Фронтенд - JS, React.js/Next.js, Angular.js, SCSS, TailwindCSS \n\n Работа с бд и другие технологии: SQLAlchemy, Aiogram, ",
-      image: "/hero.jpg",
-      image2: "/hero.jpg",
+      image: "/cbhram.jpg",
+      image2: "/spacyon.jpg",
     },
     {
       title: "User-Centered Design",
       description:
         "Our designs focus on providing the best experience for users.",
-      image: "/hero-2.jpg",
+      image: "/cbkremlin.jpg",
       image2: "/hero.jpg",
     },
     {
       title: "Scalable Technology",
       description:
         "We develop scalable and efficient software to meet your needs.",
-      image: "/hero-3.jpg",
+      image: "/cbmc.jpg",
       image2: "/hero.jpg",
     },
   ];
