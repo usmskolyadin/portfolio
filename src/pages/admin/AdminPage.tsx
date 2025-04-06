@@ -61,36 +61,6 @@ export default function AdminPage() {
             </div>
           </div>
         </div>
-        <div className="relative w-full flex justify-center ">
-          <div className="relative w-full h-full flex flex-col lg:flex-row justify-center items-center">
-            <div className="absolute top-5 lg:left-10 z-20 transform transition-transform duration-300 hover:scale-105">
-              <h1 className="text-xl font-extrabold lg:mb-2 mb-4">MIXING & MASTERING <span className="text-emerald-500 font-semibold">+ БИТЫ</span></h1>
-              <MusicItem />
-            </div>
-
-            <div className="absolute ml-20 top-56 left-36 lg:top-52 lg:left-24 z-10 transform transition-transform duration-300 hover:scale-105">
-              <h1 className="text-xl font-extrabold lg:mb-2 mb-4 w-[250px]">САЙТ ДЛЯ <span className="text-emerald-500 font-semibold">ВАШЕГО</span> БРЕНДА</h1>
-              <Image
-                src="/hero-2.jpg"
-                alt="Hero image"
-                width={250} 
-                height={50}
-                className="rounded-3xl opacity-90"
-              />
-            </div>
-
-            <div className="absolute lg:ml-30 bottom-0 left-5 lg:right-0 lg:top-36 lg:left-96 z-5 transform transition-transform duration-300 hover:scale-105">
-              <Image
-                src="/hero-3.jpg"
-                alt="Hero image"
-                width={250}
-                height={250}
-                className="rounded-3xl opacity-90"
-              />
-              <h1 className="text-xl font-extrabold lg:mt-2 mt-4 w-[250px]">САЙТ ДЛЯ ВАШЕГО БРЕНДА</h1>
-              </div>
-          </div>
-        </div>
       </section>
       <section className="mt-30 lg:pl-8 lg:pr-4">
         <h2 className="text-3xl font-bold mb-4 uppercase">My Services</h2>
