@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Play } from "lucide-react";
 import { useAppDispatch } from "@/src/app/lib/hooks";
 import { setCurrentTrack, togglePlay } from "@/src/features/player/playerSlice";
-import { Track } from "@/src/features/player/types"; // Import Track type
+import { Track } from "@/src/features/player/types";
 
 interface MusicItemProps {
   track: Track;
@@ -17,16 +17,16 @@ export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
   const dispatch = useAppDispatch();
 
   const handlePlayClick = () => {
-    dispatch(setCurrentTrack(track)); // Set the current track
-    dispatch(togglePlay()); // Start playing
-    setModalOpen(false); // Close the modal, if open
+    dispatch(setCurrentTrack(track));
+    dispatch(togglePlay());
+    setModalOpen(false); 
   };
 
   return (
     <>
       <div
         className="hover:bg-[#181818] backdrop-blur-md backdrop-blur-md cursor-pointer bg-transparent border border-[#929292] items-center p-3 rounded-3xl flex h-30"
-        onClick={handlePlayClick} // Use the new handler
+        onClick={handlePlayClick}
       >
         <div
           className="relative min-w-24 min-h-30 rounded-lg overflow-hidden cursor-pointer"
@@ -55,7 +55,7 @@ export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
             </h2>
           </div>
           <div className="flex items-center">
-            <img src="checkmark.png" className="mr-1 w-4 h-4 invert object-cover" alt="" />
+            <Image width={8} height={8} src={"/checkmark.png"} className="mr-1 w-4 h-4 invert object-cover" alt="" />
             <p className="text-gray-300 lg:text-sm text-xs">{track.artist || "Unknown Artist"}</p> {/* Use track.artist */}
           </div>
 

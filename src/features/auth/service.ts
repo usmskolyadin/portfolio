@@ -1,9 +1,9 @@
 import { PrismaClient } from '@prisma/client';
 import { RegisterInput, LoginInput, UserResponse, JWTPayload, JWTResponse } from '@/src/features/auth/types';
 import { hash, compare } from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+import jwt, { Secret } from 'jsonwebtoken';
 
-const prisma = new PrismaClient();  
+const prisma = new PrismaClient();
 
 const generateToken = (user: UserResponse): string => {
   const payload: JWTPayload = {
@@ -11,26 +11,26 @@ const generateToken = (user: UserResponse): string => {
     email: user.email,
   };
 
-  const secret = process.env.JWT_SECRET || 'your_secret_key';
-  const options = { expiresIn: '15m' }; // Access token expires in 15 minutes
+  const secret: Secret = process.env.JWT_SECRET || 'your_secret_key';
+  const options: jwt.SignOptions = { expiresIn: '15m' };
 
   return jwt.sign(payload, secret, options);
 };
 
 const generateRefreshToken = (user: UserResponse): string => {
-  const refreshSecret = process.env.JWT_REFRESH_SECRET || 'your_refresh_secret_key';
+  const refreshSecret: Secret = process.env.JWT_REFRESH_SECRET || 'your_refresh_secret_key';
   const payload: JWTPayload = {
     id: user.id,
     email: user.email,
   };
 
-  const options = { expiresIn: '15d' }; // Refresh token expires in 7 days
+  const options: jwt.SignOptions = { expiresIn: '15d' }; // Refresh token expires in 15 days
 
   return jwt.sign(payload, refreshSecret, options);
 };
 
 const verifyToken = (token: string): JWTPayload | null => {
-  const secret = process.env.JWT_SECRET || 'your_secret_key';
+  const secret: Secret = process.env.JWT_SECRET || 'your_secret_key';
 
   try {
     return jwt.verify(token, secret) as JWTPayload;
@@ -41,7 +41,7 @@ const verifyToken = (token: string): JWTPayload | null => {
 };
 
 const verifyRefreshToken = (token: string): JWTPayload | null => {
-  const refreshSecret = process.env.JWT_REFRESH_SECRET || 'your_refresh_secret_key';
+  const refreshSecret: Secret = process.env.JWT_REFRESH_SECRET || 'your_refresh_secret_key';
 
   try {
     return jwt.verify(token, refreshSecret) as JWTPayload;
@@ -84,7 +84,7 @@ export const loginUser = async (input: LoginInput): Promise<{ user: UserResponse
   }
 
   const isPasswordValid = await compare(input.password, user.password);
-  
+
   if (!isPasswordValid) {
     return null;
   }
@@ -103,7 +103,7 @@ export const loginUser = async (input: LoginInput): Promise<{ user: UserResponse
 
 export const refreshTokens = async (refreshToken: string): Promise<{ accessToken: string; refreshToken: string } | null> => {
   const payload = verifyRefreshToken(refreshToken);
-  
+
   if (!payload) {
     return null;
   }
@@ -116,8 +116,17 @@ export const refreshTokens = async (refreshToken: string): Promise<{ accessToken
     return null;
   }
 
-  const newAccessToken = generateToken(payload);
-  const newRefreshToken = generateRefreshToken(payload);
+  // Fetch the user from the database using the id from the JWTPayload
+  const user = await prisma.user.findUnique({
+    where: { id: Number(payload.id) },
+  });
+
+  if (!user) {
+    return null;
+  }
+
+  const newAccessToken = generateToken(user);
+  const newRefreshToken = generateRefreshToken(user);
 
   await prisma.refreshToken.update({
     where: { userId: payload.id },

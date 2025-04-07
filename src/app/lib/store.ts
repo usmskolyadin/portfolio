@@ -1,14 +1,15 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import audioSlice from '@/src/features/player/playerSlice';
 
+
 export const makeStore = () => {
     return configureStore({
-        reducer: {
-            player: audioSlice.reducer, // Use audioSlice.reducer here
-        },
+      reducer: {
+        player: audioSlice.reducer,
+      },
     });
-};
-
+  };
+  
 export type AppStore = ReturnType<typeof makeStore>;
 export type RootState = ReturnType<AppStore['getState']>;
 export type AppDispatch = AppStore['dispatch'];

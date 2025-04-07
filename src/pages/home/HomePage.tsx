@@ -77,7 +77,7 @@ export default function Home() {
             </span>
           </h2>
             <p className="lg:text-xl text-md uppercase text-white font-medium mt-4">
-              Я - Максим Колядин (aka spacy?), являюсь веб-разработчиком с 2020 года, за это время сделал > 150 сайтов для разных компаний по всему миру и так же спродюсировал множество треков в самых различных тайпах
+              Я - Максим Колядин (aka spacy?), являюсь веб-разработчиком с 2020 года, за это время сделал `{">"}` 150 сайтов для разных компаний по всему миру и так же спродюсировал множество треков в самых различных тайпах
             </p>
             <h1 className="text-xl font-bold mt-6">МОИ ПРОЕКТЫ:</h1>
             <div>
@@ -185,14 +185,18 @@ export default function Home() {
           }`}
         >
           <div className="relative w-full md:w-1/2">
-            <img
+            <Image
                 src={feature.image}
                 alt={feature.title}
+                width={"1000"}
+                height={"1000"}
                 className="lg:w-96 w-56 lg:h-96 h-56 rounded-3xl shadow-lg transform object-cover transition-transform duration-300 hover:scale-105"
             />
-            <img
+            <Image
                 src={feature.image2}
                 alt={feature.title}
+                width={"1000"}
+                height={"1000"}
                 className="absolute top-[-40] lg:left-86 left-40 w-56 w-36 h-56 h-36 rounded-3xl object-cover shadow-lg transform transition-transform duration-300 hover:scale-105"
             />
           </div>
@@ -207,8 +211,7 @@ export default function Home() {
     <section className="mt-30 lg:pl-8 lg:pr-4">
         <h2 className="text-3xl font-bold mb-4 uppercase">My Services</h2>
         <Tabs
-          value={selectedCategory}
-          onValueChange={setSelectedCategory}
+          defaultValue={selectedCategory}
           className="mb-6"
         >
           <TabsList>

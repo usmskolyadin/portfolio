@@ -2,11 +2,10 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { useAppSelector, useAppDispatch } from '@/src/app/lib/hooks'; // Import typed hooks
+import { useAppSelector, useAppDispatch } from '@/src/app/lib/hooks';
 import { setCurrentTrack, togglePlay } from "@/src/features/player/playerSlice";
 
 export const AudioPlayer = () => {
-    // Access state correctly using the player slice
     const currentTrack = useAppSelector((state) => state.player.currentTrack);
     const isPlaying = useAppSelector((state) => state.player.isPlaying);
     const dispatch = useAppDispatch();
@@ -43,7 +42,7 @@ export const AudioPlayer = () => {
         if (audioRef.current) {
             audioRef.current.currentTime = time;
         }
-        //dispatch(setCurrentTrack({ ...currentTrack, currentTime: time })); //Corrected
+        //dispatch(setCurrentTrack({ ...currentTrack, currentTime: time }));
     };
 
     const formatTime = (time: number) => {

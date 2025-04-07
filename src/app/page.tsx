@@ -1,6 +1,5 @@
-import HomePage from "../pages/home/HomePage";
+import dynamic from 'next/dynamic';
 import type { Metadata } from 'next'
-
 
 export const metadata: Metadata = {
   title: 'Продюсирование вашего личного бренда | spacycookinghere.ru',
@@ -8,8 +7,13 @@ export const metadata: Metadata = {
   icons: 'hero-3.jpg'
 }
 
+const HomePageClient = dynamic(() => import('@/src/pages/home/HomePage'), {
+  ssr: false,
+  loading: () => <p>Loading...</p>, // Optional: loading indicator
+});
+
 export default function Home() {
   return (
-    <HomePage/>
+    <HomePageClient />
   );
 }
