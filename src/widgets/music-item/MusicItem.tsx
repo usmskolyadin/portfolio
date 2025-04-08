@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Play } from "lucide-react";
 import { useAppDispatch } from "@/src/app/lib/hooks";
@@ -15,6 +15,9 @@ export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
   const [hovered, setHovered] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+  }, [dispatch]);
 
   const handlePlayClick = () => {
     dispatch(setCurrentTrack(track));
