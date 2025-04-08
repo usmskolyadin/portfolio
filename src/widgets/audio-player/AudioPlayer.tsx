@@ -2,11 +2,10 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { useAppSelector, useAppDispatch } from '@/src/app/lib/hooks'; // Import typed hooks
+import { useAppSelector, useAppDispatch } from '@/src/app/lib/hooks';
 import { setCurrentTrack, togglePlay } from "@/src/features/player/playerSlice";
 
 export const AudioPlayer = () => {
-    // Access state correctly using the player slice
     const currentTrack = useAppSelector((state) => state.player.currentTrack);
     const isPlaying = useAppSelector((state) => state.player.isPlaying);
     const dispatch = useAppDispatch();
@@ -14,6 +13,9 @@ export const AudioPlayer = () => {
     const [duration, setDuration] = useState(0);
     const audioRef = useRef<HTMLAudioElement>(null);
 
+    useEffect(() => {
+    }, [dispatch]);
+  
     useEffect(() => {
         if (audioRef.current) {
             audioRef.current.src = currentTrack?.audioSrc || '';
@@ -43,7 +45,7 @@ export const AudioPlayer = () => {
         if (audioRef.current) {
             audioRef.current.currentTime = time;
         }
-        //dispatch(setCurrentTrack({ ...currentTrack, currentTime: time })); //Corrected
+        //dispatch(setCurrentTrack({ ...currentTrack, currentTime: time }));
     };
 
     const formatTime = (time: number) => {
@@ -57,7 +59,7 @@ export const AudioPlayer = () => {
     };
 
     return (
-        <div className="fixed bottom-2 w-full z-50 lg:ml-8 lg:mr-8">
+        <div className="fixed bottom-2 w-full z-50 lg:mr-8">
             <div className="mx-auto max-w-screen-2xl">
                 <div className="cursor-pointer bg-transparent border border-[#929292] rounded-full m-2 h-20 flex items-center justify-between backdrop-blur-md">
                     <input

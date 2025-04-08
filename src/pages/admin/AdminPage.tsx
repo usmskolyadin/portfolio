@@ -65,8 +65,7 @@ export default function AdminPage() {
       <section className="mt-30 lg:pl-8 lg:pr-4">
         <h2 className="text-3xl font-bold mb-4 uppercase">My Services</h2>
         <Tabs
-          value={selectedCategory}
-          onValueChange={setSelectedCategory}
+          defaultValue={selectedCategory}
           className="mb-6"
         >
           <TabsList>
@@ -98,12 +97,12 @@ export default function AdminPage() {
           }`}
         >
           <div className="relative w-full md:w-1/2">
-            <img
+            <Image
                 src={feature.image}
                 alt={feature.title}
                 className="lg:w-96 w-80 lg:h-96 h-80 rounded-3xl shadow-lg transform transition-transform duration-300 hover:scale-105"
             />
-            <img
+            <Image
                 src={feature.image2}
                 alt={feature.title}
                 className="absolute top-[-40] lg:left-86 left-40 w-64 h-64 rounded-3xl shadow-lg transform transition-transform duration-300 hover:scale-105"
@@ -120,28 +119,6 @@ export default function AdminPage() {
       <section className="py-2 gap-8 p-8 w-full">
       <h2 className="text-3xl font-extrabold uppercase mb-4 mt-12">Beats catalog</h2>
         <div className="flex gap-5 w-full ">
-            <div className="gap-5 w-full mt-2">
-                <div className="mb-4">
-                    <MusicItem/>
-                </div>
-                <div className="mb-4">
-                    <MusicItem/>
-                </div>
-                <div className="mb-4">
-                    <MusicItem/>
-                </div>
-            </div>
-            <div className="gap-5 w-full mt-2">
-                <div className="mb-4">
-                    <MusicItem/>
-                </div>
-                <div className="mb-4">
-                    <MusicItem/>
-                </div>
-                <div className="mb-4">
-                    <MusicItem/>
-                </div>
-            </div>
         </div>
       </section>
     </div>

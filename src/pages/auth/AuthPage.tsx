@@ -75,7 +75,6 @@ export default function AuthPage() {
           <div className="relative w-full h-full flex flex-col lg:flex-row justify-center items-center">
             <div className="absolute top-5 lg:left-10 z-20 transform transition-transform duration-300 hover:scale-105">
               <h1 className="text-xl font-extrabold lg:mb-2 mb-4">MIXING & MASTERING <span className="text-emerald-500 font-semibold">+ БИТЫ</span></h1>
-              <MusicItem />
             </div>
 
             <div className="absolute ml-20 top-56 left-36 lg:top-52 lg:left-24 z-10 transform transition-transform duration-300 hover:scale-105">
@@ -105,8 +104,7 @@ export default function AuthPage() {
       <section className="mt-30 lg:pl-8 lg:pr-4">
         <h2 className="text-3xl font-bold mb-4 uppercase">My Services</h2>
         <Tabs
-          value={selectedCategory}
-          onValueChange={setSelectedCategory}
+          defaultValue={selectedCategory}
           className="mb-6"
         >
           <TabsList>
@@ -137,19 +135,6 @@ export default function AuthPage() {
             index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
           }`}
         >
-          <div className="relative w-full md:w-1/2">
-            <img
-                src={feature.image}
-                alt={feature.title}
-                className="lg:w-96 w-80 lg:h-96 h-80 rounded-3xl shadow-lg transform transition-transform duration-300 hover:scale-105"
-            />
-            <img
-                src={feature.image2}
-                alt={feature.title}
-                className="absolute top-[-40] lg:left-86 left-40 w-64 h-64 rounded-3xl shadow-lg transform transition-transform duration-300 hover:scale-105"
-            />
-          </div>
-
           <div className="w-full md:w-1/2 text-center md:text-left space-y-4">
             <h2 className="text-3xl font-extrabold uppercase">{feature.title}</h2>
             <p className="text-xl uppercase text-white font-medium">{feature.description}</p>
