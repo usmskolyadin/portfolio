@@ -13,9 +13,9 @@ const eslintConfig = [
   ...compat.config({
     extends: ["next/core-web-vitals", "next/typescript"],
     rules: {
-      '@typescript-eslint/no-unused-vars': 'off', // Отключаем правило для неиспользуемых переменных
-      '@typescript-eslint/no-explicit-any': 'off', // Отключаем правило для any
-      '@typescript-eslint/no-wrapper-object-types': 'off', // Отключаем правило для оберточных типов
+      '@typescript-eslint/no-unused-vars': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-wrapper-object-types': 'off', 
     },
   })
 ];

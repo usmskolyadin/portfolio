@@ -58,6 +58,7 @@ export const registerUser = async (input: RegisterInput): Promise<JWTResponse> =
       name: input.name,
       email: input.email,
       password: hashedPassword,
+      is_admin: false,
     },
   });
 
