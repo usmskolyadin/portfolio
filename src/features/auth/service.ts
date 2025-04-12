@@ -13,7 +13,6 @@ const generateToken = (user: UserResponse): string => {
 
   const secret: Secret = process.env.JWT_SECRET || 'your_secret_key';
   const options: jwt.SignOptions = { expiresIn: '15m' };
-
   return jwt.sign(payload, secret, options);
 };
 
@@ -24,7 +23,7 @@ const generateRefreshToken = (user: UserResponse): string => {
     email: user.email,
   };
 
-  const options: jwt.SignOptions = { expiresIn: '15d' }; // Refresh token expires in 15 days
+  const options: jwt.SignOptions = { expiresIn: '15d' };
 
   return jwt.sign(payload, refreshSecret, options);
 };
@@ -65,13 +64,6 @@ export const registerUser = async (input: RegisterInput): Promise<JWTResponse> =
   const accessToken = generateToken(user);
   const refreshToken = generateRefreshToken(user);
 
-  await prisma.refreshToken.create({
-    data: {
-      userId: user.id,
-      token: refreshToken,
-    },
-  });
-
   return { user: user, access_token: accessToken, refresh_token: refreshToken };
 };
 
@@ -93,12 +85,6 @@ export const loginUser = async (input: LoginInput): Promise<{ user: UserResponse
   const accessToken = generateToken(user);
   const refreshToken = generateRefreshToken(user);
 
-  await prisma.refreshToken.upsert({
-    where: { userId: user.id },
-    update: { token: refreshToken },
-    create: { userId: user.id, token: refreshToken },
-  });
-
   return { user, accessToken, refreshToken };
 };
 
@@ -109,15 +95,6 @@ export const refreshTokens = async (refreshToken: string): Promise<{ accessToken
     return null;
   }
 
-  const tokenRecord = await prisma.refreshToken.findUnique({
-    where: { userId: payload.id },
-  });
-
-  if (!tokenRecord || tokenRecord.token !== refreshToken) {
-    return null;
-  }
-
-  // Fetch the user from the database using the id from the JWTPayload
   const user = await prisma.user.findUnique({
     where: { id: Number(payload.id) },
   });
@@ -128,11 +105,6 @@ export const refreshTokens = async (refreshToken: string): Promise<{ accessToken
 
   const newAccessToken = generateToken(user);
   const newRefreshToken = generateRefreshToken(user);
-
-  await prisma.refreshToken.update({
-    where: { userId: payload.id },
-    data: { token: newRefreshToken },
-  });
 
   return { accessToken: newAccessToken, refreshToken: newRefreshToken };
 };
