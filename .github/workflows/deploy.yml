@@ -1,0 +1,55 @@
+name: Deploy Next.js with Docker & Nginx
+
+on:
+  push:
+    branches: [ master ]
+
+env:
+  DOCKER_IMAGE: your-dockerhub-username/nextjs-app
+  DOCKER_COMPOSE_FILE: docker-compose.prod.yml
+  SSH_HOST: ${{ secrets.SSH_HOST }}
+  SSH_USER: ${{ secrets.SSH_USER }}
+  SSH_PORT: ${{ secrets.SSH_PORT || '22' }}
+  REMOTE_DIR: /home/deploy/nextjs-app
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+        username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+    - name: Build and push Docker image
+      run: |
+        docker build -t $DOCKER_IMAGE:latest -f Dockerfile.prod .
+        docker push $DOCKER_IMAGE:latest
+
+    - name: Copy files to server
+      uses: appleboy/scp-action@v0.1.4
+      with:
+        host: ${{ env.SSH_HOST }}
+        username: ${{ env.SSH_USER }}
+        port: ${{ env.SSH_PORT }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        source: "docker-compose.prod.yml,.env.production,nginx.conf"
+        target: ${{ env.REMOTE_DIR }}
+
+    - name: Deploy on server
+      uses: appleboy/ssh-action@v0.1.4
+      with:
+        host: ${{ env.SSH_HOST }}
+        username: ${{ env.SSH_USER }}
+        port: ${{ env.SSH_PORT }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          cd $REMOTE_DIR
+          docker-compose -f $DOCKER_COMPOSE_FILE down
+          docker-compose -f $DOCKER_COMPOSE_FILE pull
+          docker-compose -f $DOCKER_COMPOSE_FILE up -d
+          echo "Deployment completed successfully!"

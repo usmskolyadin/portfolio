@@ -31,24 +31,25 @@ export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
         className="hover:bg-[#181818] backdrop-blur-md backdrop-blur-md cursor-pointer bg-transparent border border-[#929292] items-center p-3 rounded-3xl flex h-30"
         onClick={handlePlayClick}
       >
-        <div
-          className="relative min-w-24 min-h-30 rounded-lg overflow-hidden cursor-pointer"
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-        >
-          <Image
-            src={track.imageSrc || "/hero.jpg"} // Use track.imageSrc
-            alt="Album Cover"
-            className="rounded-3xl mt-2 object-cover"
-            width={100}
-            height={100}
-          />
-          {hovered && (
-            <div className="absolute inset-0 my-2 rounded-3xl flex items-center justify-center bg-black bg-opacity-90 transition-opacity">
-              <Play size={32} className="text-white" />
-            </div>
-          )}
-        </div>
+      <div
+        className="relative w-24 h-24 rounded-lg overflow-hidden cursor-pointer"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        <Image
+          src={track.imageSrc || "/hero.jpg"}
+          alt="Album Cover"
+          className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+          width={96}  // 24rem * 4 (так как 1rem = 4px для Tailwind)
+          height={96} // делаем одинаковые width/height для квадрата
+          priority
+        />
+        {hovered && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity rounded-lg">
+            <Play size={32} className="text-white" />
+          </div>
+        )}
+      </div>
 
         <div className="text-white ml-4">
           <div className="flex items-center">

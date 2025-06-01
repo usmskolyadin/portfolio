@@ -90,38 +90,43 @@ export default function Home() {
               по всему миру и так же спродюсировал множество треков в самых
               различных тайпах
             </p>
-            <h1 className="text-xl font-bold mt-6">МОИ ПРОЕКТЫ:</h1>
             <div>
               <div className="overflow-x-auto flex items-center gap-4 grayscale opacity-100 mt-4">
                 <div className="cursor-pointer items-center  transform transition-transform duration-300 hover:scale-105">
-                  <Image
-                    key="323"
-                    src={`/seamusic.png`}
-                    alt="Company logo"
-                    className="object-cover"
-                    width={40}
-                    height={5}
-                  />
+                  <a href="https://seamusic.space/">
+                    <Image
+                      key="323"
+                      src={`/seamusic.png`}
+                      alt="Company logo"
+                      className="object-cover"
+                      width={40}
+                      height={5}
+                    />
+                  </a>
                 </div>
                 <div className="cursor-pointer transform transition-transform duration-300 hover:scale-105">
-                  <Image
-                    key="432"
-                    src={`/github.png`}
-                    alt="Company logo"
-                    className="invert object-cover"
-                    width={42}
-                    height={10}
-                  />
+                  <a href="https://github.com/usmskolyadin">
+                    <Image
+                      key="432"
+                      src={`/github.png`}
+                      alt="Company logo"
+                      className="invert object-cover"
+                      width={42}
+                      height={10}
+                    />
+                  </a>
                 </div>
                 <div className="cursor-pointer transform transition-transform duration-300 hover:scale-105">
-                  <Image
-                    key="534"
-                    src={`/telegram.png`}
-                    alt="Company logo"
-                    className="invert object-cover"
-                    width={45}
-                    height={30}
-                  />
+                  <a href="https://t.me/whyspacy">
+                    <Image
+                      key="534"
+                      src={`/telegram.png`}
+                      alt="Company logo"
+                      className="invert object-cover"
+                      width={45}
+                      height={30}
+                    />
+                  </a>
                 </div>
                 <div className="cursor-pointer transform transition-transform duration-300 hover:scale-105">
                   <Image
