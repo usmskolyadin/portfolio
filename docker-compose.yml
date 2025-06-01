@@ -5,9 +5,15 @@ services:
     build: .
     ports:
       - "4000:3001"
-    volumes:
-      - ".:/portfolio"
-      - "/var/www/spacycookinghere/.next:/portfolio/.next"
+
     environment:
       NODE_ENV: production
+      PORT: 3001
+
     restart: unless-stopped
+
+    networks:
+      - spacycookinghere
+
+networks:
+  spacycookinghere:
