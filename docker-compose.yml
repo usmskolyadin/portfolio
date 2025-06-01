@@ -4,7 +4,7 @@ services:
   frontend:
     build: .
     ports:
-      - "4000:3001"
+      - "127.0.0.1:4000:127.0.0.1:3001"
 
     environment:
       NODE_ENV: production
