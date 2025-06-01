@@ -4,16 +4,14 @@ services:
   frontend:
     build: .
     ports:
-      - "127.0.0.1:4000:3001"
-
+      - "4000:3001"
+    networks:
+      - spacycookinghere
     environment:
       NODE_ENV: production
       PORT: 3001
 
-    restart: unless-stopped
-
-    networks:
-      - spacycookinghere
 
 networks:
   spacycookinghere:
+  
