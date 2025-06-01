@@ -9,7 +9,6 @@ import { TabsTrigger } from "@/src/shared/tabs-trigger/TabsTrigger";
 import { TabsList } from "@/src/shared/tabs-list/TabsList";
 import { Tabs } from "@/src/shared/tabs/Tabs";
 import { ProductCard } from "@/src/widgets/product-card/ProductCard";
-import { MusicItem } from "@/src/widgets/music-item/MusicItem";
 import { products, features, typingSpeed, texts, pauseTime} from "@/src/shared/constants/constants";
 
 export default function AuthPage() {
@@ -39,19 +38,14 @@ export default function AuthPage() {
   return (
 
     <div>
-      {/* Первый блок */}
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-10 ">
         <div className="relative">
-          {/* Контент */}
           <div className="p-6 rounded-2xl">
           <h2 className="lg:text-5xl text-5xl font-semibold uppercase ">
           <span className="">
               АВТОРИЗАЦИЯ
             </span>
           </h2>
-
-
-
             <p className="text-xl uppercase text-white font-medium mt-4">
               Зарегестироваться и авторизоваться можно здесь
             </p>
@@ -76,7 +70,6 @@ export default function AuthPage() {
             <div className="absolute top-5 lg:left-10 z-20 transform transition-transform duration-300 hover:scale-105">
               <h1 className="text-xl font-extrabold lg:mb-2 mb-4">MIXING & MASTERING <span className="text-emerald-500 font-semibold">+ БИТЫ</span></h1>
             </div>
-
             <div className="absolute ml-20 top-56 left-36 lg:top-52 lg:left-24 z-10 transform transition-transform duration-300 hover:scale-105">
               <h1 className="text-xl font-extrabold lg:mb-2 mb-4 w-[250px]">САЙТ ДЛЯ <span className="text-emerald-500 font-semibold">ВАШЕГО</span> БРЕНДА</h1>
               <Image
@@ -87,7 +80,6 @@ export default function AuthPage() {
                 className="rounded-3xl opacity-90"
               />
             </div>
-
             <div className="absolute lg:ml-30 bottom-0 left-5 lg:right-0 lg:top-36 lg:left-96 z-5 transform transition-transform duration-300 hover:scale-105">
               <Image
                 src="/hero-3.jpg"

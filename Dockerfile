@@ -10,6 +10,6 @@ COPY . .
 
 RUN npm run build
 
-CMD ["npx", "serve@latest", "out"]
+CMD ["npm", "start"]
 
 EXPOSE 3000

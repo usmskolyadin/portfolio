@@ -59,7 +59,7 @@
         };
 
         return (
-            <div className="fixed bottom-2 w-full z-50 lg:mr-8">
+            <div className="fixed bottom-2 left-10 w-full z-50 ">
                 <div className="mx-auto max-w-screen-2xl">
                     <div className="cursor-pointer bg-transparent border border-[#929292] rounded-full m-2 h-20 flex items-center justify-between backdrop-blur-md">
                         <input
