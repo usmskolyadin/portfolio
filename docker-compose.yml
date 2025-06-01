@@ -4,10 +4,10 @@ services:
   frontend:
     build: .
     ports:
-      - "4000:3000"
+      - "4000:3001"
     volumes:
       - ".:/portfolio"
+      - "/var/www/spacycookinghere/.next:/portfolio/.next"
     environment:
       NODE_ENV: production
-      
     restart: unless-stopped
