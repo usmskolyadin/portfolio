@@ -64,10 +64,10 @@ export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
           </div>
 
           <div className="flex gap-2 mt-2 lg:text-sm text-xs">
-            <span className="bg-transparent border border-[#929292]  text-white px-3 py-2 rounded-full">
+            <span className="bg-transparent border border-[#929292]  text-white px-3 py-1.5 rounded-full">
               #newjazz
             </span>
-            <span className="bg-transparent border border-[#929292]  text-white px-3 py-2 rounded-full">
+            <span className="bg-transparent border border-[#929292]  text-white px-3 py-1.5 rounded-full">
               #opium
             </span>
           </div>
