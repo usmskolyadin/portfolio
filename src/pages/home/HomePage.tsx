@@ -18,6 +18,8 @@ import {
   pauseTime,
 } from "@/src/shared/constants/constants";
 import { Track } from "@/src/features/player/types";
+import HorizontalScrollGallery from "@/src/widgets/horizontal-scroll-gallery/HorizontalScrollGallery";
+import { mock } from "node:test";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -57,17 +59,16 @@ export default function Home() {
   return (
     <div>
       {/* Первый блок */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:gap-8 mt-10 ">
-        <div className="relative">
-          {/* Контент */}
-          <div className="lg:p-6 rounded-2xl">
-            <h2 className="lg:text-5xl text-4xl font-semibold uppercase ">
+      <section className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-8 mt-28 lg:h-screen">
+        <div className="flex flex-col  h-screen lg:relative lg:block">
+          <div className="lg:p-6 rounded-2xl text-center lg:text-left">
+            <h2 className="lg:text-5xl text-4xl font-semibold uppercase font-benzin">
               <span className="drop-shadow-[0_0_3px_#ffffff]">
-                * САЙТ ДЛЯ{" "}
+                *ЛУЧШИЙ САЙТ ДЛЯ{" "}
               </span>
               <motion.span
                 className="text-emerald-500 font-semibold"
-                style={{ textShadow: "0 0 15px rgb(12, 117, 82)" }}
+                style={{ textShadow: "0 0 15px #0c7552" }}
               >
                 {text}
                 <span className="animate-blink">|</span> {/* Имитация курсора */}
@@ -79,126 +80,74 @@ export default function Home() {
               >
                 WHY
               </span>
-              <span className="drop-shadow-[0_0_3px_#ffffff]">SPACY?</span>
+              <span className="drop-shadow-[0_0_3px_#ffffff]">SPACY? 
+                
+              </span>
               <span className="drop-shadow-[0_0_3px_#ffffff]">
                 СВЕДЕНИЕ. M&M. ФИТЫ.
               </span>
             </h2>
-            <p className="lg:text-xl text-md uppercase text-white font-medium mt-4">
-              Я - Максим Колядин (aka spacy?), являюсь веб-разработчиком с 2020
-              года, за это время сделал {">"} 150 сайтов для разных компаний
-              по всему миру и так же спродюсировал множество треков в самых
-              различных тайпах
-            </p>
+              <p className=" font-benzin lg:text-lg uppercase text-md mt-4 w-full w-48 text-gray-200 font-medium mt-2 ">
+                Приветствую на одном из моих проектов, <span className="text-emerald-500 font-semibold">spacycookinghere.ru!!</span>
+                 <br /><br /> 
+                 Если тебе нужен <span className="text-emerald-500 font-semibold">сайт</span> для твоего собственного бренда, <span className="text-emerald-500 font-semibold">сведение</span> или же <span className="text-emerald-500 font-semibold">бит</span> - жми "УСЛУГИ",
+                  если хочешь работать со мной - жми вторую кнопку
+              </p>
+
             <div>
-              <div className="overflow-x-auto flex items-center gap-4 grayscale opacity-100 mt-4">
-                <div className="cursor-pointer items-center  transform transition-transform duration-300 hover:scale-105">
-                  <a href="https://seamusic.space/">
-                    <Image
-                      key="323"
-                      src={`/seamusic.png`}
-                      alt="Company logo"
-                      className="object-cover"
-                      width={40}
-                      height={5}
-                    />
-                  </a>
-                </div>
-                <div className="cursor-pointer transform transition-transform duration-300 hover:scale-105">
-                  <a href="https://github.com/usmskolyadin">
-                    <Image
-                      key="432"
-                      src={`/github.png`}
-                      alt="Company logo"
-                      className="invert object-cover"
-                      width={42}
-                      height={10}
-                    />
-                  </a>
-                </div>
-                <div className="cursor-pointer transform transition-transform duration-300 hover:scale-105">
-                  <a href="https://t.me/whyspacy">
-                    <Image
-                      key="534"
-                      src={`/telegram.png`}
-                      alt="Company logo"
-                      className="invert object-cover"
-                      width={45}
-                      height={30}
-                    />
-                  </a>
-                </div>
-                <div className="cursor-pointer transform transition-transform duration-300 hover:scale-105">
-                  <Image
-                    key="534"
-                    src={`/youtube.png`}
-                    alt="Company logo"
-                    className="invert object-cover"
-                    width={45}
-                    height={30}
-                  />
-                </div>
-                <div className="cursor-pointer transform transition-transform duration-300 hover:scale-105">
-                  <Image
-                    key="534"
-                    src={`/instagram.png`}
-                    alt="Company logo"
-                    className="invert object-cover"
-                    width={45}
-                    height={30}
-                  />
-                </div>
-              </div>
+
             </div>
 
-            <div className="lg:flex flex-col justify-between mt-2">
-              <MainButton>ЧТО ДАЛЬШЕ?</MainButton>
+            <div className="lg:flex justify-between mt-2">
+              <MainButton className="lg:w-1/2 w-full font-benzin">УСЛУГИ</MainButton>
+              <MainButton className="lg:ml-4 lg:w-1/2 w-full font-benzin bg-emerald-700 ">СДЕЛАТЬ ГРЯЗЬ</MainButton>
             </div>
           </div>
         </div>
-        <div className="hidden lg:flex w-full justify-center">
-          <div className="relative w-full h-full flex flex-col lg:flex-row justify-center items-center">
-            <div className="absolute top-5 lg:left-10 z-20 transform transition-transform duration-300 hover:scale-105">
-              <h1 className="text-xl font-extrabold lg:mb-2 mb-4">
-                MIXING & MASTERING{" "}
-                <span className="text-emerald-500 font-semibold">+ БИТЫ</span>
-              </h1>
-              {isClient && <MusicItem track={mockTrack} />}
-            </div>
+        <div className="flex flex-col justify-center  h-screen lg:flex lg:mt-6 mt-12">
+          <div className="relative w-full h-full flex flex-col items-center">
 
-            <div className="absolute ml-20 top-56 left-36 lg:top-52 lg:left-24 z-10 transform transition-transform duration-300 hover:scale-105">
-              <h1 className="text-xl font-extrabold lg:mb-2 mb-4 w-[250px]">
-                САЙТ ДЛЯ{" "}
-                <span className="text-emerald-500 font-semibold">ВАШЕГО</span>{" "}
-                БРЕНДА
-              </h1>
-
+            <div className=" w-60 h-60 z-5 flex justify-center transform transition-transform duration-300 hover:scale-105">
               <Image
-                src="/cbkremlin.jpg"
+                src="/i.jpg"
                 alt="Hero image"
-                width={250}
-                height={50}
-                className="rounded-3xl opacity-90"
+                fill
+                quality={1000}
+                className=" object-cover rounded-full"
               />
-            </div>
-
-            <div className="absolute lg:ml-30 bottom-0 left-5 lg:right-0 lg:top-36 lg:left-96 z-5 transform transition-transform duration-300 hover:scale-105">
-              <Image
-                src="/cbhram.jpg"
-                alt="Hero image"
-                width={250}
-                height={250}
-                className="rounded-3xl opacity-90"
-              />
-              <h1 className="text-xl font-extrabold lg:mt-2 mt-4 w-[250px]">
-                САЙТ ДЛЯ ВАШЕГО БРЕНДА
+              <h1 className="text-3xl font-benzin mr-2 font-extrabold mt-66 flex items-center">
+                <span className="mr-2 drop-shadow-[0_0_1px_#ffffff] ">SPACY?</span>
+                <svg className="invert " color="#0c7552" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 50 50">
+                  <path d="M 25 2 C 12.317 2 2 12.317 2 25 C 2 37.683 12.317 48 25 48 C 37.683 48 48 37.683 48 25 C 48 20.44 46.660281 16.189328 44.363281 12.611328 L 42.994141 14.228516 C 44.889141 17.382516 46 21.06 46 25 C 46 36.579 36.579 46 25 46 C 13.421 46 4 36.579 4 25 C 4 13.421 13.421 4 25 4 C 30.443 4 35.393906 6.0997656 39.128906 9.5097656 L 40.4375 7.9648438 C 36.3525 4.2598437 30.935 2 25 2 z M 43.236328 7.7539062 L 23.914062 30.554688 L 15.78125 22.96875 L 14.417969 24.431641 L 24.083984 33.447266 L 44.763672 9.046875 L 43.236328 7.7539062 z"></path>
+                </svg>
               </h1>
             </div>
+            <div className="flex gap-2 mt-2 lg:text-sm text-xs mt-14 h-8 font-benzin">
+                <span className="bg-transparent border border-[#929292]  text-white px-3 py-1.5 rounded-full">
+                #artist
+                </span>
+              <span className="bg-transparent border border-[#929292]  text-white px-3 py-1.5 rounded-full">
+                #producer
+                </span>
+                <span className="bg-transparent border border-[#929292]  text-white px-3 py-1.5 rounded-full">
+                #progammer
+                </span>
+            </div>
+            <p className="lg:text-md uppercase text-gray-200 text-md lg:w-4/5 text-center text-gray-200 font-medium mt-5 font-benzin">
+              Я - Максим Колядин (aka spacy?), являюсь веб-разработчиком, продюсером и артистом с 2020
+              года, за это время сделал <span className="text-emerald-500 font-bold">{">"} 150 сайтов</span> для разных компаний
+              по всему миру и так же спродюсировал множество треков в самых
+              различных тайпах, в том числе <a href="" className="text-emerald-500 font-bold">своих</a>
+              <br />
+              <br />
+            </p>
+
           </div>
         </div>
       </section>
+      {/* <HorizontalScrollGallery /> */}
 
-      <section className="py-16 gap-8 lg:p-8 mt-10 space-y-10">
+      <section className="lg:py-16 gap-8 lg:p-8 lg:mt-10 space-y-10">
         {features.map((feature, index) => (
           <div
             key={index}
@@ -219,13 +168,13 @@ export default function Home() {
                 alt={feature.title}
                 width={"1000"}
                 height={"1000"}
-                className="absolute top-[-40] lg:left-86 left-40 w-56 w-36 h-56 h-36 rounded-3xl object-cover shadow-lg transform transition-transform duration-300 hover:scale-105"
+                className="absolute top-[-40] lg:left-86 left-40 lg:w-56 w-48 lg:h-56 h-48 rounded-3xl object-cover shadow-lg transform transition-transform duration-300 hover:scale-105"
               />
             </div>
 
             <div className="w-full md:w-1/2 text-center md:text-left space-y-4">
-              <h2 className="text-3xl font-extrabold uppercase">{feature.title}</h2>
-              <p className="lg:text-xl text-md uppercase text-white font-medium">
+              <h2 className="text-3xl font-extrabold uppercase font-benzin">{feature.title}</h2>
+              <p className="lg:text-xl text-md uppercase text-white font-medium font-benzin">
                 {feature.description}
               </p>
             </div>

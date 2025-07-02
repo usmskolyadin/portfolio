@@ -1,7 +1,7 @@
 export const products = [
     {
       id: 1,
-      title: "Web Development",
+      title: "ВЕБ-РАЗРАБОТКА",
       description: "Custom websites and applications.",
       price: "$1500",
       images: ["/hero-2.jpg", "/hero-2.jpg", "/service1-3.jpg"],
@@ -27,7 +27,7 @@ export const products = [
 
 export const features = [
     {
-      title: "MY DEVELOPER EXP.",
+      title: "ВЕБ-РАЗРАБОТКА",
       description:
         "Стек технологий подбирается индивидуально под каждый случай, я использую исключительно современные и удобные для обеих сторон технологии. Мой стек: \n\n Бэкенд - Python, FastAPI, Flask, Django Rest Framework/Django, Express.js, Node.js \n\n Фронтенд - JS, React.js/Next.js, Angular.js, SCSS, TailwindCSS \n\n Работа с бд и другие технологии: SQLAlchemy, Aiogram, ",
       image: "/cbhram.jpg",

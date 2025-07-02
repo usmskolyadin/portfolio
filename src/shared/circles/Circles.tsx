@@ -6,7 +6,7 @@ const Circles = () => {
             {Array.from({ length: 5 }).map((_, i) => (
             <div
                 key={i}
-                className="absolute w-64 h-64 bg-emerald-600 rounded-full opacity-40 blur-3xl"
+                className="absolute lg:w-64 lg:h-64 w-40 h-40 bg-emerald-600 rounded-full opacity-40 blur-3xl"
                 style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
