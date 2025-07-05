@@ -59,9 +59,9 @@ export default function Home() {
   return (
     <div>
       <section className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-8 mt-34 lg:h-screen">
-        <div className="flex flex-col  h-screen lg:relative lg:block">
+        <div className="flex flex-col h-screen lg:relative lg:block">
           <div className="lg:p-6 rounded-2xl text-center lg:text-left">
-            <h2 className="lg:text-5xl text-4xl font-semibold uppercase font-benzin">
+            <h2 className="lg:text-5xl text-3xl font-semibold uppercase font-benzin">
               <span className="drop-shadow-[0_0_3px_#ffffff]">
                 *ЛУЧШИЙ САЙТ ДЛЯ{" "}
               </span>
@@ -86,7 +86,7 @@ export default function Home() {
                 СВЕДЕНИЕ. M&M. ФИТЫ.
               </span>
             </h2>
-              <p className=" font-benzin lg:text-lg uppercase text-md mt-4 w-full w-48 text-gray-200 font-medium mt-2 ">
+              <p className=" font-benzin lg:text-lg uppercase text-sm mt-4 w-full w-48 text-gray-200 font-medium mt-2 ">
                 Приветствую на одном из моих проектов, <span className="text-emerald-500 font-semibold">spacycookinghere.ru!!</span> Здесь ты точно найдешь себе то, что тебе нужно, будь ты бизнесменом или музыкантом.
                  <br /><br /> 
                  Если тебе нужен <span className="text-emerald-500 font-semibold">сайт</span> для твоего собственного бренда, <span className="text-emerald-500 font-semibold">сведение</span> или же <span className="text-emerald-500 font-semibold">бит</span> - жми "УСЛУГИ",
@@ -139,7 +139,7 @@ export default function Home() {
               </span>
             </div>
 
-            <p className="lg:text-md uppercase text-gray-200 text-md lg:w-4/5 max-w-lg mx-auto text-center font-medium mt-5 font-benzin">
+            <p className="lg:text-md uppercase text-gray-200 text-sm lg:w-4/5 max-w-lg mx-auto text-center font-medium mt-5 font-benzin">
               Я - Максим Колядин (aka spacy?), являюсь веб-разработчиком, продюсером и артистом с 2020
               года, за это время сделал <span className="text-emerald-500 font-bold">{">"} 150 сайтов</span> для разных компаний
               по всему миру и так же спродюсировал множество треков в самых
@@ -180,8 +180,8 @@ export default function Home() {
             </div>
 
             <div className="w-full md:w-1/2 text-center md:text-left space-y-4">
-              <h2 className="text-3xl font-extrabold uppercase font-benzin">{feature.title}</h2>
-              <p className="lg:text-xl text-md uppercase text-white font-medium font-benzin">
+              <h2 className="lg:text-3xl text-2xl font-extrabold uppercase font-benzin">{feature.title}</h2>
+              <p className="lg:text-xl text-sm uppercase text-white font-medium font-benzin">
                 {feature.description}
               </p>
             </div>
