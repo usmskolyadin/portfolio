@@ -19,8 +19,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${montserrat.variable}`}>
         <ReduxProvider>
           <Circles />
-          <div className="mx-auto max-w-screen-2xl">
-            <div className="grid p-8 pb-20 mx-auto">
+          <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+            <div className="grid pb-20">
               <Header />
               {children ? children : <p className="text-white">Контент не загружен</p>}
               {/* <AudioPlayer /> */}

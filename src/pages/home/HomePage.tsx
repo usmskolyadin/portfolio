@@ -87,7 +87,7 @@ export default function Home() {
               </span>
             </h2>
               <p className=" font-benzin lg:text-lg uppercase text-md mt-4 w-full w-48 text-gray-200 font-medium mt-2 ">
-                Приветствую на одном из моих проектов, <span className="text-emerald-500 font-semibold">spacycookinghere.ru!!</span>
+                Приветствую на одном из моих проектов, <span className="text-emerald-500 font-semibold">spacycookinghere.ru!!</span> Здесь ты точно найдешь себе то, что тебе нужно, будь ты бизнесменом или музыкантом.
                  <br /><br /> 
                  Если тебе нужен <span className="text-emerald-500 font-semibold">сайт</span> для твоего собственного бренда, <span className="text-emerald-500 font-semibold">сведение</span> или же <span className="text-emerald-500 font-semibold">бит</span> - жми "УСЛУГИ",
                   если хочешь работать со мной - жми вторую кнопку
@@ -103,50 +103,58 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-center  h-screen lg:flex lg:mt-6 mt-12">
-          <div className="relative w-full h-full flex flex-col items-center">
-
-            <div className=" w-60 h-60 z-5 flex justify-center transform transition-transform duration-300 hover:scale-105">
-              <Image
-                src="/i.jpg"
-                alt="Hero image"
-                fill
-                quality={1000}
-                className=" object-cover rounded-full"
-              />
-              <h1 className="text-3xl font-benzin mr-2 font-extrabold mt-66 flex items-center">
-                <span className="mr-2 drop-shadow-[0_0_1px_#ffffff] ">SPACY?</span>
-                <svg className="invert " color="#0c7552" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 50 50">
-                  <path d="M 25 2 C 12.317 2 2 12.317 2 25 C 2 37.683 12.317 48 25 48 C 37.683 48 48 37.683 48 25 C 48 20.44 46.660281 16.189328 44.363281 12.611328 L 42.994141 14.228516 C 44.889141 17.382516 46 21.06 46 25 C 46 36.579 36.579 46 25 46 C 13.421 46 4 36.579 4 25 C 4 13.421 13.421 4 25 4 C 30.443 4 35.393906 6.0997656 39.128906 9.5097656 L 40.4375 7.9648438 C 36.3525 4.2598437 30.935 2 25 2 z M 43.236328 7.7539062 L 23.914062 30.554688 L 15.78125 22.96875 L 14.417969 24.431641 L 24.083984 33.447266 L 44.763672 9.046875 L 43.236328 7.7539062 z"></path>
+        <div className="flex flex-col items-center justify-center h-screen">
+          <div className="relative w-full max-w-lg flex flex-col items-center h-full mt-3">
+              <div className="relative w-60 aspect-square rounded-full overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                <Image
+                  src="/i.jpg"
+                  alt="Hero image"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h1 className="text-3xl font-benzin font-extrabold mt-2 mb-2 flex items-center justify-center">
+                <span className="mr-2 drop-shadow-[0_0_1px_#ffffff]">SPACY?</span>
+                <svg
+                  className="invert"
+                  color="#0c7552"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 50 50"
+                >
+                  <path d="M 25 2 C 12.317 2 2 12.317 2 25 C 2 37.683 12.317 48 25 48 C 37.683 48 48 37.683 48 25 C 48 20.44 46.660281 16.189328 44.363281 12.611328 L 42.994141 14.228516 C 44.889141 17.382516 46 21.06 46 25 C 46 36.579 36.579 46 25 46 C 13.421 46 4 36.579 4 25 C 4 13.421 13.421 4 25 4 C 30.443 4 35.393906 6.0997656 39.128906 9.5097656 L 40.4375 7.9648438 C 36.3525 4.2598437 30.935 2 25 2 z M 43.236328 7.7539062 L 23.914062 30.554688 L 15.78125 22.96875 L 14.417969 24.431641 L 24.083984 33.447266 L 44.763672 9.046875 L 43.236328 7.7539062 z" />
                 </svg>
               </h1>
-            </div>
-            <div className="flex gap-2 mt-2 lg:text-sm text-xs mt-14 h-8 font-benzin">
-                <span className="bg-transparent border border-[#929292]  text-white px-3 py-1.5 rounded-full">
+
+            <div className="flex gap-2 mt-2 lg:text-sm text-xs h-8 font-benzin">
+              <span className="bg-transparent border border-[#929292] text-white px-3 py-1.5 rounded-full">
                 #artist
-                </span>
-              <span className="bg-transparent border border-[#929292]  text-white px-3 py-1.5 rounded-full">
+              </span>
+              <span className="bg-transparent border border-[#929292] text-white px-3 py-1.5 rounded-full">
                 #producer
-                </span>
-                <span className="bg-transparent border border-[#929292]  text-white px-3 py-1.5 rounded-full">
-                #progammer
-                </span>
+              </span>
+              <span className="bg-transparent border border-[#929292] text-white px-3 py-1.5 rounded-full">
+                #programmer
+              </span>
             </div>
-            <p className="lg:text-md uppercase text-gray-200 text-md lg:w-4/5 text-center text-gray-200 font-medium mt-5 font-benzin">
+
+            <p className="lg:text-md uppercase text-gray-200 text-md lg:w-4/5 max-w-lg mx-auto text-center font-medium mt-5 font-benzin">
               Я - Максим Колядин (aka spacy?), являюсь веб-разработчиком, продюсером и артистом с 2020
               года, за это время сделал <span className="text-emerald-500 font-bold">{">"} 150 сайтов</span> для разных компаний
               по всему миру и так же спродюсировал множество треков в самых
-              различных тайпах, в том числе <a href="" className="text-emerald-500 font-bold">своих</a>
+              различных тайпах, в том числе <a href="" className="text-emerald-500 font-bold">своих</a>.
               <br />
               <br />
             </p>
-
           </div>
         </div>
+
+
       </section>
       <HorizontalScrollGallery />
 
-      <section className="lg:py-16 gap-8 lg:p-8 lg:mt-10 space-y-10">
+      <section className="lg:py-16  lg:mt-10 space-y-10">
         {features.map((feature, index) => (
           <div
             key={index}
@@ -181,8 +189,8 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="mt-30 lg:pl-8 lg:pr-4">
-        <h2 className="text-3xl font-bold mb-4 uppercase">My Services</h2>
+      <section className="mt-30">
+        <h2 className="text-3xl font-bold mb-4 uppercase font-benzin">My Services</h2>
         <Tabs defaultValue={selectedCategory} className="mb-6">
           <TabsList>
             {["All", "Development", "Design", "Marketing"].map((cat) => (
@@ -206,8 +214,8 @@ export default function Home() {
         </Tabs>
       </section>
 
-      <section className="py-2 gap-8 lg:p-8 w-full">
-        <h2 className="text-3xl font-extrabold uppercase mb-4 mt-12">
+      <section className="py-2 gap-8 w-full">
+        <h2 className="text-3xl font-extrabold uppercase mb-4 mt-12 font-benzin">
           Beats catalog
         </h2>
         <div className="flex gap-4 grid lg:grid-cols-2 grid-cols-1 w-full ">
