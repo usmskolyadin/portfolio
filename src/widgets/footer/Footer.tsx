@@ -1,7 +1,7 @@
 "use client";
 
 const Footer = () => {
-    return (<footer className="flex justify-between items-center py-4  border-gray-200 px-6 relative mb-10">
+    return (<footer className="mt-24 flex justify-between items-center py-4  border-gray-200 relative mb-10 font-benzin">
     <h1 className="text-md font-medium drop-shadow-[0_0_3px_#ffffff]">
       *WHY SPACY COOKING <span className="underline">HERE</span>?
     </h1>
