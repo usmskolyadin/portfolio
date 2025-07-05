@@ -45,17 +45,16 @@ const HorizontalScrollGallery = () => {
   const duplicatedItems = [...items, ...items];
 
   return (
-    <div className="w-full py-8 max-w-screen-2xl mx-auto overflow-hidden px-4">
+    <div className="w-full lg:py-8 py-12  lg:mb-0 mb-24 lg:max-w-screen-2xl max-w-96 mx-auto overflow-hidden px-4">
       <h2 className="text-2xl font-extrabold uppercase font-benzin mb-6">МОИ ПРОЕКТЫ (IT)</h2>
-
       <div className="relative w-full overflow-hidden">
         <div className="animate-scroll flex whitespace-nowrap">
           {duplicatedItems.map((item, index) => (
             <div
             key={`${item.id}-${index}`}
-            className="w-86 mx-4 flex-shrink-0"
+            className="lg:w-86 w-48 mx-4 flex-shrink-0"
             >
-            <div className="h-50 w-full">
+            <div className="lg:h-50 h-36 w-full">
                 <img
                 src={item.image}
                 alt={item.title}
@@ -83,7 +82,7 @@ const HorizontalScrollGallery = () => {
 
       <style jsx>{`
         .animate-scroll {
-          animation: scroll-left 30s linear infinite;
+          animation: scroll-left 10s linear infinite;
         }
 
         @keyframes scroll-left {
