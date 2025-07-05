@@ -16,13 +16,15 @@ export function ProductCard({ product }: { product: any }) {
       <Card>
         <CardHeader>
           <div className="relative w-full h-56">
-            <Image
-              src={product.images[imageIndex]}
-              alt={product.title}
-              layout="fill"
-              objectFit="cover"
-              className="rounded-3xl"
-            />
+            <div className="">
+              <Image
+                src={product.images[imageIndex]}
+                alt={product.title}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-3xl"
+              />
+            </div>
             {product.images.length > 1 && (
               <>
                 <button
@@ -51,8 +53,8 @@ export function ProductCard({ product }: { product: any }) {
           <CardTitle>{product.title}</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="uppercase font-bold mt-2">от {product.price}</p>
-          <p className="uppercase text-md text-gray-300">{product.description}</p>
+          <p className="font-benzin uppercase font-bold mt-2">от {product.price}</p>
+          <p className="font-benzin uppercase lg:text-md text-sm text-gray-300">{product.description}</p>
         </CardContent>
       </Card>
     );

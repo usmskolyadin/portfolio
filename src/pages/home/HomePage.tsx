@@ -181,7 +181,7 @@ export default function Home() {
 
             <div className="w-full md:w-1/2 text-center md:text-left space-y-4">
               <h2 className="lg:text-3xl text-2xl font-extrabold uppercase font-benzin">{feature.title}</h2>
-              <p className="lg:text-xl text-sm uppercase text-white font-medium font-benzin">
+              <p className="lg:text-lg text-gray-200 text-sm uppercase font-medium font-benzin whitespace-pre-line">
                 {feature.description}
               </p>
             </div>
@@ -190,7 +190,7 @@ export default function Home() {
       </section>
 
       <section className="mt-30">
-        <h2 className="text-3xl font-bold mb-4 uppercase font-benzin">My Services</h2>
+        <h2 className="lg:text-3xl text-2xl font-bold mb-4 uppercase font-benzin">My Services</h2>
         <Tabs defaultValue={selectedCategory} className="mb-6">
           <TabsList>
             {["All", "Development", "Design", "Marketing"].map((cat) => (
@@ -215,7 +215,7 @@ export default function Home() {
       </section>
 
       <section className="py-2 gap-8 w-full">
-        <h2 className="text-3xl font-extrabold uppercase mb-4 mt-12 font-benzin">
+        <h2 className="lg:text-3xl text-2xl font-extrabold uppercase mb-4 mt-12 font-benzin">
           Beats catalog
         </h2>
         <div className="flex gap-4 grid lg:grid-cols-2 grid-cols-1 w-full ">
