@@ -202,10 +202,8 @@ export default function Home() {
           <TabsContent value={selectedCategory}>
             <div className="grid lg:grid-cols-4 grid-cols-1 gap-6 mt-8">
               {products
-                .filter(
-                  (p) =>
-                    selectedCategory === "All" || p.category === selectedCategory
-                )
+                .filter((p): p is NonNullable<typeof p> => p !== undefined)
+                .filter(p => selectedCategory === "All" || p.category === selectedCategory)
                 .map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}

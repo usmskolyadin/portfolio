@@ -25,7 +25,7 @@ export const products = [
     },
     {
       id: 4,
-      title: "САЙТА-ВИЗИТКА",
+      title: "TELEGRAM MINI APP",
       description: "Впервую очередь, ",
       price: "$500",
       images: ["/hero-2.jpg"],
