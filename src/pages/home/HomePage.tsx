@@ -58,8 +58,7 @@ export default function Home() {
 
   return (
     <div>
-      {/* Первый блок */}
-      <section className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-8 mt-28 lg:h-screen">
+      <section className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-8 mt-34 lg:h-screen">
         <div className="flex flex-col  h-screen lg:relative lg:block">
           <div className="lg:p-6 rounded-2xl text-center lg:text-left">
             <h2 className="lg:text-5xl text-4xl font-semibold uppercase font-benzin">
@@ -145,7 +144,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* <HorizontalScrollGallery /> */}
+      <HorizontalScrollGallery />
 
       <section className="lg:py-16 gap-8 lg:p-8 lg:mt-10 space-y-10">
         {features.map((feature, index) => (
