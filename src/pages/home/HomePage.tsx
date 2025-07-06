@@ -22,7 +22,7 @@ import HorizontalScrollGallery from "@/src/widgets/horizontal-scroll-gallery/Hor
 import { mock } from "node:test";
 
 export default function Home() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("ВСЁ");
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -59,7 +59,7 @@ export default function Home() {
   return (
     <div>
       <section className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-8 mt-34 lg:h-screen">
-        <div className="flex flex-col h-screen lg:relative lg:block">
+        <div className="flex flex-col lg:h-screen lg:relative lg:block">
           <div className="lg:p-6 rounded-2xl text-center lg:text-left">
             <h2 className="lg:text-5xl text-3xl font-semibold uppercase font-benzin">
               <span className="drop-shadow-[0_0_3px_#ffffff]">
@@ -67,7 +67,7 @@ export default function Home() {
               </span>
               <motion.span
                 className="text-emerald-500 font-semibold"
-                style={{ textShadow: "0 0 15px #0c7552" }}
+                style={{ textShadow: "0 0 15px #0db484" }}
               >
                 {text}
                 <span className="animate-blink">|</span> {/* Имитация курсора */}
@@ -75,7 +75,7 @@ export default function Home() {
               <span className="drop-shadow-[0_0_3px_#ffffff]">БРЕНДА ОТ </span>
               <span
                 className="text-emerald-500 font-semibold"
-                style={{ textShadow: "0 0 15px rgb(12, 117, 82)" }}
+                style={{ textShadow: "0 0 15px #0db484" }}
               >
                 WHY
               </span>
@@ -87,9 +87,9 @@ export default function Home() {
               </span>
             </h2>
               <p className=" font-benzin lg:text-lg uppercase text-sm mt-4 w-full w-48 text-gray-200 font-medium mt-2 ">
-                Приветствую на одном из моих проектов, <span className="text-emerald-500 font-semibold">spacycookinghere.ru!!</span> Здесь ты точно найдешь себе то, что тебе нужно, будь ты бизнесменом или музыкантом.
+                Приветствую на одном из моих проектов, <span className="text-[#0db484] font-semibold">spacycookinghere.ru!!</span> Здесь ты точно найдешь себе то, что тебе нужно, будь ты бизнесменом или музыкантом.
                  <br /><br /> 
-                 Если тебе нужен <span className="text-emerald-500 font-semibold">сайт</span> для твоего собственного бренда, <span className="text-emerald-500 font-semibold">сведение</span> или же <span className="text-emerald-500 font-semibold">бит</span> - жми "УСЛУГИ",
+                 Если тебе нужен <span className="text-[#0db484] font-semibold">сайт</span> для твоего собственного бренда, <span className="text-[#0db484] font-semibold">сведение</span> или же <span className="text-[#0db484] font-semibold">бит</span> - жми "УСЛУГИ",
                   если хочешь работать со мной - жми вторую кнопку
               </p>
 
@@ -99,12 +99,12 @@ export default function Home() {
 
             <div className="lg:flex justify-between mt-2">
               <MainButton className="lg:w-1/2 w-full font-benzin">УСЛУГИ</MainButton>
-              <MainButton className="lg:ml-4 lg:w-1/2 w-full font-benzin bg-emerald-700 ">СДЕЛАТЬ ГРЯЗЬ</MainButton>
+              <MainButton className="lg:ml-4 lg:w-1/2 w-full font-benzin bg-[#0db484] ">СДЕЛАТЬ ГРЯЗЬ</MainButton>
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center h-screen">
-          <div className="relative w-full max-w-lg flex flex-col items-center h-full mt-3">
+        <div className="flex flex-col items-center justify-center lg:h-screen">
+          <div className="relative w-full max-w-lg flex flex-col items-center h-full mt-3 lg:py-0 py-15">
               <div className="relative w-60 aspect-square rounded-full overflow-hidden transform transition-transform duration-300 hover:scale-105">
                 <Image
                   src="/i.jpg"
@@ -141,9 +141,9 @@ export default function Home() {
 
             <p className="lg:text-md uppercase text-gray-200 text-sm lg:w-4/5 max-w-lg mx-auto text-center font-medium mt-5 font-benzin">
               Я - Максим Колядин (aka spacy?), являюсь веб-разработчиком, продюсером и артистом с 2020
-              года, за это время сделал <span className="text-emerald-500 font-bold">{">"} 150 сайтов</span> для разных компаний
+              года, за это время сделал <span className="text-[#0db484] font-bold">{">"} 150 сайтов</span> для разных компаний
               по всему миру и так же спродюсировал множество треков в самых
-              различных тайпах, в том числе <a href="" className="text-emerald-500 font-bold">своих</a>.
+              различных тайпах, в том числе <a href="" className="text-[#0db484] font-bold">своих</a>.
               <br />
               <br />
             </p>
@@ -190,10 +190,10 @@ export default function Home() {
       </section>
 
       <section className="mt-30">
-        <h2 className="lg:text-3xl text-2xl font-bold mb-4 uppercase font-benzin">My Services</h2>
+        <h2 className="lg:text-3xl text-2xl font-bold mb-4 uppercase font-benzin">МОИ УСЛУГИ</h2>
         <Tabs defaultValue={selectedCategory} className="mb-6">
           <TabsList>
-            {["All", "Development", "Design", "Marketing"].map((cat) => (
+            {["ВСЁ", "РАЗРАБОТКА", "СВЕДЕНИЕ", "БИТЫ"].map((cat) => (
               <TabsTrigger key={cat} value={cat}>
                 {cat}
               </TabsTrigger>
@@ -203,7 +203,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-4 grid-cols-1 gap-6 mt-8">
               {products
                 .filter((p): p is NonNullable<typeof p> => p !== undefined)
-                .filter(p => selectedCategory === "All" || p.category === selectedCategory)
+                .filter(p => selectedCategory === "ВСЁ" || p.category === selectedCategory)
                 .map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
@@ -214,7 +214,7 @@ export default function Home() {
 
       <section className="py-2 gap-8 w-full">
         <h2 className="lg:text-3xl text-2xl font-extrabold uppercase mb-4 mt-12 font-benzin">
-          Beats catalog
+          КАТАЛОГ БИТОВ
         </h2>
         <div className="flex gap-4 grid lg:grid-cols-2 grid-cols-1 w-full ">
             {isClient && <MusicItem track={mockTrack} />}
