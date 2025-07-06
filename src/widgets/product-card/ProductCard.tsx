@@ -22,13 +22,13 @@ export function ProductCard({ product }: { product: any }) {
                 alt={product.title}
                 layout="fill"
                 objectFit="cover"
-                className="rounded-3xl"
+                className="rounded-3xl "
               />
             </div>
             {product.images.length > 1 && (
               <>
                 <button
-                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-emerald-700 hover:bg-emerald-800 cursor-pointer text-white rounded-full p-2"
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-[#0db484] hover:bg-emerald-800 cursor-pointer text-white rounded-full p-2"
                   onClick={() =>
                     setImageIndex((prev) =>
                       prev === 0 ? product.images.length - 1 : prev - 1
@@ -38,7 +38,7 @@ export function ProductCard({ product }: { product: any }) {
                   <ChevronLeft size={20} />
                 </button>
                 <button
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-emerald-700 hover:bg-emerald-800 cursor-pointer text-white rounded-full p-2"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#0db484] hover:bg-emerald-800 cursor-pointer text-white rounded-full p-2"
                   onClick={() =>
                     setImageIndex((prev) =>
                       prev === product.images.length - 1 ? 0 : prev + 1
