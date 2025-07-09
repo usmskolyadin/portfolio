@@ -21,7 +21,6 @@ export function ProductCard({ product }: { product: any }) {
                 src={product.images[imageIndex]}
                 alt={product.title}
                 fill
-                style={{ objectFit: "cover" }}
                 className="rounded-3xl"
                 quality={100}
                 priority
