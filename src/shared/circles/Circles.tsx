@@ -1,21 +1,39 @@
 "use client";
 
 const Circles = () => {
-    return (
-        <div className="fixed inset-0 -z-10 overflow-hidden">
-            {Array.from({ length: 5 }).map((_, i) => (
-            <div
-                key={i}
-                className="absolute lg:w-64 lg:h-64 w-40 h-40 bg-[#0db484] rounded-full opacity-40 blur-3xl"
-                style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                transform: `translate(-50%, -50%)`,
-                }}
-            />
-            ))}
-      </div>
-    )
-}
+  const texts = [
+    "BEATS",
+    "M&M",
+    "WORK TOGETHER",
+    "SITE FOR UR BRAND",
+    "LUV U ALL",
+    "SPACY?",
+  ];
 
-export default Circles
+  return (
+    <div className="fixed inset-0 -z-10 overflow-hidden">
+      {Array.from({ length: 6 }).map((_, i) => {
+        const randomText = texts[Math.floor(Math.random() * texts.length)];
+
+        return (
+          <span
+            key={i}
+            className="absolute  opacity-40 text-white blur-sm select-none"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              transform: `translate(-50%, -50%) rotate(${Math.random() * 360}deg)`,
+            }}
+          >
+            <h1 className="font-benzin font-bold text-xl lg:text-6xl">
+            {randomText}
+
+            </h1>
+          </span>
+        );
+      })}
+    </div>
+  );
+};
+
+export default Circles;
