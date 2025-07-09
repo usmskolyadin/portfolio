@@ -11,8 +11,8 @@ const Header = () => {
     return (
     
     <div className="fixed top-0 left-0 w-full  backdrop-blur-md z-50 ">
-        <div className="lg:py-5 py-2 mx-auto w-full max-w-screen-2xl px-4">            
-            <header className="flex justify-between items-center py-4 border-gray-200 lg:px-6 px-2 py-1 relative font-benzin">
+        <div className="lg:py-5 py-2 mx-auto w-full max-w-screen-2xl ">            
+            <header className="flex justify-between items-center py-4 border-gray-200  px-2 py-1 relative font-benzin">
 
                 <h1 className="lg:text-md text-sm font-medium drop-shadow-[0_0_3px_#ffffff]">
                     <Link href="/">*WHY SPACY COOKING <span className="underline">HERE</span>?</Link>

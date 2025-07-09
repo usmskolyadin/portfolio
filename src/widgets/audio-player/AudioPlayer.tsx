@@ -59,11 +59,11 @@
         };
 
         return (
-            <div className="fixed bottom-2 left-10 w-full z-50 ">
+            <div className="fixed left-0 bottom-0 w-full  backdrop-blur-md z-50 ">
                 <div className="mx-auto max-w-screen-2xl">
-                    <div className="cursor-pointer bg-transparent border border-[#929292] rounded-full m-2 h-20 flex items-center justify-between backdrop-blur-md">
+                    <div className="mx-auto cursor-pointer bg-transparent  rounded-full m-2 h-15 flex items-center justify-between ">
                         <input
-                            className="duration absolute top-[-5] flex ml-24 w-3/4"
+                            className="duration absolute w-full max-w-screen-2xl flex -top-2 "
                             type="range"
                             value={currentTime}
                             max={duration}
@@ -74,19 +74,21 @@
                             src={currentTrack?.audioSrc}
                             onTimeUpdate={handleTimeUpdate}
                         />
+
                         <div className="flex items-center">
-                            <div className="w-24 h-24 flex items-center justify-center">
-                                <Image
-                                    src={currentTrack?.imageSrc || "/default-cover.jpg"}
-                                    alt="Track cover"
-                                    className="object-cover rounded-full"
-                                    width={60}
-                                    height={60}
-                                />
-                            </div>
-                            <div>
-                                <h1 className="text-xl font-bold">{currentTrack?.title || "No track selected"}</h1>
-                                <p className="text-[#B6B6B6] text-lg font-medium">{currentTrack?.artist || "Unknown artist"}</p>
+<div className="w-15 h-15 flex items-center justify-center">
+    <Image
+        src={currentTrack?.imageSrc || "/default-cover.jpg"}
+        alt="Track cover"
+        className="object-cover rounded-full w-full h-full"
+        width={48}
+        height={48}
+    />
+</div>
+
+                            <div className="p-4">
+                                <h1 className="font-benzin text-xl font-bold w-96 truncate">{currentTrack?.title || "No track selected"}</h1>
+                                <p className="font-benzin text-[#B6B6B6] text-lg font-medium">{currentTrack?.artist || "Unknown artist"}</p>
                             </div>
                         </div>
                         <div className="flex justify-between items-center">
@@ -132,16 +134,16 @@
                                 width={25}
                                 height={25}
                             />
+                                <Image
+                                    src="/volume.png"
+                                    alt="Volume"
+                                    className="m-4"
+                                    width={28}
+                                    height={28}
+                                />
                             <Image
                                 src="/dots.png"
                                 alt="More options"
-                                className="m-4"
-                                width={8}
-                                height={8}
-                            />
-                            <Image
-                                src="/volume.png"
-                                alt="Volume"
                                 className="m-4"
                                 width={8}
                                 height={8}

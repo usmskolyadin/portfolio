@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="grid pb-20">
               <Header />
               {children ? children : <p className="text-white">Контент не загружен</p>}
-              {/* <AudioPlayer /> */}
+              <AudioPlayer />
               <Footer />
             </div>
           </div>

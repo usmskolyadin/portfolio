@@ -49,11 +49,11 @@ export default function Home() {
 
   const mockTrack: Track = {
     id: 1,
-    title: "Mock Music Item",
-    artist: "Mock Artist",
+    title: "SPC.RU TYPE BEAT",
+    artist: "SPACY?",
     imageSrc: "/cbmc.jpg",
     audioSrc:
-      "https://storage.yandexcloud.net/seamusic-backet/beats/%23%232%20EUPHORIA%20158BPM%20@WHYSPACY%20@14BAGCHASER%20@INSOFAZE.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJEDfM0GTxK0zSBvKGgjTso%2F20250316%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20250316T145137Z&X-Amz-Expires=2592000&X-Amz-Signature=90B9CEC71D7486DAEE3BCEA3E2CE58E7B2774DC806956804279BA6BB4EECFA6E&X-Amz-SignedHeaders=host",
+      "beat1.mp3",
   };
 
   return (
@@ -228,7 +228,14 @@ export default function Home() {
         <h2 className="lg:text-3xl text-2xl font-extrabold uppercase mb-4 mt-12 font-benzin">
           КАТАЛОГ БИТОВ
         </h2>
-        <div className="flex gap-4 grid lg:grid-cols-2 grid-cols-1 w-full ">
+        <div className="flex gap-4 grid lg:grid-cols-3 grid-cols-1 w-full ">
+            {isClient && <MusicItem track={mockTrack} />}
+            {isClient && <MusicItem track={mockTrack} />}
+            {isClient && <MusicItem track={mockTrack} />}
+            {isClient && <MusicItem track={mockTrack} />}
+            {isClient && <MusicItem track={mockTrack} />}
+            {isClient && <MusicItem track={mockTrack} />}
+            {isClient && <MusicItem track={mockTrack} />}
             {isClient && <MusicItem track={mockTrack} />}
         </div>
       </section>
