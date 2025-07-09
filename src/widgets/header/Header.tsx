@@ -20,7 +20,7 @@ const Header = () => {
                 
                 <nav className=" hidden md:flex gap-6 uppercase">
                 {["О проекте", "Портфолио", "Услуги", "Work together"].map((item) => (
-                    <Link className="hover:underline font-medium" key={item} href="/admin"> 
+                    <Link className="hover:underline font-medium" key={item} href={`#${item}`}> 
                         {item}
                     </Link>
                 ))}
@@ -35,16 +35,11 @@ const Header = () => {
 
                 {isOpen && (
                 <nav className="absolute z-50 top-full right-0 bg-black shadow-lg flex flex-col w-full py-4 px-6 rounded-3xl opacity-90 justify-center flex flex-col md:hidden">
-                    {["About", "Catalog", "Pricing", "Team"].map((item) => (
-                    <a
-                        key={item}
-                        href="#"
-                        className="py-2 font-medium text-xl text-white hover:underline"
-                        onClick={() => setIsOpen(false)} // Закрывает меню при нажатии
-                    >
+                {["О проекте", "Портфолио", "Услуги", "Work together"].map((item) => (
+                    <Link className="hover:underline font-medium" key={item} href={`#${item}`}> 
                         {item}
-                    </a>
-                    ))}
+                    </Link>
+                ))}
                 </nav>
                 )}
 

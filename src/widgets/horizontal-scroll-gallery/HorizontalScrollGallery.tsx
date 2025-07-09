@@ -8,84 +8,83 @@ const HorizontalScrollGallery = () => {
       id: 1,
       image: '/centr.jpg',
       title: 'карьерамолодых (Москва, Россия)',
-      description: 'Лендинг для Центр содействия молодым специалистам',
+      description: 'Лендинг для Центра содействия молодым специалистам',
     },
     {
       id: 2,
       image: '/israil.jpg',
       title: 'HappyFlowDesign (Тель-Авив, Израиль)',
-      description: 'Сайт строительной компании, с калькуляторами, формами заявок и внутренними покупками',
+      description: 'Сайт строительной компании с калькуляторами и формами',
     },
     {
       id: 3,
       image: '/seamusic-s.jpg',
       title: 'SeaMusic (СНГ)',
-      description: 'Собственный стартап, SeaMusic – это цифровая платформа для музыкантов, продюсеров и слушателей.',
+      description: 'Цифровая платформа для музыкантов и слушателей.',
     },
     {
       id: 4,
       image: '/chairs.jpg',
       title: 'Elfadro (Москва, Россия)',
-      description: 'Интернет магазин для Московской компании по созданию массажных кресел',
+      description: 'Интернет-магазин массажных кресел',
     },
     {
       id: 5,
       image: '/usa-m.jpg',
       title: 'Studiau7 (Маями, США)',
-      description: 'Полноценный интернет магазин с товарами общего назначения по всему США',
+      description: 'Магазин товаров общего назначения по США',
     },
     {
       id: 6,
       image: '/dveri-msk.png',
       title: 'DveriMsk (Москва, Россия)',
-      description: 'Полноценный интернет магазин дверей по всей Москве',
+      description: 'Магазин дверей по Москве',
     },
   ];
 
   const duplicatedItems = [...items, ...items];
 
   return (
-    <div className="w-full lg:py-8 py-12  lg:mb-0 mb-24 lg:max-w-screen-2xl max-w-96 mx-auto overflow-hidden px-4">
-      <h2 className="text-2xl font-extrabold uppercase font-benzin mb-6">МОИ ПРОЕКТЫ (IT)</h2>
-      <div className="relative w-full overflow-hidden">
-        <div className="animate-scroll flex whitespace-nowrap">
+    <section className="overflow-hidden w-full py-12 px-4 lg:max-w-screen-2xl max-w-sm">
+      <h2 className="text-2xl font-extrabold uppercase text-white font-benzin mb-6">
+        МОИ ПРОЕКТЫ (IT)
+      </h2>
+
+      <div className="relative overflow-hidden">
+        <div className="flex animate-marquee">
           {duplicatedItems.map((item, index) => (
             <div
-            key={`${item.id}-${index}`}
-            className="lg:w-86 w-48 mx-4 flex-shrink-0"
+              key={`${item.id}-${index}`}
+              className="flex-shrink-0 w-[65vw] sm:w-[300px] md:w-[340px] px-2"
             >
-            <div className="lg:h-50 h-36 w-full">
+              <div className="h-40 md:h-52 w-full">
                 <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover rounded-2xl"
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover rounded-2xl"
                 />
-            </div>
-            <div className="mt-2">
-                <h3 className="font-bold text-xl uppercase break-words whitespace-normal">
-                {item.title}
+              </div>
+              <div className="mt-2 text-white">
+                <h3 className="font-bold text-sm md:text-base uppercase break-words font-benzin">
+                  {item.title}
                 </h3>
-                <p className="text-md text-white  break-words whitespace-normal">{item.description}</p>
-            </div>
-                <div className="flex gap-2 mt-2 lg:text-sm text-xs">
-                    <span className="bg-transparent border border-[#929292]  text-white px-3 py-1.5 rounded-full">
-                    #newjazz
-                    </span>
-                    <span className="bg-transparent border border-[#929292]  text-white px-3 py-1.5 rounded-full">
-                    #opium
-                    </span>
-                </div>
+                <p className="text-xs md:text-lg">{item.description}</p>
+              </div>
+              <div className="flex gap-2 mt-2 text-[10px] md:text-xs">
+                <span className="border border-[#929292] text-white px-2 py-1 rounded-full">
+                  #newjazz
+                </span>
+                <span className="border border-[#929292] text-white px-2 py-1 rounded-full">
+                  #opium
+                </span>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
       <style jsx>{`
-        .animate-scroll {
-          animation: scroll-left 10s linear infinite;
-        }
-
-        @keyframes scroll-left {
+        @keyframes marquee {
           0% {
             transform: translateX(0%);
           }
@@ -93,8 +92,20 @@ const HorizontalScrollGallery = () => {
             transform: translateX(-50%);
           }
         }
+
+        .animate-marquee {
+          display: flex;
+          width: max-content;
+          animation: marquee 10s linear infinite;
+        }
+
+        @media (max-width: 768px) {
+          .animate-marquee {
+            animation-duration: 5s;
+          }
+        }
       `}</style>
-    </div>
+    </section>
   );
 };
 

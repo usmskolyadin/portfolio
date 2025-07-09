@@ -22,7 +22,7 @@ import HorizontalScrollGallery from "@/src/widgets/horizontal-scroll-gallery/Hor
 import { mock } from "node:test";
 
 export default function Home() {
-  const [selectedCategory, setSelectedCategory] = useState("ВСЁ");
+  const [selectedCategory, setSelectedCategory] = useState("БИТЫ");
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -58,15 +58,15 @@ export default function Home() {
 
   return (
     <div>
-      <section className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-8 mt-34 lg:h-screen">
-        <div className="flex flex-col lg:h-screen lg:relative lg:block">
+      <section  id="О проекте" className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-8 mt-34 lg:h-screen ">
+        <div className="flex flex-col lg:h-screen lg:relative lg:block justify-center">
           <div className="lg:p-6 rounded-2xl text-center lg:text-left">
-            <h2 className="lg:text-5xl text-3xl font-semibold uppercase font-benzin">
+            <h2  className="lg:text-5xl text-3xl font-bold uppercase font-benzin">
               <span className="drop-shadow-[0_0_3px_#ffffff]">
                 *ЛУЧШИЙ САЙТ ДЛЯ{" "}
               </span>
               <motion.span
-                className="text-emerald-500 font-semibold"
+                className="text-emerald-500 font-bold"
                 style={{ textShadow: "0 0 15px #0db484" }}
               >
                 {text}
@@ -74,16 +74,16 @@ export default function Home() {
               </motion.span>
               <span className="drop-shadow-[0_0_3px_#ffffff]">БРЕНДА ОТ </span>
               <span
-                className="text-emerald-500 font-semibold"
+                className="text-emerald-500 font-bold"
                 style={{ textShadow: "0 0 15px #0db484" }}
               >
                 WHY
               </span>
               <span className="drop-shadow-[0_0_3px_#ffffff]">SPACY? 
-                
+                {" "}
               </span>
               <span className="drop-shadow-[0_0_3px_#ffffff]">
-                СВЕДЕНИЕ. M&M. ФИТЫ.
+                СВЕДЕНИЕ. БИТЫ. 
               </span>
             </h2>
               <p className=" font-benzin lg:text-lg uppercase text-sm mt-4 w-full w-48 text-gray-200 font-medium mt-2 ">
@@ -99,7 +99,7 @@ export default function Home() {
 
             <div className="lg:flex justify-between mt-2">
               <MainButton className="lg:w-1/2 w-full font-benzin">УСЛУГИ</MainButton>
-              <MainButton className="lg:ml-4 lg:w-1/2 w-full font-benzin bg-[#0db484] ">СДЕЛАТЬ ГРЯЗЬ</MainButton>
+              <MainButton href="#Work together" className="lg:ml-4 lg:w-1/2 w-full font-benzin bg-[#0db484] ">СДЕЛАТЬ ГРЯЗЬ</MainButton>
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function Home() {
           <div className="relative w-full max-w-lg flex flex-col items-center h-full mt-3 lg:py-0 py-15">
               <div className="relative w-60 aspect-square rounded-full overflow-hidden transform transition-transform duration-300 hover:scale-105">
                 <Image
-                  src="/i.jpg"
+                  src="/hero.jpg"
                   alt="Hero image"
                   fill
                   className="object-cover"
@@ -150,9 +150,12 @@ export default function Home() {
           </div>
         </div>
 
-
+      
       </section>
-      <HorizontalScrollGallery />
+      <div id="Портфолио">
+      <HorizontalScrollGallery  />
+
+      </div>
 
       <section className="lg:py-16  lg:mt-10 space-y-10">
         {features.map((feature, index) => (
@@ -181,35 +184,44 @@ export default function Home() {
 
             <div className="w-full md:w-1/2 text-center md:text-left space-y-4">
               <h2 className="lg:text-3xl text-2xl font-extrabold uppercase font-benzin">{feature.title}</h2>
-              <p className="lg:text-lg text-gray-200 text-sm uppercase font-medium font-benzin whitespace-pre-line">
+              <p className="lg:text-lg text-gray-200 lg:w-7/8 text-sm uppercase font-medium font-benzin whitespace-pre-line">
                 {feature.description}
               </p>
             </div>
           </div>
         ))}
+        <div className="flex justify-between">
+          <MainButton className="lg:invisible lg:flex hidden mx-auto lg:w-1/2 w-full font-benzin bg-[#0db484] ">WORK TOGETHER</MainButton>
+          <MainButton id="Work together" href="https://forms.yandex.ru/cloud/686e2e1302848f0ecf036ccf" className="mx-auto lg:w-1/2 w-full font-benzin bg-[#0db484] ">WORK TOGETHER</MainButton>
+
+        </div>
+
       </section>
 
-      <section className="mt-30">
+      <section  id="Услуги" className="mt-30 ">
         <h2 className="lg:text-3xl text-2xl font-bold mb-4 uppercase font-benzin">МОИ УСЛУГИ</h2>
-        <Tabs defaultValue={selectedCategory} className="mb-6">
-          <TabsList>
+          <Tabs defaultValue={selectedCategory} className="mb-6">
+            <TabsList>
+              {["ВСЁ", "РАЗРАБОТКА", "СВЕДЕНИЕ", "БИТЫ"].map((cat) => (
+                <TabsTrigger key={cat} value={cat}>
+                  {cat}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+
             {["ВСЁ", "РАЗРАБОТКА", "СВЕДЕНИЕ", "БИТЫ"].map((cat) => (
-              <TabsTrigger key={cat} value={cat}>
-                {cat}
-              </TabsTrigger>
+              <TabsContent key={cat} value={cat}>
+                <div className="grid lg:grid-cols-4 grid-cols-1 gap-6 mt-8">
+                  {products
+                    .filter((p): p is NonNullable<typeof p> => p !== undefined)
+                    .filter(p => cat === "ВСЁ" || p.category === cat)
+                    .map((product) => (
+                      <ProductCard key={product.id} product={product} />
+                    ))}
+                </div>
+              </TabsContent>
             ))}
-          </TabsList>
-          <TabsContent value={selectedCategory}>
-            <div className="grid lg:grid-cols-4 grid-cols-1 gap-6 mt-8">
-              {products
-                .filter((p): p is NonNullable<typeof p> => p !== undefined)
-                .filter(p => selectedCategory === "ВСЁ" || p.category === selectedCategory)
-                .map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+          </Tabs>
       </section>
 
       <section className="py-2 gap-8 w-full">
