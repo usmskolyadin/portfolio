@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Play } from "lucide-react";
-import { useAppDispatch } from "@/src/app/lib/hooks";
+import { Pause, Play } from "lucide-react";
+import { useAppDispatch, useAppSelector } from "@/src/app/lib/hooks";
 import { setCurrentTrack, togglePlay } from "@/src/features/player/playerSlice";
 import { Track } from "@/src/features/player/types";
 
@@ -15,6 +15,8 @@ export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
   const [hovered, setHovered] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useAppDispatch();
+  const { currentTrack, isPlaying } = useAppSelector((state) => state.player);
+  const isCurrentTrack = currentTrack?.id === track.id;
 
   useEffect(() => {
   }, [dispatch]);
@@ -22,7 +24,6 @@ export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
   const handlePlayClick = () => {
     dispatch(setCurrentTrack(track));
     dispatch(togglePlay());
-    setModalOpen(false); 
   };
 
   return (
@@ -36,17 +37,19 @@ export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        <Image
-          src={track.imageSrc || "/hero.jpg"}
-          alt="Album Cover"
-          className="absolute inset-0 w-full h-full object-cover rounded-full"
-          width={48} 
-          height={48} 
-          priority
-        />
-        {hovered && (
+        <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-black rounded-full">
+          <span className="text-white text-3xl font-bold font-benzin">{track.id}</span>
+        </div>
+
+        {hovered && !isPlaying && (
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity rounded-full">
             <Play size={32} className="text-white" />
+          </div>
+        )}
+
+        {isCurrentTrack && isPlaying && hovered && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity rounded-full">
+            <Pause size={32} className="text-white" />
           </div>
         )}
       </div>
@@ -76,20 +79,6 @@ export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
           </div>
         </div>
       </div>
-
-      {modalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center  bg-opacity-70">
-          <div className="bg-[#181818] text-white p-6 rounded-3xl shadow-lg w-80 text-center">
-            <h2 className="text-xl font-bold">Наебал))</h2>
-            <button
-              onClick={() => setModalOpen(false)}
-              className="cursor-pointer border border-[#929292] rounded-xl font-bold text-xl mt-4 px-16 py-2 w-full"
-            >
-              Закрыть
-            </button>
-          </div>
-        </div>
-      )}
     </>
   );
 };
