@@ -59,9 +59,9 @@
         };
 
         return (
-            <div className="fixed left-0 bottom-0 w-full  backdrop-blur-md z-50 ">
+            <div className="fixed left-0 -bottom-0.5 w-full  backdrop-blur-md z-50 ">
                 <div className="mx-auto max-w-screen-2xl">
-                    <div className="lg:mx-auto mx-4 cursor-pointer bg-transparent  rounded-full lg:m-2 lg:h-15 h-34 lg:flex items-center justify-between ">
+                    <div className="lg:mx-auto mx-4 cursor-pointer bg-transparent  rounded-full lg:m-2 lg:h-15 h-20 lg:flex items-center justify-between ">
                         <input
                             className="duration absolute w-full max-w-screen-2xl flex lg:-top-0 top-0"
                             type="range"
@@ -74,35 +74,24 @@
                             src={currentTrack?.audioSrc}
                             onTimeUpdate={handleTimeUpdate}
                         />
-                        <div className="lg:flex justify-between w-full">
-                            <div className="flex items-center">
+                        <div className="flex justify-between w-full ">
+                            <div className="flex items-center lg:w-lg w-2/3">
                                 <div className="w-12 h-12 lg:p-0 pt-5 flex items-center justify-center">
-                                    <Image
-                                        src={currentTrack?.imageSrc || "/default-cover.jpg"}
-                                        alt="Track cover"
-                                        className="object-cover rounded-full min-w-15 min-h-15 w-full h-full"
-                                        width={48}
-                                        height={48}
-                                    />
+                                    <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold text-lg font-benzin">
+                                        {currentTrack?.id ?? "—"}
+                                    </div>
                                 </div>
-                                <div className="lg:p-4 pl-6 pt-4">
-                                    <h1 className="font-benzin lg:text-xl text-lg font-bold w-96 truncate">{currentTrack?.title || "No track selected"}</h1>
-                                    <p className="font-benzin text-[#B6B6B6] lg:text-lg text-md font-medium">{currentTrack?.artist || "Unknown artist"}</p>
+                                <div className="lg:p-4 pl-4 pt-4">
+                                    <h1 className="font-benzin lg:text-lg text-md font-bold w-96 truncate">{currentTrack?.title || "No track selected"}</h1>
+                                    <p className="font-benzin text-[#B6B6B6] lg:text-xs text-sm font-medium">{currentTrack?.artist || "Unknown artist"}</p>
                                 </div>
                             </div>
-                            <div className="flex justify-between items-center">
-                                <p className="lg:p-6">{formatTime(currentTime)}</p>
-                                <Image
-                                    src="/arrows.png"
-                                    alt="Shuffle"
-                                    className="lg:m-4 m-2"
-                                    width={25}
-                                    height={25}
-                                />
+                            <div className="flex justify-between items-center lg:ml-0 ml-10 lg:w-sm w-1/3">
+                                <p className="lg:p-6 hidden lg:flex">{formatTime(currentTime)}</p>
                                 <Image
                                     src="/back.png"
                                     alt="Previous"
-                                    className="lg:m-4 m-2"
+                                    className="hidden lg:flex lg:m-4 m-2"
                                     width={25}
                                     height={25}
                                 />
@@ -119,13 +108,13 @@
                                 <Image
                                     src="/next.png"
                                     alt="Next"
-                                    className="lg:m-4 m-2"
+                                    className="hidden lg:flex lg:m-4 m-2"
                                     width={25}
                                     height={25}
                                 />
-                                <p className="lg:p-6">{formatTime(duration)}</p>
+                                <p className="lg:p-6 hidden lg:flex">{formatTime(duration)}</p>
                             </div>
-                            <div className="lg:flex hidden items-center">
+                            <div className="lg:flex hidden items-center justify-between w-1/8">
                                 <Image
                                     src="/heart.png"
                                     alt="Favorite"

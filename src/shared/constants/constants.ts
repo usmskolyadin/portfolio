@@ -1,3 +1,5 @@
+import { Track } from "@/src/features/player/types";
+
 export const products = [
     {
       id: 1,
@@ -34,7 +36,7 @@ export const products = [
     {
       id: 5,
       title: "ПАРСЕРЫ",
-      description: "Впервую очередь, ",
+      description: "Разработка кастомных веб-парсеров под любые задачи: сбор данных с сайтов, маркетплейсов, агрегаторов. Гибкие настройки, автоматизация, экспорт в Excel, JSON и базы данных. Работаю под ключ с техническим заданием.",
       price: "$500",
       images: ["/parsers.jpg"],
       category: "РАЗРАБОТКА",
@@ -42,7 +44,7 @@ export const products = [
     {
       id: 6,
       title: "MIXING",
-      description: "Впервую очередь, ",
+      description: "Профессиональное сведение треков: выравнивание частот, панорамирование, динамическая обработка. Работаю в любом жанре. Готовлю звучание к мастерингу и релизу. Пример звучания можно получить по запросу.",
       price: "$500",
       images: ["/mixing.png"],
       category: "СВЕДЕНИЕ",
@@ -50,35 +52,36 @@ export const products = [
     {
       id: 7,
       title: "MASTERING",
-      description: "Впервую очередь, ",
+      description: "Финальная обработка трека перед релизом: loudness, ширина, частотный баланс, динамика. Гарантирую конкурентное звучание для Spotify, Apple Music и др. Мастеринг после сведения или под чужой микс.",
       price: "$500",
       images: ["/mastering.png"],
       category: "СВЕДЕНИЕ",
     },
     {
       id: 9,
-      title: "MP3 LEASE",
-      description: "Впервую очередь, ",
+      title: "MP3 LEASE BY SPACY &/(???)",
+      description: "Бюджетная лицензия на аренду бита в формате MP3. Разрешено коммерческое использование, выступления и публикация в стриминговых сервисах. Ограничение: до 100 000 прослушиваний. Обязательное указание продюсеров (prod. by kennycarter, yungdexn).",
       price: "$500",
       images: ["/mp3lease.png"],
       category: "БИТЫ",
     },
     {
       id: 10,
-      title: "WAV LEASE",
-      description: "Впервую очередь, ",
+      title: "WAV LEASE BY SPACY &/(???)",
+      description: "Премиум аренда WAV-файла с тегом. Включено коммерческое использование, цифровые магазины, выступления. Ограничение: до 100 000 прослушиваний. Обязательное указание авторства (prod. by kennycarter, yungdexn).",
       price: "$500",
       images: ["/wavlease.png"],
       category: "БИТЫ",
     },
     {
       id: 11,
-      title: "EXCLUSIVE",
-      description: "Впервую очередь, ",
+      title: "EXCLUSIVE BY SPACY &/(???)",
+      description: "Полный выкуп прав на бит. Вы получаете MP3, WAV и TRACKOUT. Коммерческое использование, неограниченные прослушивания, возможность удалить тег. Авторство сохраняется, но бит снимается с продажи. Цена зависит от бита. Свяжитесь для обсуждения.",
       price: "$500",
       images: ["/exclusivelease.png"],
       category: "БИТЫ",
-    },
+    }
+
   ];
 
 export const features = [
@@ -105,6 +108,50 @@ export const features = [
     },
   ];
   
+export const tracks: Track[] = [
+  {
+    id: 1,
+    title: "SPC.RU TYPE BEAT",
+    artist: "SPACY?",
+    imageSrc: "/cbmc.jpg",
+    audioSrc: "beat1.mp3",
+    tags: ["#spacy", "#drill", "#typebeat"],
+  },
+  {
+    id: 2,
+    title: "GHOST IN SHELL",
+    artist: "KENNY CARTER",
+    imageSrc: "/ghost.jpg",
+    audioSrc: "beat2.mp3",
+    tags: ["#phonk", "#cinematic"],
+  },
+  {
+    id: 3,
+    title: "FOR CLUBS ONLY",
+    artist: "YUNGDEXN",
+    imageSrc: "/club.jpg",
+    audioSrc: "beat3.mp3",
+    tags: ["#club", "#bouncy", "#trap"],
+  },
+  {
+    id: 4,
+    title: "CRYOGENIC",
+    artist: "SPACY?",
+    imageSrc: "/ice.jpg",
+    audioSrc: "beat4.mp3",
+    tags: ["#ambient", "#experimental"],
+  },
+  {
+    id: 5,
+    title: "MOTIONLESS",
+    artist: "DEXTER&SPC",
+    imageSrc: "/motion.jpg",
+    audioSrc: "beat5.mp3",
+    tags: ["#slow", "#cloud", "#emotional"],
+  },
+];
+
+
 export const texts = ["ТВОЕГО", "ВАШЕГО", "ЛЮБОГО"];  
 export const typingSpeed = 200;
 export const pauseTime = 2500;

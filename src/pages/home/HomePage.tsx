@@ -16,6 +16,7 @@ import {
   typingSpeed,
   texts,
   pauseTime,
+  tracks,
 } from "@/src/shared/constants/constants";
 import { Track } from "@/src/features/player/types";
 import HorizontalScrollGallery from "@/src/widgets/horizontal-scroll-gallery/HorizontalScrollGallery";
@@ -58,12 +59,12 @@ export default function Home() {
 
   return (
     <div>
-      <section  id="О проекте" className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-8 mt-34 lg:h-screen ">
+      <section  id="О проекте" className="flex max-w-screen-2xl flex-col lg:grid lg:grid-cols-2 lg:gap-8 mt-34 lg:h-screen ">
         <div className="flex flex-col lg:h-screen lg:relative lg:block justify-center">
           <div className="lg:p-6 rounded-2xl text-center lg:text-left">
             <h2  className="lg:text-5xl text-3xl font-bold uppercase font-benzin">
               <span className="drop-shadow-[0_0_3px_#ffffff]">
-                *ЛУЧШИЙ САЙТ ДЛЯ{" "}
+                *СОВРЕМЕННЫЙ САЙТ ДЛЯ{" "}
               </span>
               <motion.span
                 className="text-emerald-500 font-bold"
@@ -99,7 +100,7 @@ export default function Home() {
 
             <div className="lg:flex justify-between mt-2">
               <MainButton className="lg:w-1/2 w-full font-benzin">УСЛУГИ</MainButton>
-              <MainButton href="#Work together" className="lg:ml-4 lg:w-1/2 w-full font-benzin bg-[#0db484] ">СДЕЛАТЬ ГРЯЗЬ</MainButton>
+              <MainButton href="#Work together" className="lg:ml-4 lg:w-1/2 w-full font-benzin bg-[#0db484] ">WORK WITH ME</MainButton>
             </div>
           </div>
         </div>
@@ -229,14 +230,8 @@ export default function Home() {
           КАТАЛОГ БИТОВ
         </h2>
         <div className="flex gap-4 grid lg:grid-cols-3 grid-cols-1 w-full ">
-            {isClient && <MusicItem track={mockTrack} />}
-            {isClient && <MusicItem track={mockTrack} />}
-            {isClient && <MusicItem track={mockTrack} />}
-            {isClient && <MusicItem track={mockTrack} />}
-            {isClient && <MusicItem track={mockTrack} />}
-            {isClient && <MusicItem track={mockTrack} />}
-            {isClient && <MusicItem track={mockTrack} />}
-            {isClient && <MusicItem track={mockTrack} />}
+        {isClient &&
+          tracks.map((track) => <MusicItem key={track.id} track={track} />)}
         </div>
       </section>
     </div>

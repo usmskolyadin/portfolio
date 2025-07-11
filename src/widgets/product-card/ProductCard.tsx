@@ -55,7 +55,7 @@ export function ProductCard({ product }: { product: any }) {
         </CardHeader>
         <CardContent>
           <p className="font-benzin uppercase font-bold mt-2">от {product.price}</p>
-          <p className="font-benzin uppercase lg:text-md text-sm text-gray-300">{product.description}</p>
+          <p className="font-benzin uppercase lg:text-md text-sm text-gray-200">{product.description}</p>
         </CardContent>
       </Card>
     );
