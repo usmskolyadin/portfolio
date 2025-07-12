@@ -78,9 +78,9 @@ export default function Home() {
                 className="text-emerald-500 font-bold"
                 style={{ textShadow: "0 0 15px #0db484" }}
               >
-                WHY
+                SPACY? 
               </span>
-              <span className="drop-shadow-[0_0_3px_#ffffff]">SPACY? 
+              <span className="drop-shadow-[0_0_3px_#ffffff]">
                 {" "}
               </span>
               <span className="drop-shadow-[0_0_3px_#ffffff]">
@@ -212,7 +212,7 @@ export default function Home() {
 
             {["ВСЁ", "РАЗРАБОТКА", "СВЕДЕНИЕ", "БИТЫ"].map((cat) => (
               <TabsContent key={cat} value={cat}>
-                <div className="grid lg:grid-cols-4 grid-cols-1 gap-6 mt-8">
+                <div className="grid lg:grid-cols-4 grid-cols-2 lg:gap-6 gap-3 mt-8">
                   {products
                     .filter((p): p is NonNullable<typeof p> => p !== undefined)
                     .filter(p => cat === "ВСЁ" || p.category === cat)

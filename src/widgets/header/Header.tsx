@@ -27,7 +27,7 @@ const Header = () => {
                 </nav>
 
                 <button
-                    className="md:hidden p-2 rounded-md focus:outline-none"
+                    className="md:hidden p-2 mr-6 rounded-md focus:outline-none"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {isOpen ? <X size={28} /> : <Menu size={28} />}

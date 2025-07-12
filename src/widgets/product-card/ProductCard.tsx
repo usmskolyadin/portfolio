@@ -15,13 +15,13 @@ export function ProductCard({ product }: { product: any }) {
     return (
       <Card>
         <CardHeader>
-          <div className="relative w-full h-50">
+          <div className="relative w-full lg:h-50 h-38">
             <div className="">
               <Image
                 src={product.images[imageIndex]}
                 alt={product.title}
                 fill
-                className="rounded-3xl"
+                className="rounded-3xl object-cover"
                 quality={100}
                 priority
               />
@@ -55,7 +55,7 @@ export function ProductCard({ product }: { product: any }) {
         </CardHeader>
         <CardContent>
           <p className="font-benzin uppercase font-bold mt-2">от {product.price}</p>
-          <p className="font-benzin uppercase lg:text-md text-sm text-gray-200">{product.description}</p>
+          <p className="font-benzin uppercase lg:text-md text-xs text-gray-200">{product.description}</p>
         </CardContent>
       </Card>
     );
