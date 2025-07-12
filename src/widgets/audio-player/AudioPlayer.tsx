@@ -11,7 +11,7 @@
         const dispatch = useAppDispatch();
         const [currentTime, setCurrentTime] = useState(0);
         const [duration, setDuration] = useState(0);
-        const audioRef = useRef<HTMLAudioElement>(null);
+        const audioRef = useRef<HTMLAudioElement>(null)
 
         useEffect(() => {
         }, [dispatch]);
@@ -61,7 +61,7 @@
         return (
             <div className="fixed left-0 -bottom-0.5 w-full  backdrop-blur-md z-50 ">
                 <div className="mx-auto max-w-screen-2xl">
-                    <div className="lg:mx-auto mx-4 cursor-pointer bg-transparent  rounded-full lg:m-2 lg:h-15 h-20 lg:flex items-center justify-between ">
+                    <div className="lg:mx-auto mx-4 cursor-pointer bg-transparent  rounded-full lg:m-2 lg:h-15 h-18 lg:flex items-center justify-between ">
                         <input
                             className="duration absolute w-full max-w-screen-2xl flex lg:-top-0 top-0"
                             type="range"
@@ -75,18 +75,18 @@
                             onTimeUpdate={handleTimeUpdate}
                         />
                         <div className="flex justify-between w-full ">
-                            <div className="flex items-center lg:w-lg w-2/3">
+                            <div className="flex items-center lg:w-lg w-3/4">
                                 <div className="w-12 h-12 lg:p-0 pt-5 flex items-center justify-center">
                                     <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold text-lg font-benzin">
                                         {currentTrack?.id ?? "—"}
                                     </div>
                                 </div>
                                 <div className="lg:p-4 pl-4 pt-4">
-                                    <h1 className="font-benzin lg:text-lg text-md font-bold w-96 truncate">{currentTrack?.title || "No track selected"}</h1>
-                                    <p className="font-benzin text-[#B6B6B6] lg:text-xs text-sm font-medium">{currentTrack?.artist || "Unknown artist"}</p>
+                                    <h1 className="font-benzin lg:text-lg text-sm uppercase font-bold w-96 truncate">{currentTrack?.title || "No track selected"}</h1>
+                                    <p className="font-benzin text-gray-200 uppercase lg:text-xs text-xs font-medium">{currentTrack?.artist || "Unknown artist"}</p>
                                 </div>
                             </div>
-                            <div className="flex justify-between items-center lg:ml-0 ml-10 lg:w-sm w-1/3">
+                            <div className="flex justify-between items-center lg:ml-0 ml-10 lg:w-sm w-1/4">
                                 <p className="lg:p-6 hidden lg:flex">{formatTime(currentTime)}</p>
                                 <Image
                                     src="/back.png"
@@ -99,7 +99,7 @@
                                 <Image
                                     src={isPlaying ? "/play.png" : "/rilplay.png"}
                                     alt={isPlaying ? "Pause" : "/play.png"}
-                                    className={`m-4 ${isPlaying ? '' : 'invert'}`}
+                                    className={`lg:m-4 mt-4  ${isPlaying ? '' : 'invert'}`}
                                     width={40}
                                     height={40}
                                     onClick={handleTogglePlay}
