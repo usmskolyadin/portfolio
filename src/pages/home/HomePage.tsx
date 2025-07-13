@@ -21,6 +21,7 @@ import {
 import { Track } from "@/src/features/player/types";
 import HorizontalScrollGallery from "@/src/widgets/horizontal-scroll-gallery/HorizontalScrollGallery";
 import { mock } from "node:test";
+import { SocialIcons } from "@/src/shared/social-icons/SocialIcons";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("БИТЫ");
@@ -62,9 +63,9 @@ export default function Home() {
       <section  id="О проекте" className="flex max-w-screen-2xl flex-col lg:grid lg:grid-cols-2 lg:gap-8 mt-34 lg:h-screen ">
         <div className="flex flex-col lg:h-screen lg:relative lg:block justify-center">
           <div className="lg:p-6 rounded-2xl text-center lg:text-left">
-            <h2  className="lg:text-5xl text-3xl font-bold uppercase font-benzin">
+            <h2  className="lg:text-5xl text-3xl font-bold uppercase font-benzin min-h-[3.5rem]">
               <span className="drop-shadow-[0_0_3px_#ffffff]">
-                *СОВРЕМЕННЫЙ САЙТ ДЛЯ{" "}
+                *ЛУЧШИЙ САЙТ ДЛЯ{" "}
               </span>
               <motion.span
                 className="text-emerald-500 font-bold"
@@ -73,25 +74,22 @@ export default function Home() {
                 {text}
                 <span className="animate-blink">|</span> {/* Имитация курсора */}
               </motion.span>
-              <span className="drop-shadow-[0_0_3px_#ffffff]">БРЕНДА ОТ </span>
+              <span className="drop-shadow-[0_0_3px_#ffffff]">БРЕНДА. <br /> M&M, БИТЫ ОТ </span>
               <span
                 className="text-emerald-500 font-bold"
                 style={{ textShadow: "0 0 15px #0db484" }}
               >
-                SPACY? 
+                SPACY?
               </span>
               <span className="drop-shadow-[0_0_3px_#ffffff]">
                 {" "}
               </span>
-              <span className="drop-shadow-[0_0_3px_#ffffff]">
-                СВЕДЕНИЕ. БИТЫ. 
-              </span>
             </h2>
               <p className=" font-benzin lg:text-lg uppercase text-sm mt-4 w-full w-48 text-gray-200 font-medium mt-2 ">
-                Приветствую на одном из моих проектов, <span className="text-[#0db484] font-semibold">spacycookinghere.ru!!</span> Здесь ты точно найдешь себе то, что тебе нужно, будь ты бизнесменом или музыкантом.
+                Приветствую на одном из моих проектов, <span className="text-[#0db484] font-semibold">spacycookinghere.ru!!</span> Ты артист или бизнесмен? - ты точно найдешь себе то, что тебе нужно. 
                  <br /><br /> 
                  Если тебе нужен <span className="text-[#0db484] font-semibold">сайт</span> для твоего собственного бренда, <span className="text-[#0db484] font-semibold">сведение</span> или же <span className="text-[#0db484] font-semibold">бит</span> - жми "УСЛУГИ",
-                  если хочешь работать со мной - жми вторую кнопку
+                  если хочешь работать со мной - жми вторую кнопку, мои основные публичные работы ты так же можешь увидеть на этом сайте. 
               </p>
 
             <div>
@@ -115,7 +113,7 @@ export default function Home() {
                 />
               </div>
               <h1 className="text-3xl font-benzin font-extrabold mt-2 mb-2 flex items-center justify-center">
-                <span className="mr-2 drop-shadow-[0_0_1px_#ffffff]">SPACY?</span>
+                <span className="mr-2 drop-shadow-[0_0_2px_#ffffff]">SPACY?</span>
                 <svg
                   className="invert"
                   color="#0c7552"
@@ -141,13 +139,14 @@ export default function Home() {
             </div>
 
             <p className="lg:text-md uppercase text-gray-200 text-sm lg:w-4/5 max-w-lg mx-auto text-center font-medium mt-5 font-benzin">
-              Я - Максим Колядин (aka spacy?), являюсь веб-разработчиком, продюсером и артистом с 2020
-              года, за это время сделал <span className="text-[#0db484] font-bold">{">"} 150 сайтов</span> для разных компаний
-              по всему миру и так же спродюсировал множество треков в самых
+              Я - Максим К. (aka spacy?), являюсь веб-разработчиком, продюсером и артистом. За это время сделал <span className="text-[#0db484] font-bold">{">"} 100 сайтов</span> для разных компаний
+              по всему миру и так же имею опыт в продюсировании треков в самых
               различных тайпах, в том числе <a href="" className="text-[#0db484] font-bold">своих</a>.
               <br />
               <br />
             </p>
+
+            <SocialIcons />
           </div>
         </div>
 
@@ -179,7 +178,7 @@ export default function Home() {
                 alt={feature.title}
                 width={"1000"}
                 height={"1000"}
-                className="absolute top-[-40] lg:left-86 left-40 lg:w-56 w-48 lg:h-56 h-48 rounded-3xl object-cover shadow-lg transform transition-transform duration-300 hover:scale-105"
+                className="absolute top-[-40] lg:left-86 left-40 lg:w-56 w-36 lg:h-56 h-36 rounded-3xl object-cover shadow-lg transform transition-transform duration-300 hover:scale-105"
               />
             </div>
 
@@ -194,11 +193,8 @@ export default function Home() {
         <div className="flex justify-between">
           <MainButton className="lg:invisible lg:flex hidden mx-auto lg:w-1/2 w-full font-benzin bg-[#0db484] ">WORK TOGETHER</MainButton>
           <MainButton id="Work together" href="https://forms.yandex.ru/cloud/686e2e1302848f0ecf036ccf" className="mx-auto lg:w-1/2 w-full font-benzin bg-[#0db484] ">WORK TOGETHER</MainButton>
-
         </div>
-
       </section>
-
       <section  id="Услуги" className="mt-30 ">
         <h2 className="lg:text-3xl text-2xl font-bold mb-4 uppercase font-benzin">МОИ УСЛУГИ</h2>
           <Tabs defaultValue={selectedCategory} className="mb-6">
