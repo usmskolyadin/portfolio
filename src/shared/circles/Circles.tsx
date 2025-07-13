@@ -25,7 +25,7 @@ const Circles = () => {
               transform: `translate(-50%, -50%) rotate(${Math.random() * 360}deg)`,
             }}
           >
-            <h1 className="font-benzin font-bold text-xl lg:text-6xl">
+            <h1 className="font-benzin font-bold text-xl lg:text-5xl">
             {randomText}
 
             </h1>

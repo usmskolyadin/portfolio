@@ -7,6 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CardHeader } from "@/src/shared/card-header/CardHeader";
 import { Card } from "@/src/shared/card/Card";
 import { useState } from "react";
+import { MainButton } from "@/src/shared/main-button/MainButton";
 
 
 export function ProductCard({ product }: { product: any }) {
@@ -56,6 +57,13 @@ export function ProductCard({ product }: { product: any }) {
         <CardContent>
           <p className="font-benzin uppercase font-bold mt-2">от {product.price}</p>
           <p className="font-benzin uppercase lg:text-md text-xs text-gray-200">{product.description}</p>
+          <button
+            className={`w-full font-benzin bg-[#0db484]  border border-0.5 backdrop-blur-md cursor-pointer rounded-3xl font-bold lg:text-md text-md mt-4 lg:px-12 px-8 py-1 transform transition-transform duration-300 hover:scale-105`}
+          >
+              <a href="https://t.me/bigmoneymgmt" target="_blank" rel="noopener noreferrer">
+                СДЕЛАТЬ ЗАКАЗ
+              </a>
+          </button>
         </CardContent>
       </Card>
     );

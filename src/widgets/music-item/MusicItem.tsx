@@ -11,6 +11,10 @@ interface MusicItemProps {
   track: Track;
 }
 
+interface Tag {
+  tag: string;
+}
+
 export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
   const [hovered, setHovered] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -29,11 +33,11 @@ export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
   return (
     <>
       <div
-        className="hover:bg-[#181818] backdrop-blur-md backdrop-blur-md cursor-pointer bg-transparent border border-[#929292] items-center p-3 rounded-full flex h-26"
+        className="hover:bg-[#181818] backdrop-blur-md backdrop-blur-md cursor-pointer bg-transparent border border-[#929292] items-center p-3 rounded-full flex lg:h-26 h-23"
         onClick={handlePlayClick}
       >
       <div
-        className="relative w-20 h-20 rounded-lg overflow-hidden cursor-pointer"
+        className="relative lg:min-w-20 lg:min-h-20 min-w-15 min-h-15 rounded-lg overflow-hidden cursor-pointer"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
@@ -66,16 +70,12 @@ export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
             <p className="font-benzin text-gray-300 lg:text-sm text-xs">{track.artist || "Unknown Artist"}</p> {/* Use track.artist */}
           </div>
 
-          <div className="flex gap-2 mt-2 mb-2 lg:text-sm text-xs">
-            <span className="bg-transparent border border-[#929292] font-benzin text-white px-3 py-1 rounded-full">
-              #newjazz
-            </span>
-            <span className="bg-transparent border border-[#929292] font-benzin text-white px-3 py-1 rounded-full">
-              #opium
-            </span>
-            <span className="bg-transparent border border-[#929292] font-benzin text-white px-3 py-1 rounded-full">
-              #opium
-            </span>
+          <div className="flex gap-2 lg:mt-2 mt-1.5 mb-2 lg:text-sm text-xs">
+            {track.tags?.map((tag, index) => (
+              <span key={index} className="bg-transparent border border-[#929292] font-benzin text-white px-3 py-1 rounded-full">
+                {tag}
+              </span>
+              ))}
           </div>
         </div>
       </div>
