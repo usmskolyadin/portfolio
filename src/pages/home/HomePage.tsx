@@ -54,7 +54,7 @@ export default function Home() {
       <section id="О проекте" className="flex max-w-screen-2xl flex-col lg:grid lg:grid-cols-2 lg:gap-8 mt-34 lg:h-screen ">
         <div className="flex flex-col lg:h-screen lg:relative lg:block justify-center">
           <div className="lg:p-6 rounded-2xl text-center lg:text-left">
-            <h2 className="lg:text-5xl text-3xl font-bold uppercase font-benzin font-mono min-h-[96px]">
+            <h2 className="lg:text-5xl text-2xl font-bold uppercase font-benzin font-mono">
               <span className="drop-shadow-[0_0_3px_#ffffff]">
                 *ЛУЧШИЙ САЙТ ДЛЯ{" "}
               </span>
@@ -169,7 +169,7 @@ export default function Home() {
                 alt={feature.title}
                 width={"1000"}
                 height={"1000"}
-                className="absolute top-[-40] lg:left-86 left-40 lg:w-56 w-36 lg:h-56 h-36 rounded-3xl object-cover shadow-lg transform transition-transform duration-300 hover:scale-105"
+                className="absolute top-[-40] lg:left-86 left-40 lg:w-56 w-48 lg:h-56 h-48 rounded-3xl object-cover shadow-lg transform transition-transform duration-300 hover:scale-105"
               />
             </div>
 

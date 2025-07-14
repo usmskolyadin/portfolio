@@ -58,7 +58,7 @@ export function ProductCard({ product }: { product: any }) {
           <p className="font-benzin uppercase font-bold mt-2">от {product.price}</p>
           <p className="font-benzin uppercase lg:text-md text-xs text-gray-200">{product.description}</p>
           <button
-            className={`w-full font-benzin bg-[#0db484]  border border-0.5 backdrop-blur-md cursor-pointer rounded-3xl font-bold lg:text-md text-md mt-4 lg:px-12 px-8 py-1 transform transition-transform duration-300 hover:scale-105`}
+            className={`w-full font-benzin bg-[#0db484]  border border-0.5 backdrop-blur-md cursor-pointer rounded-3xl font-bold lg:text-md text-sm mt-4 lg:px-12 px-2 py-1 transform transition-transform duration-300 hover:scale-105`}
           >
               <a href="https://t.me/bigmoneymgmt" target="_blank" rel="noopener noreferrer">
                 СДЕЛАТЬ ЗАКАЗ
