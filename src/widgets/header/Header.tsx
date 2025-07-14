@@ -1,6 +1,7 @@
 "use client"
 
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link"
 import { useState } from "react";
 
@@ -14,7 +15,14 @@ const Header = () => {
         <div className="lg:py-0 py-2 lg:mx-auto mx-4 w-full max-w-screen-2xl ">            
             <header className="flex justify-between items-center lg:py-5 py-0 border-gray-200  px-2 py-1 relative font-benzin">
 
-                <h1 className="lg:text-md text-sm font-medium drop-shadow-[0_0_3px_#ffffff]">
+                <h1 className="lg:text-md text-sm font-medium flex items-center drop-shadow-[0_0_2px_#ffffff]">
+                    <Image
+                        src="/SCH-LOGO.png"
+                        alt="logo"
+                        width={100}
+                        height={100}
+                        className="w-14 h-6 mr-4"
+                    />
                     <Link href="/">*WHY SPACY COOKING <span className="underline">HERE</span>?</Link>
                 </h1>
                 
