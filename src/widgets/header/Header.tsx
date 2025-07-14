@@ -38,16 +38,16 @@ const Header = () => {
                     className="md:hidden p-2 mr-6 rounded-md focus:outline-none"
                     onClick={() => setIsOpen(!isOpen)}
                 >
-                    {isOpen ? <X size={28} /> : <Menu size={28} />}
+                    {isOpen ? <X size={38} /> : <Menu size={38} />}
                 </button>
 
                 {isOpen && (
-                <nav className="absolute z-50 top-full right-0 bg-black shadow-lg flex flex-col w-full py-4 px-6 rounded-3xl opacity-90 justify-center flex flex-col md:hidden">
-                {["О проекте", "Портфолио", "Услуги", "Work together"].map((item) => (
-                    <Link className="hover:underline font-medium" key={item} href={`#${item}`}> 
-                        {item}
-                    </Link>
-                ))}
+                <nav className="absolute z-50 uppercase top-full right-4 bg-black shadow-lg flex flex-col w-full py-4 mx-auto mt-4 rounded-3xl opacity-90 justify-center flex flex-col justify-center items-center md:hidden">
+                        {["О проекте", "Портфолио", "Услуги", "Work together"].map((item) => (
+                            <Link className="hover:underline font-medium" key={item} href={`#${item}`}> 
+                                {item}
+                            </Link>
+                        ))}
                 </nav>
                 )}
 
