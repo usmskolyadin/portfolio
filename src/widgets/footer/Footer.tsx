@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image"
 
 const Footer = () => {
   return (
@@ -65,8 +66,15 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="mt-12 border-white pt-6 text-center text-sm">
-        SPACYCOOKINGHERE.RU © COPYRIGHT 2025
+      <div className="mt-12 pt-6 text-sm flex flex-col items-center justify-center text-center">
+        <span>SPACYCOOKINGHERE.RU © COPYRIGHT 2025</span>
+        <Image
+          src="/SCH-LOGO.png"
+          alt="logo"
+          width={100}
+          height={100}
+          className="w-20 h-10 mt-4"
+        />
       </div>
     </footer>
   );

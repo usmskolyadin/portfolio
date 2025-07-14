@@ -49,21 +49,12 @@ export default function Home() {
     setText(currentText.slice(0, charIndex));
   }, [charIndex, deleting, index]);
 
-  const mockTrack: Track = {
-    id: 1,
-    title: "SPC.RU TYPE BEAT",
-    artist: "SPACY?",
-    imageSrc: "/cbmc.jpg",
-    audioSrc:
-      "beat1.mp3",
-  };
-
   return (
     <div>
-      <section  id="О проекте" className="flex max-w-screen-2xl flex-col lg:grid lg:grid-cols-2 lg:gap-8 mt-34 lg:h-screen ">
+      <section id="О проекте" className="flex max-w-screen-2xl flex-col lg:grid lg:grid-cols-2 lg:gap-8 mt-34 lg:h-screen ">
         <div className="flex flex-col lg:h-screen lg:relative lg:block justify-center">
           <div className="lg:p-6 rounded-2xl text-center lg:text-left">
-            <h2  className="lg:text-5xl text-3xl font-bold uppercase font-benzin min-h-[3.5rem]">
+            <h2 className="lg:text-5xl text-3xl font-bold uppercase font-benzin font-mono min-h-[96px]">
               <span className="drop-shadow-[0_0_3px_#ffffff]">
                 *ЛУЧШИЙ САЙТ ДЛЯ{" "}
               </span>
