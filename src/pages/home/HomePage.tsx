@@ -88,8 +88,8 @@ export default function Home() {
             </div>
 
             <div className="lg:flex justify-between mt-2">
-              <MainButton className="lg:w-1/2 w-full font-benzin">УСЛУГИ</MainButton>
-              <MainButton href="#Work together" className="lg:ml-4 lg:w-1/2 w-full font-benzin bg-[#0db484] ">WORK WITH ME</MainButton>
+              <a href="#Услуги" className="lg:w-1/2 w-full font-benzin border border-0.5 backdrop-blur-md cursor-pointer rounded-3xl font-bold lg:text-lg text-md mt-4 lg:px-auto text-center px-8 py-2 transform transition-transform duration-300 hover:scale-105 ">УСЛУГИ</a>
+              <a href="#Work together" className="border border-0.5 backdrop-blur-md cursor-pointer rounded-3xl font-bold lg:text-lg text-md mt-4 lg:px-auto text-center px-8 py-2 transform transition-transform duration-300 hover:scale-105  lg:ml-4 lg:w-1/2 w-full font-benzin bg-[#0db484] ">WORK WITH ME</a>
             </div>
           </div>
         </div>
@@ -173,7 +173,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="w-full md:w-1/2 text-center md:text-left space-y-4">
+            <div id="Work together" className="w-full md:w-1/2 text-center md:text-left space-y-4">
               <h2 className="lg:text-3xl text-2xl font-extrabold uppercase font-benzin">{feature.title}</h2>
               <p className="lg:text-lg text-gray-200 lg:w-7/8 text-sm uppercase font-medium font-benzin whitespace-pre-line">
                 {feature.description}
@@ -183,7 +183,7 @@ export default function Home() {
         ))}
         <div className="flex justify-between">
           <MainButton className="lg:invisible lg:flex hidden mx-auto lg:w-1/2 w-full font-benzin bg-[#0db484] ">WORK TOGETHER</MainButton>
-          <MainButton id="Work together" href="https://forms.yandex.ru/cloud/686e2e1302848f0ecf036ccf" className="mx-auto lg:w-1/2 w-full font-benzin bg-[#0db484] ">WORK TOGETHER</MainButton>
+          <MainButton  href="https://forms.yandex.ru/cloud/686e2e1302848f0ecf036ccf" className="mx-auto lg:w-1/2 w-full font-benzin bg-[#0db484] ">WORK TOGETHER</MainButton>
         </div>
       </section>
       <section  id="Услуги" className="mt-30 ">
