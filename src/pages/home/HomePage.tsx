@@ -22,6 +22,7 @@ import { Track } from "@/src/features/player/types";
 import HorizontalScrollGallery from "@/src/widgets/horizontal-scroll-gallery/HorizontalScrollGallery";
 import { mock } from "node:test";
 import { SocialIcons } from "@/src/shared/social-icons/SocialIcons";
+import Link from "next/link";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("БИТЫ");
@@ -54,7 +55,7 @@ export default function Home() {
       <section id="О проекте" className="flex max-w-screen-2xl flex-col lg:grid lg:grid-cols-2 lg:gap-8 mt-34 lg:h-screen ">
         <div className="flex flex-col lg:h-screen lg:relative lg:block justify-center">
           <div className="lg:p-6 rounded-2xl text-center lg:text-left">
-            <h2 className="lg:text-5xl text-2xl font-bold uppercase font-benzin font-mono">
+            <h2 className="lg:text-5xl text-3xl font-bold uppercase font-benzin  min-h-46">
               <span className="drop-shadow-[0_0_3px_#ffffff]">
                 *ЛУЧШИЙ САЙТ ДЛЯ{" "}
               </span>
@@ -87,10 +88,21 @@ export default function Home() {
 
             </div>
 
-            <div className="lg:flex justify-between mt-2">
-              <a href="#Услуги" className="lg:w-1/2 w-full font-benzin border border-0.5 backdrop-blur-md cursor-pointer rounded-3xl font-bold lg:text-lg text-md mt-4 lg:px-auto text-center px-8 py-2 transform transition-transform duration-300 hover:scale-105 ">УСЛУГИ</a>
-              <a href="#Work together" className="border border-0.5 backdrop-blur-md cursor-pointer rounded-3xl font-bold lg:text-lg text-md mt-4 lg:px-auto text-center px-8 py-2 transform transition-transform duration-300 hover:scale-105  lg:ml-4 lg:w-1/2 w-full font-benzin bg-[#0db484] ">WORK WITH ME</a>
-            </div>
+          <div className="flex flex-col lg:flex-row justify-between lg:mt-6 mt-6">
+            <a
+              href="#Услуги"
+              className="lg:w-1/2 w-full font-benzin border border-0.5 backdrop-blur-md cursor-pointer rounded-3xl font-bold lg:text-lg text-md mt-4 lg:mt-0 text-center lg:px-8 px-4 py-2 transform transition-transform duration-300 hover:scale-105"
+            >
+              УСЛУГИ
+            </a>
+            <a
+              href="#WORK TOGETHER"
+              className="lg:w-1/2 w-full font-benzin bg-[#0db484] border border-0.5 backdrop-blur-md cursor-pointer rounded-3xl font-bold lg:text-lg text-md mt-4 lg:mt-0 text-center lg:px-8 px-4 py-2 transform transition-transform duration-300 hover:scale-105 lg:ml-4"
+            >
+              WORK WITH ME
+            </a>
+          </div>
+
           </div>
         </div>
         <div className="flex flex-col items-center justify-center lg:h-screen">
@@ -151,8 +163,9 @@ export default function Home() {
       <section className="lg:py-16  lg:mt-10 space-y-10">
         {features.map((feature, index) => (
           <div
+            id={feature.title}
             key={index}
-            className={`flex flex-col md:flex-row py-4 gap-8 mt-4 ${
+            className={`flex flex-col md:flex-row py-4 gap-8 mt-4  ${
               index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
           >
@@ -173,7 +186,7 @@ export default function Home() {
               />
             </div>
 
-            <div id="Work together" className="w-full md:w-1/2 text-center md:text-left space-y-4">
+            <div  className="w-full md:w-1/2 text-center md:text-left space-y-4">
               <h2 className="lg:text-3xl text-2xl font-extrabold uppercase font-benzin">{feature.title}</h2>
               <p className="lg:text-lg text-gray-200 lg:w-7/8 text-sm uppercase font-medium font-benzin whitespace-pre-line">
                 {feature.description}
@@ -181,14 +194,14 @@ export default function Home() {
             </div>
           </div>
         ))}
-        <div className="flex justify-between">
+        <div className="flex justify-between" >
           <MainButton className="lg:invisible lg:flex hidden mx-auto lg:w-1/2 w-full font-benzin bg-[#0db484] ">WORK TOGETHER</MainButton>
-          <MainButton  href="https://forms.yandex.ru/cloud/686e2e1302848f0ecf036ccf" className="mx-auto lg:w-1/2 w-full font-benzin bg-[#0db484] ">WORK TOGETHER</MainButton>
+          <MainButton href="https://forms.yandex.ru/cloud/686e2e1302848f0ecf036ccf" className="mx-auto lg:w-1/2 w-full font-benzin bg-[#0db484] ">WORK TOGETHER</MainButton>
         </div>
       </section>
       <section  id="Услуги" className="mt-30 ">
         <h2 className="lg:text-3xl text-2xl font-bold mb-4 uppercase font-benzin">МОИ УСЛУГИ</h2>
-          <Tabs defaultValue={selectedCategory} className="mb-6">
+          <Tabs defaultValue={selectedCategory} className=  "mb-6">
             <TabsList>
               {["ВСЁ", "РАЗРАБОТКА", "СВЕДЕНИЕ", "БИТЫ"].map((cat) => (
                 <TabsTrigger key={cat} value={cat}>
@@ -199,7 +212,7 @@ export default function Home() {
 
             {["ВСЁ", "РАЗРАБОТКА", "СВЕДЕНИЕ", "БИТЫ"].map((cat) => (
               <TabsContent key={cat} value={cat}>
-                <div className="grid lg:grid-cols-4 grid-cols-2 lg:gap-6 gap-3 mt-8">
+                <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 lg:gap-6 gap-5 mt-8">
                   {products
                     .filter((p): p is NonNullable<typeof p> => p !== undefined)
                     .filter(p => cat === "ВСЁ" || p.category === cat)
@@ -213,9 +226,17 @@ export default function Home() {
       </section>
 
       <section className="py-2 gap-8 w-full">
-        <h2 className="lg:text-3xl text-2xl font-extrabold uppercase mb-4 mt-12 font-benzin">
-          КАТАЛОГ БИТОВ
-        </h2>
+        <a href="https://t.me/bigmoneymgmt">
+          <h2 className="lg:text-3xl text-2xl font-extrabold uppercase mb-4 mt-12 font-benzin">
+            КАТАЛОГ БИТОВ 
+            <span
+                  className="ml-3 underline text-emerald-500 font-bold"
+                  style={{ textShadow: "0 0 15px #0db484" }}
+            >
+                  НЕ НАШЛИ СВОЙ?
+            </span>
+          </h2>
+        </a>
         <div className="flex gap-4 grid lg:grid-cols-3 grid-cols-1 w-full ">
         {isClient &&
           tracks.map((track) => <MusicItem key={track.id} track={track} />)}
