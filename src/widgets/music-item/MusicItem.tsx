@@ -61,8 +61,13 @@ export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
         <div className="text-white ml-4">
           <div className="flex items-center">
             <h2 className="text-sm font-semibold lg:text-md font-benzin">{track.title || "Unknown Title"}</h2> {/* Use track.title */}
-            <h2 className="bg-[#CCCCCC] w-2 h-2 p-2.5 font-benzin ml-2 m-1 text-xs text-black rounded-lg flex items-center justify-center">
-              E
+            <h2 className="bg-gray-200 w-2 h-2 p-2.5 font-benzin ml-2 m-1 text-xs text-black rounded-lg flex items-center justify-center">
+                        <span
+                className=" text-emerald-500 font-bold"
+                style={{ textShadow: "0 0 15px #0db484" }}
+          >
+                E
+          </span>
             </h2>
           </div>
           <div className="flex items-center">
