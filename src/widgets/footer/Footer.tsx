@@ -69,7 +69,7 @@ const Footer = () => {
       <div className="mt-12 pt-6 text-sm flex flex-col items-center justify-center text-center">
         <span>SPACYCOOKINGHERE.RU © COPYRIGHT 2025</span>
         <Image
-          src="/SCH-LOGO.png"
+          src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/SCH-LOGO.png"
           alt="logo"
           width={100}
           height={100}

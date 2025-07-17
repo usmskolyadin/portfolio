@@ -19,7 +19,7 @@ export function ProductCard({ product }: { product: any }) {
           <div className="relative w-full lg:h-50 h-44">
             <div className="">
               <Image
-                src={product.images[imageIndex]}
+                src={`https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images${product.images[imageIndex]}`}
                 alt={product.title}
                 fill
                 className="rounded-3xl object-cover"

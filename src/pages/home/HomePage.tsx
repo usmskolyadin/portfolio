@@ -109,7 +109,7 @@ export default function Home() {
           <div className="relative w-full max-w-lg flex flex-col items-center h-full mt-3 lg:py-0 py-15">
               <div className="relative w-60 aspect-square rounded-full overflow-hidden transform transition-transform duration-300 hover:scale-105">
                 <Image
-                  src="/cbhram.jpg"
+                  src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/cbhram.jpg"
                   alt="Hero image"
                   fill
                   className="object-cover"
@@ -171,14 +171,14 @@ export default function Home() {
           >
             <div className="relative w-full md:w-1/2">
               <Image
-                src={feature.image}
+                src={`https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images${feature.image}`}
                 alt={feature.title}
                 width={"1000"}
                 height={"1000"}
                 className="lg:w-96 w-56 lg:h-96 h-56 rounded-3xl shadow-lg transform object-cover transition-transform duration-300 hover:scale-105"
               />
               <Image
-                src={feature.image2}
+                src={`https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images${feature.image2}`}
                 alt={feature.title}
                 width={"1000"}
                 height={"1000"}

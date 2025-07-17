@@ -17,7 +17,7 @@ const Header = () => {
 
                 <h1 className="lg:text-md text-sm font-medium flex items-center drop-shadow-[0_0_2px_#ffffff]">
                     <Image
-                        src="/SCH-LOGO.png"
+                        src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/SCH-LOGO.png"
                         alt="logo"
                         width={100}
                         height={100}
