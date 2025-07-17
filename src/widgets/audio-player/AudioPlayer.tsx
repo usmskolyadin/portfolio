@@ -78,7 +78,7 @@
                             <div className="flex items-center lg:w-lg w-3/4">
                                 <div className="w-12 h-12 lg:p-0 pt-5 flex items-center justify-center">
                                     <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold text-lg font-benzin">
-                                        {currentTrack?.id ?? "—"}
+                                        {currentTrack?.id ?? "?"}
                                     </div>
                                 </div>
                                 <div className="lg:p-4 pl-4 pt-4">
