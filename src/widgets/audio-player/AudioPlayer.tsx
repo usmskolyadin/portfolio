@@ -17,8 +17,8 @@
         }, [dispatch]);
     
         useEffect(() => {
-            if (audioRef.current) {
-                audioRef.current.src = currentTrack?.audioSrc || '';
+            if (audioRef.current && currentTrack?.audioSrc) {
+                audioRef.current.src = `https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/beats/${currentTrack.audioSrc}`;
             }
         }, [currentTrack]);
 
@@ -71,7 +71,7 @@
                         />
                         <audio
                             ref={audioRef}
-                            src={`https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images${currentTrack?.audioSrc}`}
+                            src={`https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/beats/${currentTrack?.audioSrc}`}
                             onTimeUpdate={handleTimeUpdate}
                         />
                         <div className="flex justify-between w-full ">
@@ -106,7 +106,7 @@
                                 />
 
                                 <Image
-                                    src="/next.png"
+                                    src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/next.png"
                                     alt="Next"
                                     className="hidden lg:flex lg:m-4 m-2"
                                     width={25}
