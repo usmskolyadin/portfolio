@@ -65,7 +65,7 @@ const HorizontalScrollGallery = () => {
             >
               <div className="h-40 md:h-52 w-full">
                 <img
-                  src={item.image}
+                  src={`https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images${item.image}`}
                   alt={item.title}
                   className="w-full h-full object-cover rounded-2xl"
                 />

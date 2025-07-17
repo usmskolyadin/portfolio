@@ -71,7 +71,7 @@
                         />
                         <audio
                             ref={audioRef}
-                            src={currentTrack?.audioSrc}
+                            src={`https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images${currentTrack?.audioSrc}`}
                             onTimeUpdate={handleTimeUpdate}
                         />
                         <div className="flex justify-between w-full ">
@@ -89,7 +89,7 @@
                             <div className="flex justify-between items-center lg:ml-0 ml-10 lg:w-sm w-1/4">
                                 <p className="lg:p-6 hidden lg:flex">{formatTime(currentTime)}</p>
                                 <Image
-                                    src="/back.png"
+                                    src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/back.png"
                                     alt="Previous"
                                     className="hidden lg:flex lg:m-4 m-2"
                                     width={25}
@@ -97,8 +97,8 @@
                                 />
 
                                 <Image
-                                    src={isPlaying ? "/play.png" : "/rilplay.png"}
-                                    alt={isPlaying ? "Pause" : "/play.png"}
+                                    src={isPlaying ? "https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/play.png" : "https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/rilplay.png"}
+                                    alt={isPlaying ? "Pause" : "https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/play.png"}
                                     className={`lg:m-4 mt-4  ${isPlaying ? '' : 'invert'}`}
                                     width={40}
                                     height={40}
@@ -116,21 +116,21 @@
                             </div>
                             <div className="lg:flex hidden items-center justify-between w-1/8">
                                 <Image
-                                    src="/heart.png"
+                                    src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/heart.png"
                                     alt="Favorite"
                                     className="lg:m-4 m-2"
                                     width={25}
                                     height={25}
                                 />
                                     <Image
-                                        src="/volume.png"
+                                        src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/volume.png"
                                         alt="Volume"
                                         className="lg:m-4 m-2"
                                         width={28}
                                         height={28}
                                     />
                                 <Image
-                                    src="/dots.png"
+                                    src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/dots.png"
                                     alt="More options"
                                     className="lg:m-4 m-2"
                                     width={8}
