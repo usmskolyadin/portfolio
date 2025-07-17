@@ -22,6 +22,7 @@
   src: url("https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/fonts/Benzin-Regular.woff2") format("woff2"),
        url("https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/fonts/Benzin-Regular.woff") format("woff");
   font-weight: 400;
+  font-display: swap;
   font-style: normal;
 }
 
@@ -29,6 +30,7 @@
   font-family: "Benzin";
   src: url("https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/fonts/Benzin-Bold.woff2") format("woff2"),
        url("https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/fonts/Benzin-Bold.woff") format("woff");
+  font-display: swap;
   font-weight: 700;
   font-style: normal;
 }

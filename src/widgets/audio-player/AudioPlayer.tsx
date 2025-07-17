@@ -14,29 +14,34 @@
         const audioRef = useRef<HTMLAudioElement>(null)
 
         useEffect(() => {
-        }, [dispatch]);
-    
-        useEffect(() => {
             if (audioRef.current && currentTrack?.audioSrc) {
                 audioRef.current.src = `https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/beats/${currentTrack.audioSrc}`;
             }
         }, [currentTrack]);
 
         useEffect(() => {
-            if (audioRef.current) {
-                if (isPlaying) {
-                    audioRef.current.play();
-                } else {
-                    audioRef.current.pause();
-                }
+            if (!audioRef.current) return;
+
+            if (isPlaying) {
+                audioRef.current.play().catch((err) => {
+                console.warn("Autoplay failed", err);
+                });
+            } else {
+                audioRef.current.pause();
             }
         }, [isPlaying]);
 
         const handleTimeUpdate = () => {
-            if (audioRef.current) {
-                setCurrentTime(audioRef.current.currentTime);
-                setDuration(audioRef.current.duration);
+        const audio = audioRef.current;
+        if (audio) {
+            const time = audio.currentTime;
+            if (Math.abs(currentTime - time) > 0.2) {
+            setCurrentTime(time);
             }
+            if (!duration && audio.duration) {
+            setDuration(audio.duration);
+            }
+        }
         };
 
         const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -65,14 +70,19 @@
                         <input
                             className="duration absolute w-full max-w-screen-2xl flex lg:-top-0 top-0"
                             type="range"
-                            value={currentTime}
-                            max={duration}
+                            value={isNaN(currentTime) ? 0 : currentTime}
+                            max={isNaN(duration) ? 0 : duration}
                             onChange={handleSeek}
                         />
                         <audio
+                            preload="none"
                             ref={audioRef}
-                            src={`https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/beats/${currentTrack?.audioSrc}`}
                             onTimeUpdate={handleTimeUpdate}
+                            onLoadedMetadata={() => {
+                                if (audioRef.current?.duration) {
+                                setDuration(audioRef.current.duration);
+                                }
+                            }}
                         />
                         <div className="flex justify-between w-full ">
                             <div className="flex items-center lg:w-lg w-3/4">
@@ -94,6 +104,7 @@
                                     className="hidden lg:flex lg:m-4 m-2"
                                     width={25}
                                     height={25}
+                                    style={{ height: 'auto' }}
                                 />
 
                                 <Image
