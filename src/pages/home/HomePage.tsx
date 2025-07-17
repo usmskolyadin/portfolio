@@ -109,7 +109,7 @@ export default function Home() {
           <div className="relative w-full max-w-lg flex flex-col items-center h-full mt-3 lg:py-0 py-15">
               <div className="relative w-60 aspect-square rounded-full overflow-hidden transform transition-transform duration-300 hover:scale-105">
                 <Image
-                  src="/hero.jpg"
+                  src="/cbhram.jpg"
                   alt="Hero image"
                   fill
                   className="object-cover"
@@ -119,7 +119,7 @@ export default function Home() {
                 <span className="mr-2 drop-shadow-[0_0_2px_#ffffff]">SPACY?</span>
                 <svg
                   className="invert"
-                  color="#0c7552"
+                  color="s#0c7552"
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
                   height="32"
