@@ -4,7 +4,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    unoptimized: true,
+    domains: ['s3.twcstorage.ru'],
   },
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>

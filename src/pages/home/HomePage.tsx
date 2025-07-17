@@ -18,11 +18,8 @@ import {
   pauseTime,
   tracks,
 } from "@/src/shared/constants/constants";
-import { Track } from "@/src/features/player/types";
 import HorizontalScrollGallery from "@/src/widgets/horizontal-scroll-gallery/HorizontalScrollGallery";
-import { mock } from "node:test";
 import { SocialIcons } from "@/src/shared/social-icons/SocialIcons";
-import Link from "next/link";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("БИТЫ");
@@ -112,6 +109,7 @@ export default function Home() {
                   src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/cbhram.jpg"
                   alt="Hero image"
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -227,7 +225,7 @@ export default function Home() {
 
       <section className="py-2 gap-8 w-full">
         <a href="https://t.me/bigmoneymgmt">
-          <h2 className="lg:text-3xl text-2xl font-extrabold uppercase mb-4 mt-12 font-benzin">
+          <h2 className="lg:text-3xl text-2xl font-extrabold uppercase mb-8 mt-12 font-benzin">
             КАТАЛОГ БИТОВ 
             <span
                   className="ml-3 underline text-emerald-500 font-bold"
