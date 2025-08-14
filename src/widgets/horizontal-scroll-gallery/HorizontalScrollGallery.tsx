@@ -51,7 +51,7 @@ const HorizontalScrollGallery = () => {
   const duplicatedItems = [...items, ...items];
 
   return (
-    <section className="overflow-hidden w-full py-12 px-4 lg:max-w-screen-2xl max-w-sm">
+    <section className="overflow-hidden w-full py-12 px-4 mx-auto lg:max-w-screen-xl max-w-sm">
       <h2 className="lg:text-3xl text-2xl font-extrabold uppercase text-white font-benzin mb-6">
         МОИ ПРОЕКТЫ (IT)
       </h2>

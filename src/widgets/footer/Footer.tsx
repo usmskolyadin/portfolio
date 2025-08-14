@@ -5,8 +5,8 @@ import Image from "next/image"
 
 const Footer = () => {
   return (
-    <footer className="mt-24 mb-10 px-4 lg:px-0 py-10 uppercase text-white max-w-screen-2xl font-benzin bg-transparent border-gray-700">
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <footer className="mt-24 mb-10 px-4 lg:px-0 py-10 uppercase text-white max-w-screen-xl mx-auto w-full font-benzin bg-transparent border-gray-700">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
         <div>
           <h3 className="text-lg font-semibold mb-3">Ссылки</h3>
           <ul className="space-y-2 text-sm">
