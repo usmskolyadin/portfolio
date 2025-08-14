@@ -71,12 +71,12 @@ export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
             </h2>
           </div>
           <div className="flex items-center">
-            <p className="font-benzin text-gray-300 lg:text-sm text-xs w-full">{track.artist || "Unknown Artist"}</p> {/* Use track.artist */}
+            <p className="font-benzin text-gray-300 lg:text-xs text-xs w-full">{track.artist || "Unknown Artist"}</p> {/* Use track.artist */}
           </div>
 
           <div className="flex gap-2 lg:mt-2 mt-1.5 mb-2 lg:text-sm text-xs">
             {track.tags?.map((tag, index) => (
-              <span key={index} className="bg-transparent border border-[#929292] font-benzin text-white px-3 py-1 rounded-full">
+              <span key={index} className="bg-transparent border border-[#929292] font-benzin text-xs text-white px-3 py-1 rounded-full">
                 {tag}
               </span>
               ))}

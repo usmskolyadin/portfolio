@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html>
       <Head />
-      <body className={`${montserrat.variable}`}>
+      <body className={`${montserrat.variable} bg-black`}>
         <ReduxProvider>
           <Circles />
           <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">

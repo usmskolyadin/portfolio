@@ -49,10 +49,10 @@ export default function Home() {
 
   return (
     <div>
-      <section id="О проекте" className="flex max-w-screen-2xl flex-col lg:grid lg:grid-cols-2 lg:gap-8 mt-34 lg:h-screen ">
-        <div className="flex flex-col lg:h-screen lg:relative lg:block justify-center">
-          <div className="lg:p-6 rounded-2xl text-center lg:text-left">
-            <h2 className="lg:text-5xl text-3xl font-bold uppercase font-benzin  min-h-46">
+      <section id="О проекте" className="flex max-w-screen-xl mx-auto w-full flex-col lg:flex-row lg:gap-8 mt-34 lg:h-screen ">
+        <div className="flex lg:w-2/3 lg:mr-20 flex-col lg:h-screen lg:relative lg:block justify-center">
+          <div className=" rounded-2xl text-center lg:text-left w-full">
+            <h2 className="lg:text-5xl text-3xl font-bold uppercase font-benzin min-h-46 w-full">
               <span className="drop-shadow-[0_0_3px_#ffffff]">
                 *ЛУЧШИЙ САЙТ ДЛЯ{" "}
               </span>
@@ -102,7 +102,7 @@ export default function Home() {
 
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center lg:h-screen">
+        <div className="flex lg:w-1/3 flex-col items-center justify-center lg:h-screen">
           <div className="relative w-full max-w-lg flex flex-col items-center h-full mt-3 lg:py-0 py-15">
               <div className="relative w-60 aspect-square rounded-full overflow-hidden transform transition-transform duration-300 hover:scale-105">
                 <Image
@@ -139,7 +139,7 @@ export default function Home() {
               </span>
             </div>
 
-            <p className="lg:text-md uppercase text-gray-200 text-sm lg:w-4/5 max-w-lg mx-auto text-center font-medium mt-5 font-benzin">
+            <p className="lg:text-md uppercase text-gray-200 text-sm  max-w-lg mx-auto  text-center font-medium mt-5 font-benzin">
               Я - Максим К. (aka spacy?), являюсь веб-разработчиком, продюсером и артистом. За это время сделал <span className="text-[#0db484] font-bold">{">"} 100 сайтов</span> для разных компаний
               по всему миру и так же имею опыт в продюсировании треков в самых
               различных тайпах, в том числе <a href="" className="text-[#0db484] font-bold">своих</a>.
@@ -147,7 +147,6 @@ export default function Home() {
               <br />
             </p>
 
-            <SocialIcons />
           </div>
         </div>
 
@@ -158,7 +157,7 @@ export default function Home() {
 
       </div>
 
-      <section className="lg:py-16  lg:mt-10 space-y-10">
+      <section className="lg:py-16 max-w-screen-xl mx-auto lg:mt-10 space-y-10">
         {features.map((feature, index) => (
           <div
             id={feature.title}
@@ -186,7 +185,7 @@ export default function Home() {
 
             <div  className="w-full md:w-1/2 text-center md:text-left space-y-4">
               <h2 className="lg:text-3xl text-2xl font-extrabold uppercase font-benzin">{feature.title}</h2>
-              <p className="lg:text-lg text-gray-200 lg:w-7/8 text-sm uppercase font-medium font-benzin whitespace-pre-line">
+              <p className="lg:text-lg text-gray-200  text-sm uppercase font-medium font-benzin whitespace-pre-line">
                 {feature.description}
               </p>
             </div>
@@ -197,7 +196,7 @@ export default function Home() {
           <MainButton href="https://forms.yandex.ru/cloud/686e2e1302848f0ecf036ccf" className="mx-auto lg:w-1/2 w-full font-benzin bg-[#0db484] ">WORK TOGETHER</MainButton>
         </div>
       </section>
-      <section  id="Услуги" className="mt-30 ">
+      <section  id="Услуги" className="mt-30 max-w-screen-xl mx-auto">
         <h2 className="lg:text-3xl text-2xl font-bold mb-4 uppercase font-benzin">МОИ УСЛУГИ</h2>
           <Tabs defaultValue={selectedCategory} className=  "mb-6">
             <TabsList>
@@ -223,12 +222,12 @@ export default function Home() {
           </Tabs>
       </section>
 
-      <section className="py-2 gap-8 w-full">
+      <section className="py-2 gap-8 w-full max-w-screen-xl mx-auto">
         <a href="https://t.me/bigmoneymgmt">
           <h2 className="lg:text-3xl text-2xl font-extrabold uppercase mb-8 mt-12 font-benzin">
             КАТАЛОГ БИТОВ 
             <span
-                  className="ml-3 underline text-emerald-500 font-bold"
+                  className="ml-3  text-emerald-500 font-bold"
                   style={{ textShadow: "0 0 15px #0db484" }}
             >
                   НЕ НАШЛИ СВОЙ?

@@ -65,10 +65,10 @@
 
         return (
             <div className="fixed left-0 -bottom-0.5 w-full  backdrop-blur-md z-50 ">
-                <div className="mx-auto max-w-screen-2xl">
+                <div className="mx-auto max-w-screen-xl">
                     <div className="lg:mx-auto mx-4 cursor-pointer bg-transparent  rounded-full lg:m-2 lg:h-15 h-18 lg:flex items-center justify-between ">
                         <input
-                            className="duration absolute w-full max-w-screen-2xl flex lg:-top-0 top-0"
+                            className="duration absolute  w-full max-w-screen-xl flex lg:-top-0 top-0"
                             type="range"
                             value={isNaN(currentTime) ? 0 : currentTime}
                             max={isNaN(duration) ? 0 : duration}
