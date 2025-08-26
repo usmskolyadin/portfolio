@@ -106,7 +106,7 @@ export default function Home() {
           <div className="relative w-full max-w-lg flex flex-col items-center h-full mt-3 lg:py-0 py-15">
               <div className="relative w-60 aspect-square rounded-full overflow-hidden transform transition-transform duration-300 hover:scale-105">
                 <Image
-                  src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/cbhram.jpg"
+                  src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/cbhram.png"
                   alt="Hero image"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
