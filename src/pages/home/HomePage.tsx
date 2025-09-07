@@ -113,7 +113,7 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-              <h1 className="text-2xl font-benzin font-extrabold mt-2 mb-2 flex items-center justify-center">
+              <h1 className="text-3xl font-benzin font-extrabold mt-3 mb-2 flex items-center justify-center">
                 <span className="mr-2 drop-shadow-[0_0_2px_#ffffff]">SPACY?</span>
                 <svg
                   className="invert drop-shadow-[0_0_3px_#ffffff]"
@@ -207,11 +207,18 @@ export default function Home() {
         <h2 className="lg:text-3xl text-2xl font-bold mb-4 uppercase font-benzin">МОИ УСЛУГИ</h2>
           <Tabs defaultValue={selectedCategory} className=  "mb-6">
             <TabsList>
-              {["ВСЁ", "РАЗРАБОТКА", "СВЕДЕНИЕ", "БИТЫ"].map((cat) => (
-                <TabsTrigger key={cat} value={cat}>
-                  {cat}
-                </TabsTrigger>
-              ))}
+              {["ВСЁ", "РАЗРАБОТКА", "СВЕДЕНИЕ", "БИТЫ"].map((cat) => {
+                const count =
+                  cat === "ВСЁ"
+                    ? products.filter((p): p is NonNullable<typeof p> => p !== undefined).length
+                    : products.filter((p): p is NonNullable<typeof p> => p !== undefined && p.category === cat).length;
+
+                return (
+                  <TabsTrigger key={cat} value={cat}>
+                    {cat} <span className="text-[#0db484] ml-2 font-bold">{count}</span>
+                  </TabsTrigger>
+                );
+              })}
             </TabsList>
 
             {["ВСЁ", "РАЗРАБОТКА", "СВЕДЕНИЕ", "БИТЫ"].map((cat) => (
@@ -229,7 +236,7 @@ export default function Home() {
           </Tabs>
         <div className="flex justify-between" >
           <MainButton className="lg:invisible lg:flex hidden mx-auto lg:w-1/2 w-full font-benzin bg-[#0db484] "></MainButton>
-          <MainButton href="https://forms.yandex.ru/cloud/686e2e1302848f0ecf036ccf" className="mx-auto lg:w-1/2 w-full font-benzin text-black bg-white ">Есть особенное предложение?</MainButton>
+          <MainButton href="https://forms.yandex.ru/cloud/686e2e1302848f0ecf036ccf" className="mx-auto lg:w-1/2 w-full font-benzin text-lg text-black bg-white ">Есть <span className="text-emerald-500">особенное</span> предложение?</MainButton>
         </div>
       </section>
 
@@ -238,7 +245,7 @@ export default function Home() {
           <h2 className="lg:text-3xl text-2xl flex items-center font-extrabold mt-12 font-benzin">
             {">"} КАТАЛОГ БИТОВ 
             <span
-                  className="ml-3 text-lg hover:underline bg-white py-1.5 px-3 rounded-3xl text-emerald-500 font-bold"
+                  className="ml-3 text-lg hover:underline bg-white py-1.5 px-4 rounded-3xl text-emerald-500 font-bold"
             >
                   <span className="text-black">Не нашли</span> свой?
             </span>

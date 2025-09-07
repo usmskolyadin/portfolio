@@ -14,21 +14,28 @@ export function ProductCard({ product }: { product: any }) {
   return (
     <Card>
       <CardHeader>
-        <div className="relative w-full h-44 lg:h-56"> {/* ✅ Убедись, что есть высота */}
+        <div className="relative w-full h-50 lg:h-56 rounded-3xl overflow-hidden">
           <Image
             src={`https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images${product.images[imageIndex]}`}
             alt={product.title}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="rounded-3xl object-cover z-20"
-            loading="lazy"
-            quality={100}
+            className="object-cover"
           />
+
+          <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-black/40 to-transparent z-10" />
+
+          <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-black/40 to-transparent z-10" />
+
+          <div className="absolute top-2 right-2 z-20">
+            <span className="bg-black/60 font-benzin border border-[#929292] text-white px-4 text-xs py-1.5 rounded-full shadow-md">
+              HIT
+            </span>
+          </div>
 
           {product.images.length > 1 && (
             <>
               <button
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-[#0db484] opacity-70 backdrop-blur-xl hover:bg-emerald-800 cursor-pointer text-white rounded-full p-2"
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#0db484] opacity-70 backdrop-blur-xl hover:bg-emerald-800 cursor-pointer text-white rounded-full p-2 z-20"
                 onClick={() =>
                   setImageIndex((prev) =>
                     prev === 0 ? product.images.length - 1 : prev - 1
@@ -38,7 +45,7 @@ export function ProductCard({ product }: { product: any }) {
                 <ChevronLeft size={20} />
               </button>
               <button
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#0db484] opacity-70 backdrop-blur-xl hover:bg-emerald-800 cursor-pointer text-white rounded-full p-2"
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#0db484] opacity-70 backdrop-blur-xl hover:bg-emerald-800 cursor-pointer text-white rounded-full p-2 z-20"
                 onClick={() =>
                   setImageIndex((prev) =>
                     prev === product.images.length - 1 ? 0 : prev + 1
@@ -51,12 +58,13 @@ export function ProductCard({ product }: { product: any }) {
           )}
         </div>
 
-        <CardTitle>{product.title}</CardTitle>
+
+        <CardTitle>{">"} {product.title}</CardTitle>
       </CardHeader>
 
       <CardContent>
-        <p className="font-benzin uppercase text-lg font-extrabold mt-2">от {product.price}</p>
-        <p className="font-benzin uppercase lg:text-md text-xs text-gray-200">
+        <p className="font-benzin uppercase text-lg font-bold mt-2">от {product.price}</p>
+        <p className="font-benzin uppercase lg:text-md text-xs text-gray-100 mt-2">
           {product.description}
         </p>
         <a

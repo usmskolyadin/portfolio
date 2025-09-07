@@ -52,8 +52,13 @@ const HorizontalScrollGallery = () => {
 
   return (
     <section className="overflow-hidden w-full py-12 px-4 mx-auto lg:max-w-screen-xl max-w-sm">
-      <h2 className="lg:text-3xl text-2xl font-extrabold uppercase text-white font-benzin mb-6">
-        МОИ ПРОЕКТЫ (IT)
+      <h2 className="lg:text-3xl flex flex-wrap items-center text-2xl font-extrabold uppercase text-white font-benzin mb-6">
+        МОИ ПРОЕКТЫ <span className="text-[#0db484] lg:ml-3 flex">ВЕБ-РАЗРАБОТКА
+                  <span className="inline-block rotate-90 ml-2">
+                <img className="invert rotate-270 lg:w-8 w-5" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA60lEQVR4nO3YwQqDMBAE0PmJhPr/v9JbPdVDPsde4qXQatzZTQIzIHjpjk+L4AKKoiiKoihTJgN4AnjV88jeldWbALwB7PUoABbOdcb1pq9hUZjE7P01zBuTmL1nw7ww1N6rw9gYeu/aMOw4NuNbJdcZrb0vNsSCuYvYzyCtj9jyN7N2PbwLlhEQEZgwhCcmHOGB6YZgYrojGK/JzfjbDHIsd7X7k+iFKZ6IKEyJQHhjSiTCC9MFwcZ0RbAwQyCsmKEQlq+84RB3vruHRbRsQoZHXNlNTYP4ty2cDnEk1yVB9N5YURRFURTMnA9ByCgh6/888AAAAABJRU5ErkJggg==" alt="chevron-down"></img>
+              </span>
+        </span>
+
       </h2>
 
       <div className="relative overflow-hidden">
@@ -67,7 +72,7 @@ const HorizontalScrollGallery = () => {
                 <img
                   src={`https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images${item.image}`}
                   alt={item.title}
-                  className="w-full h-full object-cover rounded-2xl"
+                  className="w-full h-full object-cover rounded-2xl transition"
                 />
               </div>
               <div className="mt-2 text-white">
