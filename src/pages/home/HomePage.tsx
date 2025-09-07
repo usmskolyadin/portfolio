@@ -188,13 +188,16 @@ export default function Home() {
               <p className="lg:text-md text-gray-200 text-sm uppercase font-medium font-benzin whitespace-pre-line">
                 {feature.description}
               </p>
-            <div className="flex flex-wrap gap-2 max-w-full">
-              {feature.credits?.map((credit) => (
-                <span className="bg-transparent mr-2 font-benzin border border-[#929292] text-white px-4 text-xs py-1.5 rounded-full">
-                  {credit}
-                </span>
-              ))}
-            </div>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-2 max-w-full">
+                {feature.credits?.map((credit) => (
+                  <span
+                    key={credit}
+                    className="bg-transparent font-benzin border border-[#929292] text-white px-4 text-xs py-1.5 rounded-full"
+                  >
+                    {credit}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         ))}
