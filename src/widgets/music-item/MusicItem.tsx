@@ -42,7 +42,7 @@ export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
         onMouseLeave={() => setHovered(false)}
       >
         <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-black rounded-full">
-          <span className="text-white text-3xl font-bold font-benzin">{track.id}</span>
+          <span className="text-white text-2xl font-bold font-benzin">#{track.id}</span>
         </div>
 
         {hovered && !isPlaying && (
@@ -63,8 +63,7 @@ export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
             <h2 className="text-sm font-semibold lg:text-md font-benzin">{track.title || "Unknown Title"}</h2> {/* Use track.title */}
             <h2 className="bg-gray-200 w-2 h-2 p-2.5 font-benzin ml-2 m-1 text-xs text-black rounded-lg flex items-center justify-center">
                         <span
-                className=" text-emerald-500 font-bold"
-                style={{ textShadow: "0 0 15px #0db484" }}
+                className=" font-bold"
           >
                 E
           </span>

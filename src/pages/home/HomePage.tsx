@@ -54,14 +54,14 @@ export default function Home() {
           <div className=" rounded-2xl text-center lg:text-left w-full">
             <h2 className="lg:text-5xl text-3xl font-bold uppercase font-benzin min-h-46 w-full">
               <span className="drop-shadow-[0_0_3px_#ffffff]">
-                *ЛУЧШИЙ САЙТ ДЛЯ{" "}
+                {">"} ЛУЧШИЙ САЙТ ДЛЯ{" "}
               </span>
               <motion.span
                 className="text-emerald-500 font-bold"
                 style={{ textShadow: "0 0 15px #0db484" }}
               >
                 {text}
-                <span className="animate-blink">|</span> {/* Имитация курсора */}
+                <span className="animate-blink">| </span> 
               </motion.span>
               <span className="drop-shadow-[0_0_3px_#ffffff]">БРЕНДА. <br /> M&M, БИТЫ ОТ </span>
               <span
@@ -75,10 +75,10 @@ export default function Home() {
               </span>
             </h2>
               <p className=" font-benzin lg:text-lg uppercase text-sm mt-4 w-full w-48 text-gray-200 font-medium mt-2 ">
-                Приветствую на одном из моих проектов, <span className="text-[#0db484] font-semibold">spacycookinghere.ru!!</span> Ты артист или бизнесмен? - ты точно найдешь себе то, что тебе нужно. 
+                Приветствую на одном из моих проектов, <span className="text-[#0db484] font-semibold">spacycookinghere.ru!!</span> Ты артист или бизнесмен? - здесь ты точно найдешь себе то, что тебе нужно. 
                  <br /><br /> 
-                 Если тебе нужен <span className="text-[#0db484] font-semibold">сайт</span> для твоего собственного бренда, <span className="text-[#0db484] font-semibold">сведение</span> или же <span className="text-[#0db484] font-semibold">бит</span> - жми "УСЛУГИ",
-                  если хочешь работать со мной - жми вторую кнопку, мои основные публичные работы ты так же можешь увидеть на этом сайте. 
+                 Нужен <span className="text-[#0db484] font-semibold">сайт</span> для собственного бренда, <span className="text-[#0db484] font-semibold">сведение</span> или же <span className="text-[#0db484] font-semibold">бит</span> под твой новый трек? Нажимай "УСЛУГИ",
+                  если есть желание работать со мной и развиваться в программировании или продюсировании вместе - жми вторую кнопку. Мои прошлые заказы ты так же сможешь увидеть на этом сайте
               </p>
 
             <div>
@@ -88,13 +88,13 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row justify-between lg:mt-6 mt-6">
             <a
               href="#Услуги"
-              className="lg:w-1/2 w-full font-benzin border border-0.5 backdrop-blur-md cursor-pointer rounded-3xl font-bold lg:text-lg text-md mt-4 lg:mt-0 text-center lg:px-8 px-4 py-2 transform transition-transform duration-300 hover:scale-105"
+              className="lg:w-1/2 w-full font-benzin bg-white text-black border border-0.5 backdrop-blur-md cursor-pointer rounded-3xl font-bold lg:text-lg text-md mt-4 lg:mt-0 text-center lg:px-8 px-4 py-2 transform transition-transform duration-300 hover:scale-105"
             >
-              УСЛУГИ
+              МОИ УСЛУГИ
             </a>
             <a
               href="#WORK TOGETHER"
-              className="lg:w-1/2 w-full font-benzin bg-[#0db484] border border-0.5 backdrop-blur-md cursor-pointer rounded-3xl font-bold lg:text-lg text-md mt-4 lg:mt-0 text-center lg:px-8 px-4 py-2 transform transition-transform duration-300 hover:scale-105 lg:ml-4"
+              className="lg:w-1/2 w-full font-benzin bg-[#0db484] backdrop-blur-md cursor-pointer rounded-3xl font-bold lg:text-lg text-md mt-4 lg:mt-0 text-center lg:px-8 px-4 py-2 transform transition-transform duration-300 hover:scale-105 lg:ml-4"
             >
               WORK WITH ME
             </a>
@@ -113,14 +113,14 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-              <h1 className="text-3xl font-benzin font-extrabold mt-2 mb-2 flex items-center justify-center">
+              <h1 className="text-2xl font-benzin font-extrabold mt-2 mb-2 flex items-center justify-center">
                 <span className="mr-2 drop-shadow-[0_0_2px_#ffffff]">SPACY?</span>
                 <svg
-                  className="invert"
+                  className="invert drop-shadow-[0_0_3px_#ffffff]"
                   color="s#0c7552"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
+                  width="24"
+                  height="24"
                   viewBox="0 0 50 50"
                 >
                   <path d="M 25 2 C 12.317 2 2 12.317 2 25 C 2 37.683 12.317 48 25 48 C 37.683 48 48 37.683 48 25 C 48 20.44 46.660281 16.189328 44.363281 12.611328 L 42.994141 14.228516 C 44.889141 17.382516 46 21.06 46 25 C 46 36.579 36.579 46 25 46 C 13.421 46 4 36.579 4 25 C 4 13.421 13.421 4 25 4 C 30.443 4 35.393906 6.0997656 39.128906 9.5097656 L 40.4375 7.9648438 C 36.3525 4.2598437 30.935 2 25 2 z M 43.236328 7.7539062 L 23.914062 30.554688 L 15.78125 22.96875 L 14.417969 24.431641 L 24.083984 33.447266 L 44.763672 9.046875 L 43.236328 7.7539062 z" />
@@ -184,10 +184,17 @@ export default function Home() {
             </div>
 
             <div  className="w-full md:w-1/2 text-center md:text-left space-y-4">
-              <h2 className="lg:text-3xl text-2xl font-extrabold uppercase font-benzin">{feature.title}</h2>
-              <p className="lg:text-lg text-gray-200  text-sm uppercase font-medium font-benzin whitespace-pre-line">
+              <h2 className="lg:text-3xl text-2xl font-extrabold uppercase font-benzin">{">"} {feature.title}</h2>
+              <p className="lg:text-md text-gray-200 text-sm uppercase font-medium font-benzin whitespace-pre-line">
                 {feature.description}
               </p>
+            <div className="flex flex-wrap gap-2 max-w-full">
+              {feature.credits?.map((credit) => (
+                <span className="bg-transparent mr-2 font-benzin border border-[#929292] text-white px-4 text-xs py-1.5 rounded-full">
+                  {credit}
+                </span>
+              ))}
+            </div>
             </div>
           </div>
         ))}
@@ -209,7 +216,7 @@ export default function Home() {
 
             {["ВСЁ", "РАЗРАБОТКА", "СВЕДЕНИЕ", "БИТЫ"].map((cat) => (
               <TabsContent key={cat} value={cat}>
-                <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 lg:gap-6 gap-5 mt-8">
+                <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 lg:gap-6 gap-5 mt-8">
                   {products
                     .filter((p): p is NonNullable<typeof p> => p !== undefined)
                     .filter(p => cat === "ВСЁ" || p.category === cat)
@@ -220,20 +227,26 @@ export default function Home() {
               </TabsContent>
             ))}
           </Tabs>
+        <div className="flex justify-between" >
+          <MainButton className="lg:invisible lg:flex hidden mx-auto lg:w-1/2 w-full font-benzin bg-[#0db484] "></MainButton>
+          <MainButton href="https://forms.yandex.ru/cloud/686e2e1302848f0ecf036ccf" className="mx-auto lg:w-1/2 w-full font-benzin text-black bg-white ">Есть особенное предложение?</MainButton>
+        </div>
       </section>
 
       <section className="py-2 gap-8 w-full max-w-screen-xl mx-auto">
         <a href="https://t.me/bigmoneymgmt">
-          <h2 className="lg:text-3xl text-2xl font-extrabold uppercase mb-8 mt-12 font-benzin">
-            КАТАЛОГ БИТОВ 
+          <h2 className="lg:text-3xl text-2xl flex items-center font-extrabold mt-12 font-benzin">
+            {">"} КАТАЛОГ БИТОВ 
             <span
-                  className="ml-3  text-emerald-500 font-bold"
-                  style={{ textShadow: "0 0 15px #0db484" }}
+                  className="ml-3 text-lg hover:underline bg-white py-1.5 px-3 rounded-3xl text-emerald-500 font-bold"
             >
-                  НЕ НАШЛИ СВОЙ?
+                  <span className="text-black">Не нашли</span> свой?
             </span>
           </h2>
         </a>
+        <div>
+          <input type="text" className="p-3 border-1 my-4 w-1/2 border-[#929292] rounded-3xl" placeholder="134BPM.. F#.." />
+        </div>
         <div className="flex gap-4 grid lg:grid-cols-3 grid-cols-1 w-full ">
         {isClient &&
           tracks.map((track) => <MusicItem key={track.id} track={track} />)}
