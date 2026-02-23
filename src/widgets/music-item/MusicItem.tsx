@@ -33,34 +33,34 @@ export const MusicItem: React.FC<MusicItemProps> = ({ track }) => {
   return (
     <>
       <div
-        className="hover:bg-[#181818] backdrop-blur-md backdrop-blur-md cursor-pointer bg-transparent border border-[#929292] items-center p-3 rounded-full flex lg:h-26 h-25"
+        className="hover:bg-[#181818] transition backdrop-blur-xl backdrop-blur-md cursor-pointer bg-transparent border border-[#929292] items-center rounded-full flex lg:h-26 h-22"
         onClick={handlePlayClick}
       >
       <div
-        className="relative lg:min-w-20 lg:min-h-20 min-w-15 min-h-15 rounded-lg overflow-hidden cursor-pointer"
+        className="relative lg:min-w-26 lg:min-h-26 min-w-22 min-h-22 rounded-l-full overflow-hidden cursor-pointer"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-black rounded-full">
+        <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-white/30 rounded-l-full">
           <span className="text-white text-2xl font-bold font-benzin">#{track.id}</span>
         </div>
 
         {hovered && !isPlaying && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity rounded-full">
+          <div className="absolute inset-0 flex items-center justify-center bg-black/90 bg-opacity-50 transition-opacity rounded-l-full">
             <Play size={32} className="text-white" />
           </div>
         )}
 
         {isCurrentTrack && isPlaying && hovered && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity rounded-full">
+          <div className="absolute inset-0 flex items-center justify-center bg-black/90 bg-opacity-50 transition-opacity rounded-l-full">
             <Pause size={32} className="text-white" />
           </div>
         )}
       </div>
 
-        <div className="text-white ml-4">
+        <div className="text-white  p-3">
           <div className="flex items-center">
-            <h2 className="text-sm font-semibold lg:text-md font-benzin">{track.title || "Unknown Title"}</h2> {/* Use track.title */}
+            <h2 className="text-xs font-semibold lg:text-md font-benzin">{track.title || "Unknown Title"}</h2> {/* Use track.title */}
             <h2 className="bg-gray-200 w-2 h-2 p-2.5 font-benzin ml-2 m-1 text-xs text-black rounded-lg flex items-center justify-center">
                         <span
                 className=" font-bold"

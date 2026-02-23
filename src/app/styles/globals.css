@@ -27,6 +27,15 @@
 
 @font-face {
   font-family: "Benzin";
+  src: url("https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/fonts/Benzin-Medium.woff2") format("woff2"),
+       url("https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/fonts/Benzin-Medium.woff") format("woff");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Benzin";
   src: url("https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/fonts/Benzin-Bold.woff2") format("woff2"),
        url("https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/fonts/Benzin-Bold.woff") format("woff");
   font-display: swap;
@@ -42,6 +51,22 @@
   font-family: "Montserrat";
 }
 
+.font-benzin-regular {
+  font-family: "Benzin";
+  font-weight: 400;
+}
+
+.font-benzin-medium {
+  font-family: "Benzin";
+  font-weight: 600;
+}
+
+.font-benzin-bold {
+  font-family: "Benzin";
+  font-weight: 700;
+}
+
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -51,33 +76,52 @@ body {
 .duration {
   -webkit-appearance: none;
   appearance: none;
+  width: 100%;
   cursor: pointer;
   outline: none;
-  border-radius: 15px;
-  height: 0.5px;
-  background: linear-gradient(
-    to right,
-    #0db484,
-    #ffffff
-  );
+  height: 2px;
+  border-radius: 999px;
+  background: #ffffff33; /* пустая часть */
 }
 
+/* трек */
 .duration::-webkit-slider-runnable-track {
-  background: #ffffff;
-  border-radius: 15px;
+  height: 2px;
+  border-radius: 999px;
+  background: transparent;
 }
 
+/* бегунок */
 .duration::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 12px;
   height: 12px;
-  background: #0a946d;
+  background: #0db484;
   border-radius: 50%;
   cursor: pointer;
   margin-top: -5px;
 }
 
-.duration:focus::-webkit-slider-thumb {
-  outline: none;
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 10s linear infinite;
 }
