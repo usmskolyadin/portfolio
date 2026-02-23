@@ -186,11 +186,11 @@ export default function ProjectModal({ project, onClose }: Props) {
 
             <div className="flex flex-col justify-between p-4">
               <div>
-                <h2 className="text-3xl font-benzin sm:text-2xl lg:text-4xl font-bold mb-4 hover:text-[#0db484] transition-colors duration-300">
+                <h2 className="lg:text-4xl text-xl font-benzin font-bold mb-4 hover:text-[#0db484] transition-colors duration-300">
                   {project.title}
                 </h2>
 
-                <p className="text-md mt-1 md:text-sm font-benzin my-2">{project.detail}</p>
+                <p className="lg:text-md mt-1 text-xs font-benzin my-2">{project.detail}</p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag) => (
@@ -204,15 +204,15 @@ export default function ProjectModal({ project, onClose }: Props) {
                 </div>
 
                 <div className="space-y-2 font-benzin text-sm text-white mb-8">
-                  {project.price && <div className="font-bold uppercase text-lg">Бюджет: {project.price}</div>}
-                  {project.tech && <div className="font-semibold uppercase text-sm">Стэк: {project.tech}</div>}
-                  {project.client && <div className="font-semibold uppercase text-md">Клиент: {project.client}</div>}
+                  {project.price && <div className="font-bold uppercase lg:text-lg text-sm">Бюджет: {project.price}</div>}
+                  {project.tech && <div className="font-semibold uppercase lg:text-sm text-xs">Стэк: {project.tech}</div>}
+                  {project.client && <div className="font-semibold uppercase lg:text-md text-xs">Клиент: {project.client}</div>}
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-2 mt-auto">
                 <button className="cursor-pointer bg-[#0db484] hover:bg-[#0b9b6e] transition-all duration-300 px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
-                  Заказать похожее
+                  <a href="https://t.me/bigmoneymgmt">Заказать похожее</a>
                 </button>
                 <button
                   onClick={onClose}

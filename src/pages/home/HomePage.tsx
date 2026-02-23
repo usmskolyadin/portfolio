@@ -164,7 +164,7 @@ export default function Home() {
               index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
           >
-            <div className="relative w-full md:w-1/2">
+            <div className="relative w-full md:w-1/2 mt-12">
               <Image
                 src={`https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images${feature.image}`}
                 alt={feature.title}
@@ -177,7 +177,7 @@ export default function Home() {
                 alt={feature.title}
                 width={"1000"}
                 height={"1000"}
-                className="absolute top-[-40] lg:left-86 left-40 lg:w-56 w-48 lg:h-56 h-48 rounded-3xl object-cover shadow-lg transform transition-transform duration-300 hover:scale-105"
+                className="absolute top-[-40] lg:left-86 left-40 lg:w-48 w-42 lg:h-48 h-42 rounded-3xl object-cover shadow-lg transform transition-transform duration-300 hover:scale-105"
               />
             </div>
 
