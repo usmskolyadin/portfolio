@@ -28,7 +28,16 @@ export default function TextCarousel() {
 
 function CarouselLine({ text }: { text: string }) {
   return (
-    <span className="mx-2.5 px-4 py-1.5 text-sm lg:text-md font-semibold uppercase font-benzin text-white/80 border border-white/20 bg-white/5 backdrop-blur-md rounded-[50px] tracking-widest whitespace-nowrap">
+    <span className="
+      mx-2.5 px-4 py-1.5
+      text-sm lg:text-md font-semibold uppercase font-benzin
+      text-[#ffffffcc]
+      border border-[#ffffff33]
+      bg-[#ffffff0d]
+      backdrop-blur-md
+      rounded-[50px]
+      tracking-widest whitespace-nowrap
+    ">
       {text}
     </span>
   );

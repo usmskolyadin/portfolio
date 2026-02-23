@@ -149,8 +149,8 @@ const HorizontalScrollGallery = () => {
                 </h3>
                 <p className="text-sm mt-1 md:text-sm font-benzin">{item.description}</p>
                 <div className="flex items-center gap-2 mt-2 overflow-hidden flex-wrap">
-                  {item.tags.map((tag) => (
-                    <div className="px-2 py-0.5 border-transperent border rounded-3xl">
+                  {item.tags.map((tag, key) => (
+                    <div key={key} className="px-2 py-0.5 border-transperent border rounded-3xl">
                       {tag}
                     </div>
                   ))}
