@@ -12,7 +12,7 @@ export type Project = {
   images: string[];
   tags: string[];
   price?: string;
-  tech?: string[];
+  tech?: string;
   client?: string;
 };
 
