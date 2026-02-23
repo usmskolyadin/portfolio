@@ -6,6 +6,7 @@ import Circles from "@/src/shared/circles/Circles";
 import Footer from "@/src/widgets/footer/Footer";
 import { Montserrat, Lato } from 'next/font/google';
 import Head from "./head";
+import ElectricLines from "../shared/electric-lines/ElectricLines";
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],
@@ -19,12 +20,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <Head />
       <body className={`${montserrat.variable} bg-black`}>
         <ReduxProvider>
-          <Circles />
-          <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+          <ElectricLines />
+          <div className="mx-auto max-w-screen-3xl px-4 sm:px-6 lg:px-8">
             <div className="lg:grid pb-20">
+              
               <Header />
               {children ? children : <p className="text-white">Контент не загружен</p>}
-              <AudioPlayer />
+              <div className="mx-auto w-full">
+                {/* <AudioPlayer /> */}
+              </div>
               <Footer />
             </div>
           </div>

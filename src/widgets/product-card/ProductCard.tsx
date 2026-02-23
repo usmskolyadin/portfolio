@@ -59,7 +59,7 @@ export function ProductCard({ product }: { product: any }) {
         </div>
 
 
-        <CardTitle>{">"} {product.title}</CardTitle>
+        <CardTitle>{product.title}</CardTitle>
       </CardHeader>
 
       <CardContent>

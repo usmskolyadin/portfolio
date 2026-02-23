@@ -64,16 +64,40 @@
         };
 
         return (
-            <div className="fixed left-0 -bottom-0.5 w-full  backdrop-blur-md z-50 ">
-                <div className="mx-auto max-w-screen-xl">
-                    <div className="lg:mx-auto mx-4 cursor-pointer bg-transparent  rounded-full lg:m-2 lg:h-15 h-18 lg:flex items-center justify-between ">
+            <div
+            className="
+                fixed
+                left-1/2
+                -translate-x-1/2
+                bottom-2
+                w-full
+                max-w-screen-xl
+                border border-white/20
+                bg-white/5
+                backdrop-blur-md
+                rounded-[50px]
+                z-50
+            "
+            >       
+             <div className="mx-auto max-w-screen-xl">
+                    <div className="lg:mx-auto mx-4 cursor-pointer bg-transparent px-2 rounded-full lg:m-2 lg:h-15 h-18 lg:flex items-center justify-between ">
                         <input
-                            className="duration absolute  w-full max-w-screen-xl flex lg:-top-0 top-0"
-                            type="range"
-                            value={isNaN(currentTime) ? 0 : currentTime}
-                            max={isNaN(duration) ? 0 : duration}
-                            onChange={handleSeek}
+                        type="range"
+                        className="duration absolute w-full mx-12 top-0"
+                        value={isNaN(currentTime) ? 0 : currentTime}
+                        max={isNaN(duration) ? 0 : duration}
+                        onChange={handleSeek}
+                        style={{
+                            background: `linear-gradient(
+                            to right,
+                            #0db484 0%,
+                            #0db484 ${(currentTime / duration) * 100 || 0}%,
+                            rgba(255,255,255,0.25) ${(currentTime / duration) * 100 || 0}%,
+                            rgba(255,255,255,0.25) 100%
+                            )`
+                        }}
                         />
+
                         <audio
                             preload="none"
                             ref={audioRef}
@@ -85,7 +109,7 @@
                             }}
                         />
                         <div className="flex justify-between w-full ">
-                            <div className="flex items-center lg:w-lg w-3/4">
+                            <div className="flex items-center lg:w-lg w-1/3">
                                 <div className="w-12 h-12 lg:p-0 pt-5 flex items-center justify-center">
                                     <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold text-lg font-benzin">
                                         {currentTrack?.id ?? "?"}
@@ -96,57 +120,96 @@
                                     <p className="font-benzin text-gray-200 uppercase lg:text-xs text-xs font-medium">{currentTrack?.artist || "Unknown artist"}</p>
                                 </div>
                             </div>
-                            <div className="flex justify-between items-center lg:ml-0 ml-10 lg:w-sm w-1/4">
-                                <p className="lg:p-6 hidden lg:flex">{formatTime(currentTime)}</p>
-                                <Image
-                                    src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/back.png"
-                                    alt="Previous"
-                                    className="hidden lg:flex lg:m-4 m-2"
-                                    width={25}
-                                    height={25}
-                                    style={{ height: 'auto' }}
-                                />
+                            <div className="flex  items-center lg:ml-0 ml-10 lg:w-xs w-1/3">
+                                <p className="lg:p-4 hidden lg:flex text-md font-bold font-benzin">{formatTime(currentTime)}</p>
+ 
+                                <div className="flex items-center mx-4">
+                                    <svg className="hover:opacity-70 transition" width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15 6L9 12L15 18"
+                                            stroke="white"
+                                            stroke-width="5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                        </svg>
+                                        {isPlaying ? (
+                                            <svg className="hover:opacity-70 transition" 
+                                            onClick={handleTogglePlay}
+                                            width="52"
+                                            height="52"
+                                            viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                            <rect x="6.5" y="5" width="4.5" height="14" rx="2.25" fill="white" />
+                                            <rect x="13" y="5" width="4.5" height="14" rx="2.25" fill="white" />
+                                            </svg>
 
-                                <Image
-                                    src={isPlaying ? "https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/play.png" : "https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/rilplay.png"}
-                                    alt={isPlaying ? "Pause" : "https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/play.png"}
-                                    className={`lg:m-4 mt-4  ${isPlaying ? '' : 'invert'}`}
-                                    width={40}
-                                    height={40}
-                                    onClick={handleTogglePlay}
-                                />
+                                        ) : (
 
-                                <Image
-                                    src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/next.png"
-                                    alt="Next"
-                                    className="hidden lg:flex lg:m-4 m-2"
-                                    width={25}
-                                    height={25}
-                                />
-                                <p className="lg:p-6 hidden lg:flex">{formatTime(duration)}</p>
+                                            <svg className="hover:opacity-70 transition" 
+                                            onClick={handleTogglePlay}
+                                            width="52"
+                                            height="52"
+                                            viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                            <path
+                                                d="M8.5 5.8C8.5 4.7 9.7 4.1 10.6 4.7L18 10.3C18.9 11 18.9 13 18 13.7L10.6 19.3C9.7 19.9 8.5 19.3 8.5 18.2V5.8Z"
+                                                fill="white"
+                                            />
+                                            </svg>
+                                        )}
+
+
+
+                                    <svg className="hover:opacity-70 transition"  width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9 6L15 12L9 18"
+                                            stroke="white"
+                                            stroke-width="5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                        </svg>
+                                </div>
+ 
+
+                                <p className="lg:p-4 hidden lg:flex text-md font-bold font-benzin">{formatTime(duration)}</p>
                             </div>
-                            <div className="lg:flex hidden items-center justify-between w-1/8">
-                                <Image
-                                    src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/heart.png"
-                                    alt="Favorite"
-                                    className="lg:m-4 m-2"
-                                    width={25}
-                                    height={25}
-                                />
-                                    <Image
-                                        src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/volume.png"
-                                        alt="Volume"
-                                        className="lg:m-4 m-2"
-                                        width={28}
-                                        height={28}
+                            <div className="lg:flex hidden items-center justify-end w-1/3">
+                            <div className="flex items-center">
+                                    <svg
+                                    width="48"
+                                    height="48"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M4.5 9.5C4.5 8.7 5.2 8 6 8H9.2L13.8 5.2C14.7 4.7 16 5.3 16 6.4V17.6C16 18.7 14.7 19.3 13.8 18.8L9.2 16H6C5.2 16 4.5 15.3 4.5 14.5V9.5Z"
+                                            fill="white"
+                                        />
+                                        <path
+                                            d="M18.2 9.2C19.3 10.1 19.3 13.9 18.2 14.8"
+                                            stroke="white"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                        />
+                                    </svg>
+
+                                    <svg
+                                    width="48"
+                                    height="48"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                    <path
+                                        d="M12 19.2C11.7 19.2 11.4 19.1 11.2 18.9L6.3 14.1C4.8 12.7 4.8 10.3 6.3 8.9C7.7 7.5 10 7.5 11.4 8.9L12 9.5L12.6 8.9C14 7.5 16.3 7.5 17.7 8.9C19.2 10.3 19.2 12.7 17.7 14.1L12.8 18.9C12.6 19.1 12.3 19.2 12 19.2Z"
+                                        fill="white"
                                     />
-                                <Image
-                                    src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/dots.png"
-                                    alt="More options"
-                                    className="lg:m-4 m-2"
-                                    width={8}
-                                    height={8}
-                                />
+                                    </svg>
+
+                            </div>
                             </div>
 
                         </div>

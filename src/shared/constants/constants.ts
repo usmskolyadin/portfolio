@@ -118,7 +118,7 @@ export const tracks: Track[] = [
     artist: "WHYSPACY, POLVW, WHYKLAY",
     imageSrc: "/cbmc.jpg",
     audioSrc: "beat1.mp3",
-    tags: ["#detroit", "G#MIN", "140BPM"],
+    tags: ["#detroit", "G#MIN"],
   },
   {
     id: 2,
@@ -150,7 +150,7 @@ export const tracks: Track[] = [
     artist: "WHYSPACY, POLVW, WHYKLAY",
     imageSrc: "/motion.jpg",
     audioSrc: "beat5.mp3",
-    tags: ["#detroit", "A#MIN", "140BPM"],
+    tags: ["#detroit", "A#MIN"],
   },
 ];
 
