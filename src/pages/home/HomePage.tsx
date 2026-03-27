@@ -73,8 +73,8 @@ export default function Home() {
                 {" "}
               </span>
             </h2>
-              <p className="lg:px-10 px-8 lg:text-sm lg:uppercase font-benzin text-md mt-4 w-full w-48 text-white  mt-2 ">
-                Добро пожаловать на мой сайт-портфолио - <span className="text-[#0db484] font-semibold">spacycookinghere.ru!!</span> Если ты бизнесмен или артист, ты обязательно найдешь себе ту услугу которая тебе подойдет.
+              <p className="lg:px-10 px-8 lg:text-md font-benzin text-md mt-4 w-full w-48 text-white  mt-2 ">
+                Сап, ты на моем сайте-портфолио - <span className="text-[#0db484] font-semibold">spacycookinghere.ru!!</span> Если ты бизнесмен или артист, ты обязательно найдешь себе ту услугу которая тебе подойдет.
                  <br /><br /> 
                  Нужен <span className="text-[#0db484] font-semibold">современный сайт</span> для собственного бренда? Или же <span className="text-[#0db484] font-semibold">бит</span> для твоего нового трека? Выбирай соответствующую услугу и выводи свое дело на <span className="underline">новый уровень!</span> <br /><br /> <span className="italic">P.S. Техническое портфолио есть в моем гитхабе</span>
               </p>
@@ -85,16 +85,16 @@ export default function Home() {
             <TextCarousel />
           <div className="lg:px-10 px-6 items-center flex lg:flex-col lg:flex-row justify-between lg:mt-4 mt-4 lg:gap-2">
             <a
-              href="#Услуги"
-              className="w-1/2  lg:mr-0 mr-2 font-benzin bg-white text-black border border-0.5 backdrop-blur-md cursor-pointer rounded-2xl font-bold lg:text-md text-sm  lg:mt-0 text-center lg:px-8 px-4 py-2.5 transform transition-transform duration-300 hover:scale-105"
+              href="#Портфолио"
+              className="w-1/2  lg:mr-0 mr-2 font-benzin bg-white text-black border border-0.5 backdrop-blur-md cursor-pointer rounded-2xl font-bold lg:text-md text-sm  lg:mt-0 text-center lg:px-8 px-4 py-2 transform transition-transform duration-300 hover:scale-105"
             >
               Портфолио
             </a>
-                <a 
-                href="#WORK TOGETHER"
-                className="cursor-pointer font-benzin w-1/2 text-center bg-[#0db484] hover:bg-[#0b9b6e] transition-all duration-300 text-sm px-4 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
-                  Услуги
-                </a>
+               <a 
+              href="#Услуги"
+              className="cursor-pointer font-benzin w-1/2 text-center bg-[#0db484] hover:bg-[#0b9b6e] transition-all duration-300 text-sm px-4 py-2 rounded-2xl font-semibold shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
+                Услуги
+              </a>
           </div>
 
           </div>
@@ -104,7 +104,7 @@ export default function Home() {
             <h2 className="lg:text-2xl text-2xl font-bold uppercase font-benzin w-full mb-4">Инфа обо мне</h2>
               <div className="relative lg:w-48 w-48 aspect-square rounded-full overflow-hidden transform transition-transform duration-300 hover:scale-105">
                 <Image
-                  src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/cbhram.png"
+                  src="https://s3.twcstorage.ru/30ac639c-badf-4586-8d01-bcd43bfd9c21/images/i.jpg"
                   alt="Hero image"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -138,9 +138,9 @@ export default function Home() {
               </span>
             </div>
 
-            <p className="lg:text-sm lg:uppercase  text-md  max-w-lg mx-auto  lg:text-center text-left font-medium mt-5 font-benzin">
-              Максим К. (aka spacy?), являюсь Fullstack-разработчиком с опытом более {"5 лет"}, продюсером и артистом. За это время сделал <span className="text-[#0db484] font-bold">{">"} 100 сайтов</span> для разных компаний
-              по всему миру. Так же занимаюсь написанием битов и своих треков.  
+            <p className="lg:text-md   text-md  max-w-lg mx-auto  lg:text-center text-left font-medium mt-5 font-benzin">
+              Являюсь Fullstack-разработчиком с опытом более {"5 лет"}, продюсером и артистом. За это время сделал <span className="text-[#0db484] font-semi">{">"} 100 сайтов</span> для разных компаний
+              по всему миру. <br /><br /><span className="italic">Основатель & CEO "SeaMusic", "DeepReflect"</span>
               <br />
               <br />
             </p>
@@ -166,14 +166,14 @@ export default function Home() {
           >
             <div className="relative w-full md:w-1/2 mt-12">
               <Image
-                src={`https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images${feature.image}`}
+                src={`https://s3.twcstorage.ru/30ac639c-badf-4586-8d01-bcd43bfd9c21/images${feature.image}`}
                 alt={feature.title}
                 width={"1000"}
                 height={"1000"}
                 className="lg:w-96 w-56 lg:h-96 h-56 rounded-3xl shadow-lg transform object-cover transition-transform duration-300 hover:scale-105"
               />
               <Image
-                src={`https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images${feature.image2}`}
+                src={`https://s3.twcstorage.ru/30ac639c-badf-4586-8d01-bcd43bfd9c21/images${feature.image2}`}
                 alt={feature.title}
                 width={"1000"}
                 height={"1000"}
@@ -183,14 +183,14 @@ export default function Home() {
 
             <div  className="w-full md:w-1/2  md:text-left space-y-4">
               <h2 className={`lg:text-3xl text-2xl font-extrabold uppercase font-benzin ${index % 2 === 0 ? ("text-left") : ("text-right")}`}>{">"} {feature.title}</h2>
-              <p className={`lg:text-md text-gray-200 text-md lg:uppercase font-medium font-benzin whitespace-pre-line ${index % 2 === 0 ? ("text-left") : ("text-right")}`}>
+              <p className={`lg:text-md text-gray-200 text-md font-medium font-benzin whitespace-pre-line ${index % 2 === 0 ? ("text-left") : ("text-right")}`}>
                 {feature.description}
               </p>
               <div className={`flex flex-wrap  gap-2 max-w-full ${index % 2 === 0 ? ("justify-start") : ("justify-end")}`}>
                 {feature.credits?.map((credit) => (
                   <span
                     key={credit}
-                    className="bg-transparent font-benzin border border-[#929292] text-white lg:px-4 px-2.5 text-xs py-1.5 rounded-full"
+                    className="border border-white/20 bg-white/5 backdrop-blur-md rounded-[50px] text-white px-3 py-1.5 rounded-full"
                   >
                     {credit}
                   </span>
@@ -200,11 +200,11 @@ export default function Home() {
           </div>
         ))}
       </section>
-      <section  id="Услуги" className="mt-8 max-w-screen-xl mx-auto border border-white/20 bg-white/5 backdrop-blur-md rounded-[50px] px-8 py-6">
+      <section id="Услуги" className="mt-8 max-w-screen-xl mx-auto border border-white/20 bg-white/5 backdrop-blur-md rounded-[50px] px-8 py-6">
         <h2 className="lg:text-3xl text-2xl font-bold mb-4 uppercase font-benzin">МОИ УСЛУГИ</h2>
           <Tabs defaultValue={selectedCategory} className=  "mb-6">
             <TabsList>
-              {["ВСЁ", "РАЗРАБОТКА", "СВЕДЕНИЕ", "БИТЫ"].map((cat) => {
+              {["ВСЁ"].map((cat) => {
                 const count =
                   cat === "ВСЁ"
                     ? products.filter((p): p is NonNullable<typeof p> => p !== undefined).length
@@ -218,7 +218,7 @@ export default function Home() {
               })}
             </TabsList>
 
-            {["ВСЁ", "РАЗРАБОТКА", "СВЕДЕНИЕ", "БИТЫ"].map((cat) => (
+            {["ВСЁ"].map((cat) => (
               <TabsContent key={cat} value={cat}>
                 <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 lg:gap-6 gap-5 mt-8">
                   {products
@@ -231,10 +231,7 @@ export default function Home() {
               </TabsContent>
             ))}
           </Tabs>
-        <div className="flex justify-between" >
-          <MainButton className="lg:invisible lg:flex hidden mx-auto lg:w-1/2 w-full font-benzin bg-[#0db484] "></MainButton>
-          <MainButton href="https://forms.yandex.ru/cloud/686e2e1302848f0ecf036ccf" className="mx-auto lg:w-1/2 w-full font-benzin text-lg text-black bg-white ">Есть <span className="text-emerald-500">особенное</span> предложение?</MainButton>
-        </div>
+
       </section>
 
       {/* <section className="py-2 gap-8 w-full max-w-screen-xl mx-auto border mt-4 border-white/20 bg-white/5 backdrop-blur-md rounded-[50px] px-8 py-6">

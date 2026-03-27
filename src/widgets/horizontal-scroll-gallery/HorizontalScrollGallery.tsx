@@ -49,22 +49,22 @@ const HorizontalScrollGallery = () => {
       detail: 'Лендинг для Центра содействия молодым специалистам',
 
       tags: ['#next.js', '#figma', '#лендинг'],
-      extraImages: ['/israil1.jpg', '/israil2.jpg', '/israil3.jpg', '/israil4.jpg', '/israil5.jpg'],
+      extraImages: ['/israil1.jpg', '/israil2.jpg', '/israil3.jpg', '/israil4.jpg', '/israil5.jpg', '/israil6.jpg', '/israil7.jpg'],
       price: '30 000₽',
     },
-    {
-      id: 5,
-      image: '/seamusic (3).png',
-      title: 'SeaMusic (СНГ)',
-      description: 'Цифровая платформа для музыкантов и слушателей.',
-      detail: 'С нуля разрабатывал площадку для взаимодействия артистов и продюсеров. Присутствуют элементы социальной сети (Мессенджер, Подписки, Посты), Стриминговой площадки (Плеер, умные рекомендации) и Маркетплейса (Онлайн покупка)',
+    // {
+    //   id: 5,
+    //   image: '/seamusic (3).png',
+    //   title: 'SeaMusic (СНГ)',
+    //   description: 'Цифровая платформа для музыкантов и слушателей.',
+    //   detail: 'С нуля разрабатывал площадку для взаимодействия артистов и продюсеров. Присутствуют элементы социальной сети (Мессенджер, Подписки, Посты), Стриминговой площадки (Плеер, умные рекомендации) и Маркетплейса (Онлайн покупка)',
 
-      tags: ['#music', '#streaming', '#nextjs', '#fastapi', '#social'],
-      extraImages: ['/seamusic (1).png', '/seamusic (2).png', '/seamusic (3).png', '/seamusic (4).png', '/seamusic (5).png'],
-      price: 'Договорный',
-      tech: 'FastAPI, Python, Next.js, TailwindCSS, Nginx, Docker',
-      client: "SPACY?"
-    },
+    //   tags: ['#music', '#streaming', '#nextjs', '#fastapi', '#social'],
+    //   extraImages: ['/seamusic (1).png', '/seamusic (2).png', '/seamusic (3).png', '/seamusic (4).png', '/seamusic (5).png'],
+    //   price: 'Договорный',
+    //   tech: 'FastAPI, Python, Next.js, TailwindCSS, Nginx, Docker',
+    //   client: "SPACY?"
+    // },
     {
       id: 6,
       image: '/bars (1).jpg',
@@ -108,7 +108,7 @@ const HorizontalScrollGallery = () => {
   const [project, setProject] = useState<Project | null>(null);
 
   return (
-    <section className="overflow-hidden w-full lg:py-12 py-8 mt-5 px-0 mx-auto lg:max-w-screen-xl border border-white/20 bg-white/5 backdrop-blur-md rounded-[50px]">
+    <section className="overflow-hidden w-full lg:py-10 py-8 mt-5 px-0 mx-auto lg:max-w-screen-xl border border-white/20 bg-white/5 backdrop-blur-md rounded-[50px]">
       <h2 className="lg:text-2xl lg:px-8 px-6 flex flex-wrap items-center text-2xl font-extrabold uppercase text-white font-benzin mb-6">
         МОИ ПРОЕКТЫ{' '}
         <span className="text-[#0db484] lg:ml-3 flex">
@@ -127,7 +127,7 @@ const HorizontalScrollGallery = () => {
                 title: item.title,
                 description: item.description,
                 images: item.extraImages.map(img =>
-                  'https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images' + img
+                  'https://s3.twcstorage.ru/30ac639c-badf-4586-8d01-bcd43bfd9c21/images' + img
                 ),
                 tags: item.tags,
                 price: item.price,
@@ -138,7 +138,7 @@ const HorizontalScrollGallery = () => {
             >
               <div className="h-40 md:h-52 w-full relative">
                 <img
-                  src={`https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images${item.image}`}
+                  src={`https://s3.twcstorage.ru/30ac639c-badf-4586-8d01-bcd43bfd9c21/images${item.image}`}
                   alt={item.title}
                   className="w-full h-full object-cover rounded-2xl transition hover:opacity-80"
                 />
@@ -150,7 +150,7 @@ const HorizontalScrollGallery = () => {
                 <p className="text-sm mt-1 md:text-sm font-benzin">{item.description}</p>
                 <div className="flex items-center gap-2 mt-2 overflow-hidden flex-wrap">
                   {item.tags.map((tag, key) => (
-                    <div key={key} className="px-2 py-0.5 border-transperent border rounded-3xl">
+                    <div key={key} className="border border-white/20 bg-white/5 backdrop-blur-md rounded-[50px] text-white px-3 py-1 rounded-full">
                       {tag}
                     </div>
                   ))}
@@ -164,7 +164,12 @@ const HorizontalScrollGallery = () => {
       {project && (
         <ProjectModal project={project} onClose={() => setProject(null)} />
       )}
-
+            <a
+              href="https://t.me/spacyreviews_it"
+              className="w-1/2  lg:mr-0 mr-2 ml-8 mt-12 font-benzin bg-white text-black border border-0.5 backdrop-blur-md cursor-pointer rounded-2xl font-bold lg:text-md text-sm  lg:mt-0 text-center lg:px-8 px-4 py-2 transform transition-transform duration-300 hover:scale-105"
+            >
+              Портфолио + Отзывы в TG
+            </a>
       <style jsx>{`
         @keyframes marquee {
           0% { transform: translateX(0%); }
