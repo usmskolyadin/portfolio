@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="mt-8 border border-white/20 bg-white/5 backdrop-blur-md rounded-[50px] mb-2  lg:px-0 py-10 uppercase text-white max-w-screen-xl mx-auto w-full font-benzin bg-transparent border-gray-700">
       <div className="grid grid-cols-2 px-8 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
         <div>
-          <h3 className="text-lg font-semibold mb-3">Ссылки</h3>
+          <h3 className="text-lg font-bold mb-3">Ссылки</h3>
           <ul className="space-y-2 text-sm">
             <li>
               <Link href="https://t.me/spacyreviews_it" className="hover:underline">Отзывы</Link>
@@ -32,7 +32,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold mb-3">Услуги</h3>
+          <h3 className="text-lg font-bold mb-3">Услуги</h3>
           <ul className="space-y-2 text-sm">
             <li>
               <Link href="#Услуги" className="hover:underline">ВЕБ-РАЗРАБОТКА</Link>
@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold mb-3">Work together</h3>
+          <h3 className="text-lg font-bold mb-3">Work together</h3>
           <ul className="space-y-2 text-sm">
             <li>
               <a href="mailto:whyspacy7@gmail.com" className="hover:underline">Связаться через почту</a>
@@ -67,7 +67,7 @@ const Footer = () => {
       </div>
 
       <div className="mt-12 pt-6 text-sm flex flex-col items-center justify-center text-center">
-        <span>SPACYCOOKINGHERE.RU © COPYRIGHT 2025</span>
+        <span>SPACYCOOKINGHERE.RU <br /> © COPYRIGHT 2025</span>
         <Image
           src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/SCH-LOGO.png"
           alt="logo"

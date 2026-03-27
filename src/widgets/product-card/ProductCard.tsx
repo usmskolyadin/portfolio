@@ -16,7 +16,7 @@ export function ProductCard({ product }: { product: any }) {
       <CardHeader>
         <div className="relative w-full h-50 lg:h-56 rounded-3xl overflow-hidden">
           <Image
-            src={`https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images${product.images[imageIndex]}`}
+            src={`https://s3.twcstorage.ru/30ac639c-badf-4586-8d01-bcd43bfd9c21/images${product.images[imageIndex]}`}
             alt={product.title}
             fill
             className="object-cover"
@@ -64,7 +64,7 @@ export function ProductCard({ product }: { product: any }) {
 
       <CardContent>
         <p className="font-benzin uppercase text-lg font-bold mt-2">от {product.price}</p>
-        <p className="font-benzin uppercase lg:text-md text-xs text-gray-100 mt-2">
+        <p className="font-benzin lg:text-md text-md text-white mt-2">
           {product.description}
         </p>
         <a
