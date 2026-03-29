@@ -69,7 +69,7 @@ export function ProductCard({
         <CardTitle>{product.title}</CardTitle>
       </CardHeader>
 
-      <CardContent className="flex flex-col flex-grow">
+      <CardContent>
         <p className="font-benzin uppercase text-lg font-bold mt-2">
           от {product.price}
         </p>
