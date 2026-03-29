@@ -23,12 +23,13 @@ import { SocialIcons } from "@/src/shared/social-icons/SocialIcons";
 import TextCarousel from "@/src/widgets/text-slider/TextCarousel";
 
 export default function Home() {
-  const [selectedCategory, setSelectedCategory] = useState("БИТЫ");
+  const [selectedCategory, setSelectedCategory] = useState("ВСЁ");
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [expandedId, setExpandedId] = useState<number | null>(null);
 
   useEffect(() => {
     setIsClient(true);
@@ -73,11 +74,14 @@ export default function Home() {
                 {" "}
               </span>
             </h2>
-              <p className="lg:px-10 px-8 lg:text-md font-benzin text-md mt-4 w-full w-48 text-white  mt-2 ">
-                Сап, ты на моем сайте-портфолио - <span className="text-[#0db484] font-semibold">spacycookinghere.ru!!</span> Если ты бизнесмен или артист, ты обязательно найдешь себе ту услугу которая тебе подойдет.
-                 <br /><br /> 
-                 Нужен <span className="text-[#0db484] font-semibold">современный сайт</span> для собственного бренда? Или же <span className="text-[#0db484] font-semibold">бит</span> для твоего нового трека? Выбирай соответствующую услугу и выводи свое дело на <span className="underline">новый уровень!</span> <br /><br /> <span className="italic">P.S. Техническое портфолио есть в моем гитхабе</span>
-              </p>
+          <p className="lg:px-10 px-8 lg:text-md font-benzin text-md mt-4 w-full w-48 text-white mt-2">
+            Сап, ты на моем сайте-портфолио - <span className="text-[#0db484] font-semibold">spacycookinghere.ru!!</span> Если ты бизнесмен или артист, ты обязательно найдешь нужную тебе услугу в краткие сроки.
+            <br /><br /> 
+            Нужен <span className="text-[#0db484] font-semibold">современный и масштабируемый сайт</span> для собственного бренда? Или же мясной <span className="text-[#0db484] font-semibold">бит</span> для твоего трека? Выбирай нужный тебе вариант, и выводи свое дело на новый уровень.
+            <br /><br /> 
+            Моя задача в перспективе дальнейшего сотрудничества, поэтому качество результата в интересах не только у заказчика. Каждый проект - это не просто работа, а инструмент для твоего роста и дохода (и моего).
+            <br /><br /> 
+          </p>
 
             <div>
 
@@ -225,7 +229,12 @@ export default function Home() {
                     .filter((p): p is NonNullable<typeof p> => p !== undefined)
                     .filter(p => cat === "ВСЁ" || p.category === cat)
                     .map((product) => (
-                      <ProductCard key={product.id} product={product} />
+                      <ProductCard
+                        key={product.id}
+                        product={product}
+                        expandedId={expandedId}
+                        setExpandedId={setExpandedId}
+                      />
                     ))}
                 </div>
               </TabsContent>
