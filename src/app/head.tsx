@@ -32,7 +32,7 @@ export default function Head() {
       hire web developer
       " />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="icon" href="https://s3.twcstorage.ru/30ac639c-badf-4586-8d01-bcd43bfd9c21/images/SCH-LOGO.png" type="image/png" sizes="512x512"/>
+      <link rel="icon" href="/public/SCH-LOGO.png" type="image/png" sizes="512x512"/>
       <link rel="preconnect" href="https://s3.twcstorage.ru" />
       <link rel="dns-prefetch" href="https://s3.twcstorage.ru" />
     </>

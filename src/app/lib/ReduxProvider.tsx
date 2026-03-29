@@ -22,7 +22,7 @@ export function ReduxProvider({ children }: { children: React.ReactNode }) {
     return (
       <div className="flex h-screen justify-center items-center bg-black">
         <Image
-          src="https://s3.twcstorage.ru/bf9f335b-325409fa-85a9-484e-8b56-e3ad47c00577/images/SCH-LOGO.png"
+          src="/SCH-LOGO.png"
           alt="logo"
           width={100}
           height={100}
