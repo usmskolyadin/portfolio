@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "ONLINE STORE",
+    "description": "I will create a full-featured turnkey online store: stylish landing page, product catalog, cart, wishlist, and smooth navigation. I will integrate payment, basic SEO, and make it responsive for all devices. You will get a ready-to-use tool for stable sales and business growth.",
+    "price": "$150",
+    "images": ["/studiau2.jpg", "/studiau1.jpg", "/studiau3.jpg", "/studiau4.jpg", "/dveri1.jpg", "/dveri2.jpg", "/dveri3.jpg", "/dveri4.jpg"],
+    "category": "DEVELOPMENT"
+  },
+  {
+    "id": 2,
+    "title": "LANDING PAGE",
+    "description": "I will develop a modern landing page with unique design and a focus on conversion. Thought-out structure, strong messaging, and fast loading for maximum efficiency. Perfect for presenting a product, service, or running ad campaigns.",
+    "price": "$100",
+    "images": ["/israil1.jpg", "/israil2.jpg", "/israil3.jpg", "/israil4.jpg", "/israil5.jpg", "/israil6.jpg", "/israil7.jpg"],
+    "category": "DEVELOPMENT"
+  },
+  {
+    "id": 3,
+    "title": "BUSINESS CARD WEBSITE",
+    "description": "I will create a concise and stylish website to present your company, specialist, or service. Clear structure, key information, and convenient user experience. Great for building trust and first contact with clients.",
+    "price": "$100",
+    "images": ["/centr.jpg", "/centr2.jpg", "/centr3.jpg"],
+    "category": "DEVELOPMENT"
+  },
+  {
+    "id": 4,
+    "title": "TG BOT + MINI APP",
+    "description": "I will develop a Telegram Mini App and bot for your tasks: from simple services to complex applications inside Telegram. Integrations, logic, UX, and stable performance on all devices. You get a convenient tool for audience interaction and process automation.",
+    "price": "$150",
+    "images": ["/tmaservice.png"],
+    "category": "DEVELOPMENT"
+  },
+  {
+    "id": 5,
+    "title": "PARSERS",
+    "description": "I will develop custom parsers for collecting data from websites, marketplaces, and aggregators. I will set up automation, filtering, and export to Excel, JSON, or databases. Perfect for analytics, price monitoring, and business scaling.",
+    "price": "$45",
+    "images": ["/parserservice.png"],
+    "category": "DEVELOPMENT"
+  },
+  {
+    "id": 6,
+    "title": "ML/AI SCRIPTS",
+    "description": "I will create and implement ML/AI solutions for your tasks: chatbots, recommendations, data analysis, and automation. I will select models, train them, and integrate them into your product or business processes. This will speed up work, reduce costs, and increase efficiency.",
+    "price": "$45",
+    "images": ["/mlservice.jpg"],
+    "category": "DEVELOPMENT"
+  }
+]

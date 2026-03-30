@@ -11,8 +11,8 @@ import { Tabs } from "@/src/shared/tabs/Tabs";
 import { ProductCard } from "@/src/widgets/product-card/ProductCard";
 import { MusicItem } from "@/src/widgets/music-item/MusicItem";
 import {
-  products,
-  features,
+  // products,
+  // features,
   typingSpeed,
   texts,
   pauseTime,
@@ -21,6 +21,13 @@ import {
 import HorizontalScrollGallery from "@/src/widgets/horizontal-scroll-gallery/HorizontalScrollGallery";
 import { SocialIcons } from "@/src/shared/social-icons/SocialIcons";
 import TextCarousel from "@/src/widgets/text-slider/TextCarousel";
+import { useTranslations } from "@/src/widgets/language-switcher/useTranslations";
+import { usePathname } from "next/navigation";
+
+
+interface HomePageProps {
+  locale: 'ru' | 'en';
+}
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("ВСЁ");
@@ -31,9 +38,23 @@ export default function Home() {
   const [isClient, setIsClient] = useState(false);
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
+  const pathname = usePathname();
+  const locale = pathname?.startsWith("/en") ? "en" : "ru";
+    
+  const products = useTranslations("products", locale) as any;
+  const features = useTranslations("features", locale) as any;
+  const items = useTranslations("items", locale) as any;
+  const ui = useTranslations("ui", locale) as any;
+
+  useEffect(() => {
+    console.log("Locale:", locale);
+    console.log("Products translations:", products);
+    console.log("Features translations:", features);
+  }, [locale, products, features]);
+
   useEffect(() => {
     setIsClient(true);
-    const currentText = texts[index];
+    const currentText = ui.hero.texts[index];
 
     if (!deleting && charIndex < currentText.length) {
       setTimeout(() => setCharIndex((prev) => prev + 1), typingSpeed);
@@ -51,40 +72,54 @@ export default function Home() {
 
   return (
     <div>
-      <section id="О проекте" className="flex max-w-screen-xl mx-auto w-full flex-col lg:flex-row lg:gap-0 mt-24  ">
+      <section id="О проекте" className="flex max-w-screen-xl mx-auto w-full flex-col lg:flex-row lg:gap-0 lg:mt-28 mt-24">
         <div className="flex lg:w-2/3 w-full lg:mr-5 border border-white/20 bg-white/5 backdrop-blur-md rounded-[50px]  py-8 flex-col lg:relative lg:block justify-center">
           <div className=" rounded-2xl lg:text-center text-left lg:text-left w-full">
             <h2 className="lg:px-10 px-8 lg:text-4xl text-2xl font-bold uppercase font-benzin  min-h-32 w-full">
-              <span className="">
-               РАЗРАБОТАЮ САЙТ ДЛЯ{" "}
+              <span>
+                {ui.hero.title.before}{" "}
               </span>
-              <motion.span
-                className="text-emerald-500 font-bold"
-              >
+
+              <motion.span className="text-emerald-500 font-bold">
                 {text}
                 <span className="animate-blink">| </span> 
               </motion.span>
-              <span className="">БРЕНДА. <br />БИТЫ ОТ </span>
-              <span
-                className="text-emerald-500 font-bold"
-              >
+
+              <span>
+                {ui.hero.title.after} <br />
+                {ui.hero.title.beats}{" "}
+              </span>
+
+              <span className="text-emerald-500 font-bold">
                 SPACY?
               </span>
-              <span className="">
-                {" "}
-              </span>
             </h2>
-          <p className="lg:px-10 px-8 lg:text-md font-benzin text-md mt-4 w-full w-48 text-white mt-2">
-            Сап, ты на моем сайте-портфолио - <span className="text-[#0db484] font-semibold">spacycookinghere.ru!!</span> Если ты бизнесмен или артист, ты обязательно найдешь нужную тебе услугу в краткие сроки.
-            <br /><br /> 
-            Нужен <span className="text-[#0db484] font-semibold">современный и масштабируемый сайт</span> для собственного бренда? Или же мясной <span className="text-[#0db484] font-semibold">бит</span> для твоего трека? Выбирай нужный тебе вариант, и выводи свое дело на новый уровень.
-            <br /><br /> 
-            Моя задача в перспективе дальнейшего сотрудничества, поэтому качество результата в интересах не только у заказчика. Каждый проект - это не просто работа, а инструмент для твоего роста и дохода (и моего).
-            <br /><br /> 
-          </p>
+            <p className="lg:px-10 px-8 lg:text-md font-benzin text-md mt-4 w-full w-48 text-white mt-2">
+              {ui.hero.description.p1.start}
+              <span className="text-[#0db484] font-semibold">
+                {ui.hero.description.p1.highlight}
+              </span>
+              {ui.hero.description.p1.end}
 
+              <br /><br />
+
+              {ui.hero.description.p2.start}
+              <span className="text-[#0db484] font-semibold">
+                {ui.hero.description.p2.highlight1}
+              </span>
+              {ui.hero.description.p2.middle}
+              <span className="text-[#0db484] font-semibold">
+                {ui.hero.description.p2.highlight2}
+              </span>
+              {ui.hero.description.p2.end}
+
+              <br /><br />
+
+              {ui.hero.description.p3}
+
+              <br /><br />
+            </p>
             <div>
-
             </div>
             <TextCarousel />
           <div className="lg:px-10 px-6 items-center flex lg:flex-col lg:flex-row justify-between lg:mt-4 mt-4 lg:gap-2">
@@ -92,12 +127,12 @@ export default function Home() {
               href="#Портфолио"
               className="w-1/2  lg:mr-0 mr-2 font-benzin bg-white text-black border border-0.5 backdrop-blur-md cursor-pointer rounded-2xl font-bold lg:text-md text-sm  lg:mt-0 text-center lg:px-8 px-4 py-2 transform transition-transform duration-300 hover:scale-105"
             >
-              Портфолио
+              {ui.buttons.portfolio}
             </a>
                <a 
               href="#Услуги"
               className="cursor-pointer font-benzin w-1/2 text-center bg-[#0db484] hover:bg-[#0b9b6e] transition-all duration-300 text-sm px-4 py-2 rounded-2xl font-semibold shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
-                Услуги
+              {ui.buttons.services}
               </a>
           </div>
 
@@ -105,7 +140,7 @@ export default function Home() {
         </div>
         <div className="flex lg:mt-0 mt-4 lg:w-1/3 w-full border border-white/20 bg-white/5 backdrop-blur-md rounded-[50px] px-8 py-4 flex-col items-center justify-center ">
           <div className="relative w-full max-w-lg flex flex-col lg:items-center h-full mt-3 lg:py-0 py-0">
-            <h2 className="lg:text-2xl text-2xl font-bold uppercase font-benzin w-full mb-4">Инфа обо мне</h2>
+            <h2 className="lg:text-2xl text-2xl font-bold uppercase font-benzin w-full mb-4">{ui.about.title}</h2>
               <div className="relative lg:w-48 w-48 aspect-square rounded-full overflow-hidden transform transition-transform duration-300 hover:scale-105">
                 <Image
                   src="https://s3.twcstorage.ru/30ac639c-badf-4586-8d01-bcd43bfd9c21/images/i.jpg"
@@ -142,11 +177,22 @@ export default function Home() {
               </span>
             </div>
 
-            <p className="lg:text-md   text-md  max-w-lg mx-auto  lg:text-center text-left font-medium mt-5 font-benzin">
-              Являюсь Fullstack-разработчиком с опытом более {"5 лет"}, продюсером и артистом. За это время сделал <span className="text-[#0db484] font-semi">{">"} 100 сайтов</span> для разных компаний
-              по всему миру. <br /><br /><span className="italic">Основатель & CEO "SeaMusic", "DeepReflect"</span>
-              <br />
-              <br />
+            <p className="lg:text-md text-md max-w-lg mx-auto lg:text-center text-left font-medium mt-5 font-benzin">
+              {ui.about.description.start}{" "}
+              <span>{ui.about.description.years}</span>
+              {ui.about.description.middle}{" "}
+              <span className="text-[#0db484] font-semi">
+                {ui.about.description.highlight}
+              </span>{" "}
+              {ui.about.description.end}
+
+              <br /><br />
+
+              <span className="italic">
+                {ui.about.description.footer}
+              </span>
+
+              <br /><br />
             </p>
 
           </div>
@@ -155,12 +201,11 @@ export default function Home() {
       
       </section>
       <div id="Портфолио">
-      <HorizontalScrollGallery  />
-
+            <HorizontalScrollGallery items={items} locale={locale}/>
       </div>
 
       <section className="lg:py-2 max-w-screen-xl mx-auto space-y-4">
-        {features.map((feature, index) => (
+        {features.map((feature: any, index: any) => (
           <div
             id={feature.title}
             key={index}
@@ -191,7 +236,7 @@ export default function Home() {
                 {feature.description}
               </p>
               <div className={`flex flex-wrap  gap-2 max-w-full ${index % 2 === 0 ? ("justify-start") : ("justify-end")}`}>
-                {feature.credits?.map((credit) => (
+                {feature.credits?.map((credit: any) => (
                   <span
                     key={credit}
                     className="border border-white/20 bg-white/5 backdrop-blur-md rounded-[50px] text-white px-3 py-1.5 rounded-full"
@@ -205,14 +250,14 @@ export default function Home() {
         ))}
       </section>
       <section id="Услуги" className="mt-8 max-w-screen-xl mx-auto border border-white/20 bg-white/5 backdrop-blur-md rounded-[50px] px-8 py-6">
-        <h2 className="lg:text-3xl text-2xl font-bold mb-4 uppercase font-benzin">МОИ УСЛУГИ</h2>
+        <h2 className="lg:text-3xl text-2xl font-bold mb-4 uppercase font-benzin">{ui.headers.myServices}</h2>
           <Tabs defaultValue={selectedCategory} className=  "mb-6">
             <TabsList>
               {["ВСЁ"].map((cat) => {
                 const count =
                   cat === "ВСЁ"
-                    ? products.filter((p): p is NonNullable<typeof p> => p !== undefined).length
-                    : products.filter((p): p is NonNullable<typeof p> => p !== undefined && p.category === cat).length;
+                    ? products.filter((p: any): p is NonNullable<typeof p> => p !== undefined).length
+                    : products.filter((p: any): p is NonNullable<typeof p> => p !== undefined && p.category === cat).length;
 
                 return (
                   <TabsTrigger key={cat} value={cat}>
@@ -226,10 +271,11 @@ export default function Home() {
               <TabsContent key={cat} value={cat}>
                 <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 lg:gap-6 gap-5 mt-8">
                   {products
-                    .filter((p): p is NonNullable<typeof p> => p !== undefined)
-                    .filter(p => cat === "ВСЁ" || p.category === cat)
-                    .map((product) => (
+                    .filter((p: any ): p is NonNullable<typeof p> => p !== undefined)
+                    .filter((p: any) => cat === "ВСЁ" || p.category === cat)
+                    .map((product: any) => (
                       <ProductCard
+                        locale={locale}
                         key={product.id}
                         product={product}
                         expandedId={expandedId}

@@ -7,19 +7,23 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CardHeader } from "@/src/shared/card-header/CardHeader";
 import { Card } from "@/src/shared/card/Card";
 import { useState } from "react";
+import { useTranslations } from "../language-switcher/useTranslations";
 
 export function ProductCard({
   product,
   expandedId,
-  setExpandedId
+  setExpandedId,
+  locale
 }: {
   product: any;
   expandedId: number | null;
   setExpandedId: (id: number | null) => void;
+  locale: "en" | "ru"
 }) {
   const [imageIndex, setImageIndex] = useState(0);
 
   const isExpanded = expandedId === product.id;
+  const ui = useTranslations("ui", locale) as any;
 
   return (
     <Card>
@@ -100,7 +104,7 @@ export function ProductCard({
             rel="noopener noreferrer"
             className="block w-full font-benzin bg-[#0db484] rounded-3xl font-bold text-sm mt-4 px-4 py-2 text-center transition hover:scale-105"
           >
-            СДЕЛАТЬ ЗАКАЗ
+            {ui.buttons.order}
           </a>
         </div>
       </CardContent>

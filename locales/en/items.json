@@ -1,0 +1,82 @@
+
+
+[
+  {
+    "id": 1,
+    "image": "/centr.jpg",
+    "title": "Karyeramolodykh (Moscow, Russia)",
+    "description": "Landing page for the Center for Supporting Young Specialists",
+    "detail": "Assisted in developing the site on Django and deploying using Nginx & Docker",
+    "tags": ["django", "#python", "#landing"],
+    "extraImages": ["/centr.jpg", "/centr2.jpg", "/centr3.jpg"],
+    "price": "25,000 ₽",
+    "tech": "Django, Python, Jinja, SCSS",
+    "client": "CSMS"
+  },
+  {
+    "id": 2,
+    "image": "/zamda (2).png",
+    "title": "ZAMDA (USA, Sacramento)",
+    "description": "Service for posting ads across the USA.",
+    "detail": "Developed the site from scratch similar to Avito using Next.js & Django REST Framework. Built architecture, CI/CD and automated deployment to Digital Ocean with Nginx & Docker",
+    "tags": ["django", "#python", "#landing"],
+    "extraImages": ["/zamda (1).png", "/zamda (3).png", "/zamda (4).png", "/zamda (5).png"],
+    "price": "Over 85,000 ₽",
+    "tech": "DRF, Python, Next.js, SSR, TailwindCSS, Nginx, Docker",
+    "client": "ZAMDA"
+  },
+  {
+    "id": 3,
+    "image": "/studiau1.jpg",
+    "title": "Studiau7 (USA, New York)",
+    "description": "Service for posting ads across the USA.",
+    "detail": "Landing page for the Center for Supporting Young Specialists",
+    "tags": ["django", "#python", "#landing"],
+    "extraImages": ["/studiau1.jpg", "/studiau2.jpg"],
+    "price": "30,000 ₽"
+  },
+  {
+    "id": 4,
+    "image": "/israil.jpg",
+    "title": "HappyFlowDesign (Tel Aviv, Israel)",
+    "description": "Construction company website with calculators and forms",
+    "detail": "Landing page for the Center for Supporting Young Specialists",
+    "tags": ["#next.js", "#figma", "#landing"],
+    "extraImages": ["/israil1.jpg", "/israil2.jpg", "/israil3.jpg", "/israil4.jpg", "/israil5.jpg", "/israil6.jpg", "/israil7.jpg"],
+    "price": "30,000 ₽"
+  },
+  {
+    "id": 6,
+    "image": "/bars (1).jpg",
+    "title": "BARS (Russia, Ural)",
+    "description": "Automated documentation for an oil company",
+    "detail": "Landing page for the Center for Supporting Young Specialists",
+    "tags": ["#music", "#streaming", "#nextjs", "#fastapi", "#social"],
+    "extraImages": ["/bars (1).jpg", "/bars (2).jpg", "/bars (3).jpg"],
+    "price": "30,000 ₽"
+  },
+  {
+    "id": 7,
+    "image": "/dveri1.jpg",
+    "title": "dveri-msk24",
+    "description": "Website for a metal doors store in Moscow",
+    "detail": "Developed a turnkey online store for doors using Django",
+    "tags": ["#music", "#streaming", "#nextjs", "#fastapi", "#social"],
+    "extraImages": ["/dveri2.jpg", "/dveri1.jpg", "/dveri3.jpg", "/dveri4.jpg"],
+    "price": "25,000 ₽",
+    "tech": "Django, Docker",
+    "client": "dveri-msk24"
+  },
+  {
+    "id": 8,
+    "image": "/artiz1.jpg",
+    "title": "Artiz",
+    "description": "Online auction for paintings",
+    "detail": "Developed a turnkey online store for doors using Django",
+    "tags": ["#music", "#streaming", "#nextjs", "#fastapi", "#social"],
+    "extraImages": ["/artiz1.jpg", "/artiz2.jpg", "/artiz3.jpg"],
+    "price": "25,000 ₽",
+    "tech": "Django, Docker",
+    "client": "dveri-msk24"
+  }
+]

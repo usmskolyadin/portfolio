@@ -1,0 +1,60 @@
+{
+  "buttons": {
+    "portfolio": "Portfolio",
+    "services": "Services",
+    "contact": "Contact",
+    "order": "Make an order",
+    "workTogether": "Work together",
+    "tgp": "Portfolio + Reviews in TG"
+  },
+  "headers": {
+    "aboutProject": "About project",
+    "myServices": "MY SERVICES",
+    "portfolioSection": "Portfolio",
+    "portfolioType": "Web-Development"
+  },
+  "footer": {
+    "links": "Links",
+    "services": "Services",
+    "workTogether": "Work together"
+  },
+  "hero": {
+    "title": {
+      "before": "I CREATE WEBSITES FOR",
+      "after": "BRANDS.",
+      "beats": "BEATS BY"
+    },
+    "texts": ["YOUR", "THEIR", "ANY"],
+    "description": {
+      "p1": {
+        "start": "Yo, you're on my portfolio website - ",
+        "highlight": "spacycookinghere.ru!!",
+        "end": " If you're a business owner or an artist, you'll definitely find what you need quickly."
+      },
+      "p2": {
+        "start": "Need a ",
+        "highlight1": "modern and scalable website",
+        "middle": " for your brand? Or a hard ",
+        "highlight2": "beat",
+        "end": " for your track? Choose what you need and take your project to the next level."
+      },
+      "p3": "I'm focused on long-term collaboration, so quality matters for both of us. Every project is not just work — it's a tool for your growth and income."
+    }
+  },
+  "about": {
+    "title": "About me",
+    "tags": {
+      "artist": "artist",
+      "producer": "producer",
+      "programmer": "programmer"
+    },
+    "description": {
+      "start": "I'm a Fullstack developer with over",
+      "years": "5 years",
+      "middle": "of experience, as well as a producer and artist. During this time I've created",
+      "highlight": "100+ websites",
+      "end": "for companies around the world.",
+      "footer": "Founder & CEO of \"SeaMusic\", \"DeepReflect\""
+    }
+  }
+}

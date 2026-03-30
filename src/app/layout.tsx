@@ -14,7 +14,9 @@ const montserrat = Montserrat({
 });
 
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children, params }: { children: React.ReactNode, params: any }) {
+  const { locale } = params;
+
   return (
     <html>
       <Head />
@@ -24,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="mx-auto max-w-screen-3xl px-4 sm:px-6 lg:px-8">
             <div className="lg:grid pb-20">
               
-              <Header />
+              <Header locale={locale}/>
               {children ? children : <p className="text-white">Контент не загружен</p>}
               <div className="mx-auto w-full">
                 {/* <AudioPlayer /> */}
