@@ -31,9 +31,9 @@ function CarouselLine({ text }: { text: string }) {
     <span className="
       mx-2.5 px-4 py-1.5
       text-sm lg:text-md font-semibold uppercase font-benzin
-      text-[#ffffffcc]
-      border border-[#ffffff33]
-      bg-[#ffffff0d]
+      text-white/80 dark:text-white
+      border border-white/20
+      bg-black/10 dark:bg-white/5
       backdrop-blur-md
       rounded-[50px]
       tracking-widest whitespace-nowrap
