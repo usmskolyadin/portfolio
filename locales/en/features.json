@@ -1,0 +1,15 @@
+[
+  {
+    "title": "WEB DEVELOPMENT",
+    "description": "I will create a unique and stylish website tailored to your brand's style, fully scalable for future growth. All websites are written entirely from scratch by me, and the development process will be fully transparent. At the end, you will receive the complete repository with all the code, or I can deploy it directly to your hosting. We can finalize the tech stack in private correspondence, along with all design details. Tech stack, if interested:\n\nBACKEND - Python, FastAPI, Flask, Django Rest Framework/Django, Express.js, Node.js\n\nFRONTEND - JS, React.js/Next.js, Angular.js, SCSS, TailwindCSS\n\nAdditionally, I can integrate AI into your projects if desired. Currently, such functionality can greatly surprise your users and bring real value to your business.",
+    "image": "/service-1.jpg",
+    "image2": "/service-2.jpg",
+    "credits": ["Studiau7", "Zamda", "Elfadro", "HappyFlowDesign", "DveriMsk", "Muroway", "BARS", "careerforyoung.rf", "VIDANA"]
+  },
+  {
+    "title": "TRACK MIXING AND BEATS",
+    "description": "I will mix and master your track. You can contact me via Telegram @bigmoneymgmt and get a 30% discount from the listed price! Promo code - #SCH2026\n\nYou can also purchase beats according to the approved price list or order a custom beat in your style. You will receive a contract when purchasing the appropriate license.\n\nSoon, you'll be able to do this in the most convenient way, buying and selling beats in a balanced ecosystem with other users, but that's another story))\n\n#SEAMUSIC2025, MAKE IT SINCE 2023, JUST WAIT..",
+    "image": "/service-3.jpg",
+    "image2": "/service-4.jpg"
+  }
+]
