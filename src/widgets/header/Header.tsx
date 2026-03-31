@@ -40,7 +40,7 @@ const Header = ({ locale }: HeaderProps) => {
                     />
                     <div className="hidden lg:block text-lg font-semibold">
                         <Link href="/">SPACY COOKING <span className="">HERE</span>?</Link>
-                        <p className="text-xs font-medium">GODDAMN RIGHT!</p>
+                        <p className="text-xs font-medium opacity-80">GODDAMN RIGHT!</p>
                     </div>
                 </h1>
 

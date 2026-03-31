@@ -18,10 +18,8 @@ export default function RootLayout({ children, params }: { children: React.React
   const { locale } = params;
 
   return (
-    <html>
+    <div>
       <Head />
-      <body className={`${montserrat.variable} bg-black`}>
-        <ReduxProvider>
           <ElectricLines />
           <div className="mx-auto max-w-screen-3xl px-4 sm:px-6 lg:px-8">
             <div className="lg:grid pb-20">
@@ -34,8 +32,6 @@ export default function RootLayout({ children, params }: { children: React.React
               <Footer />
             </div>
           </div>
-        </ReduxProvider>
-      </body>
-    </html>
+    </div>
   );
 }

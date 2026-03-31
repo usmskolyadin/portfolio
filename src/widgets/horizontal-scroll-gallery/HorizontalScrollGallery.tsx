@@ -72,7 +72,7 @@ const HorizontalScrollGallery = ({ items, locale }: HorizontalScrollGalleryProps
                 <p className="text-sm mt-1 md:text-sm font-benzin">{item.description}</p>
                 <div className="flex items-center gap-2 mt-2 overflow-hidden flex-wrap">
                   {item.tags.map((tag, key) => (
-                    <div key={key} className="border border-white/20 bg-white/5 backdrop-blur-md rounded-[50px] text-white px-3 py-1 rounded-full">
+                    <div key={key} className="border font-benzin border-white/20 bg-white/5 backdrop-blur-md rounded-[50px] text-white px-3 py-1 rounded-full">
                       {tag}
                     </div>
                   ))}

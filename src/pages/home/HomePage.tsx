@@ -234,7 +234,7 @@ export default function Home() {
                 {feature.credits?.map((credit: any) => (
                   <span
                     key={credit}
-                    className="border border-white/20 bg-white/5 backdrop-blur-md rounded-[50px] text-white px-3 py-1.5 rounded-full"
+                    className="border border-white/20 bg-white/5 backdrop-blur-md rounded-[50px] text-white px-3 py-1.5 rounded-full font-benzin"
                   >
                     {credit}
                   </span>
