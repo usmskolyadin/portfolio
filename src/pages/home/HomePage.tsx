@@ -9,17 +9,13 @@ import { TabsTrigger } from "@/src/shared/tabs-trigger/TabsTrigger";
 import { TabsList } from "@/src/shared/tabs-list/TabsList";
 import { Tabs } from "@/src/shared/tabs/Tabs";
 import { ProductCard } from "@/src/widgets/product-card/ProductCard";
-import { MusicItem } from "@/src/widgets/music-item/MusicItem";
 import {
-  // products,
-  // features,
   typingSpeed,
   texts,
   pauseTime,
   tracks,
 } from "@/src/shared/constants/constants";
 import HorizontalScrollGallery from "@/src/widgets/horizontal-scroll-gallery/HorizontalScrollGallery";
-import { SocialIcons } from "@/src/shared/social-icons/SocialIcons";
 import TextCarousel from "@/src/widgets/text-slider/TextCarousel";
 import { useTranslations } from "@/src/widgets/language-switcher/useTranslations";
 import { usePathname } from "next/navigation";
@@ -122,20 +118,19 @@ export default function Home() {
             <div>
             </div>
             <TextCarousel />
-          <div className="lg:px-10 px-6 items-center flex lg:flex-col lg:flex-row justify-between lg:mt-4 mt-4 lg:gap-2">
-            <a
-              href="#Портфолио"
-              className="w-1/2  lg:mr-0 mr-2 font-benzin bg-white text-black border border-0.5 backdrop-blur-md cursor-pointer rounded-2xl font-bold lg:text-md text-sm  lg:mt-0 text-center lg:px-8 px-4 py-2 transform transition-transform duration-300 hover:scale-105"
-            >
-              {ui.buttons.portfolio}
-            </a>
-               <a 
-              href="#Услуги"
-              className="cursor-pointer font-benzin w-1/2 text-center bg-[#0db484] hover:bg-[#0b9b6e] transition-all duration-300 text-sm px-4 py-2 rounded-2xl font-semibold shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
-              {ui.buttons.services}
+            <div className="lg:px-10 px-6 items-center flex lg:flex-col lg:flex-row justify-between lg:mt-4 mt-4 lg:gap-2">
+              <a
+                href="#Портфолио"
+                className="w-1/2  lg:mr-0 mr-2 font-benzin bg-white text-black border border-0.5 backdrop-blur-md cursor-pointer rounded-2xl font-bold lg:text-md text-sm  lg:mt-0 text-center lg:px-8 px-4 py-2 transform transition-transform duration-300 hover:scale-105"
+              >
+                {ui.buttons.portfolio}
               </a>
-          </div>
-
+                <a 
+                href="#Услуги"
+                className="cursor-pointer font-benzin w-1/2 text-center bg-[#0db484] hover:bg-[#0b9b6e] transition-all duration-300 text-sm px-4 py-2 rounded-2xl font-semibold shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
+                {ui.buttons.services}
+                </a>
+            </div>
           </div>
         </div>
         <div className="flex lg:mt-0 mt-4 lg:w-1/3 w-full border border-white/20 bg-white/5 backdrop-blur-md rounded-[50px] px-8 py-4 flex-col items-center justify-center ">

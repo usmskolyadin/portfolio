@@ -72,6 +72,9 @@ body {
   color: var(--foreground);
 }
 
+* {
+  background-clip: padding-box; 
+}
 
 .duration {
   -webkit-appearance: none;
@@ -81,17 +84,15 @@ body {
   outline: none;
   height: 2px;
   border-radius: 999px;
-  background: #ffffff33; /* пустая часть */
+  background: #ffffff33;
 }
 
-/* трек */
 .duration::-webkit-slider-runnable-track {
   height: 2px;
   border-radius: 999px;
   background: transparent;
 }
 
-/* бегунок */
 .duration::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
