@@ -73,7 +73,7 @@ body {
 }
 
 * {
-  background-clip: padding-box; /* iOS Safari лучше обрабатывает blur + прозрачность */
+  background-clip: padding-box; 
 }
 
 .duration {
@@ -84,17 +84,15 @@ body {
   outline: none;
   height: 2px;
   border-radius: 999px;
-  background: #ffffff33; /* пустая часть */
+  background: #ffffff33;
 }
 
-/* трек */
 .duration::-webkit-slider-runnable-track {
   height: 2px;
   border-radius: 999px;
   background: transparent;
 }
 
-/* бегунок */
 .duration::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
