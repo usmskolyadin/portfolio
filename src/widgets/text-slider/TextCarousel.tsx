@@ -31,11 +31,18 @@ function CarouselLine({ text }: { text: string }) {
     <span className="
       mx-2.5 px-4 py-1.5
       text-sm lg:text-md font-semibold uppercase font-benzin
-      text-white/80 dark:text-white
+      text-white
+
       border border-white/20
-      bg-black/10 dark:bg-white/5
+      
+      bg-white/5
+      supports-[backdrop-filter]:bg-white/5
+      supports-[not(backdrop-filter)]:bg-white/10
+
       backdrop-blur-md
-      rounded-[50px]
+      [-webkit-backdrop-filter:blur(12px)]
+
+      rounded-full
       tracking-widest whitespace-nowrap
     ">
       {text}

@@ -25,7 +25,7 @@ export default function RootLayout({ children, params }: { children: React.React
       <body className={`${montserrat.variable} bg-black`}>
         <ReduxProvider>
           {/* <ElectricLines /> */}
-          <div className="mx-auto max-w-screen-3xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-screen-3xl ">
             <div className="lg:grid pb-20">
               
               {children ? children : (
